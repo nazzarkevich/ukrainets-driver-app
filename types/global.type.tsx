@@ -37,3 +37,5 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
     BottomTabScreenProps<RootTabParamList, Screen>,
     NativeStackScreenProps<RootStackList>
   >;
+
+export type Nullable<T> = T | null;
