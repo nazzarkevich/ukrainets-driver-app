@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React, { useEffect } from 'react';
 
-import { useRootStore } from '../components';
+import { useRootStore } from '../../components';
 
 export const HomeScreen = () => {
   const { clientsStore } = useRootStore();

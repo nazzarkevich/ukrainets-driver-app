@@ -12,7 +12,7 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-} from '../firebase';
+} from '../../firebase';
 import { useNavigation } from '@react-navigation/native';
 
 export const LoginScreen = () => {
