@@ -1,12 +1,10 @@
-import { getDocs, collection } from 'firebase/firestore';
 import { action, computed, makeObservable, observable } from 'mobx';
 
-import { db } from '../../firebase';
-import { firestoreConst } from '../../constants';
-import { ClientType } from '../../types';
+import { ClientType, FirestoreCollections } from '../../types';
+import { firebaseService } from '../../services';
 
 export class ClientsStore {
-  @observable clients = [] as ClientType[];
+  @observable clients: ClientType[] = [];
 
   constructor() {
     makeObservable(this);
@@ -19,12 +17,13 @@ export class ClientsStore {
 
   @action
   async fetchClients(): Promise<void> {
-    const querySnapshot = await getDocs(collection(db, firestoreConst.clients));
+    this.clients = await firebaseService.getDocuments(
+      FirestoreCollections.clients
+    );
+  }
 
-    querySnapshot.forEach((item) => {
-      this.clients.push(item.data() as ClientType);
-
-      console.log('STORE: item: ', item.data());
-    });
+  @action
+  async addClient(client: ClientType): Promise<void> {
+    await firebaseService.addDocument(FirestoreCollections.clients, client);
   }
 }
