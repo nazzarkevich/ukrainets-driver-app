@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React, { useEffect } from 'react';
+import { observer } from 'mobx-react';
 
 import { useRootStore } from '../../components';
 
-export const HomeScreen = () => {
+export const HomeScreen = observer(function HomeScreen() {
   const { clientsStore } = useRootStore();
 
   async function fetchData(): Promise<void> {
@@ -41,6 +42,6 @@ export const HomeScreen = () => {
       <Text>HomeScreen</Text>
     </View>
   );
-};
+});
 
 const styles = StyleSheet.create({});
