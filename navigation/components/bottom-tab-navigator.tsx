@@ -1,21 +1,21 @@
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import { Pressable } from 'react-native';
 
 import { colors } from '../../constants';
 import { useColorScheme } from '../../hooks';
-import { TabOneScreen, TabTwoScreen } from '../../screens';
+import { TabHomeScreen, TabParcelsScreen } from '../../screens';
 import { RootTabParamList, RootTabScreenProps } from '../../types';
 
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
  */
 function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
+  name: React.ComponentProps<typeof FontAwesome5>['name'];
   color: string;
 }) {
-  return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
+  return <FontAwesome5 size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
@@ -25,17 +25,17 @@ export function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="TabHomeScreen"
       screenOptions={{
         tabBarActiveTintColor: colors[colorScheme].tint,
       }}
     >
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        name="TabHomeScreen"
+        component={TabHomeScreen}
+        options={({ navigation }: RootTabScreenProps<'TabHomeScreen'>) => ({
+          title: 'Tab Home Screen',
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
@@ -55,11 +55,11 @@ export function BottomTabNavigator() {
       />
 
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
+        name="TabParcelsScreen"
+        component={TabParcelsScreen}
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Tab Parcels Screen',
+          tabBarIcon: ({ color }) => <TabBarIcon name="boxes" color={color} />,
         }}
       />
     </BottomTab.Navigator>

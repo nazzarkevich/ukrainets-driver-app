@@ -5,10 +5,10 @@ import { RootStore } from '../../stores';
 
 const RootStoreContext = React.createContext<Nullable<RootStore>>(null);
 
-export const RootStoreProvider: React.FC<{ store: RootStore }> = ({
-  store,
-  children,
-}) => {
+export const RootStoreProvider: React.FC<{
+  store: RootStore;
+  children: React.ReactNode;
+}> = ({ store, children }) => {
   return (
     <RootStoreContext.Provider value={store}>
       {children}
