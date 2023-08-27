@@ -1,7 +1,7 @@
-import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import { Pressable } from 'react-native';
+import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { colors } from '../../constants';
 import { useColorScheme } from '../../hooks';

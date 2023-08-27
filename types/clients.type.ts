@@ -1,19 +1,19 @@
 import { Nullable } from './global.type';
 
 export interface ClientType {
-  firstName: string;
-  lastName: string;
   phone: string;
+  lastName: string;
+  firstName: string;
   isBlocked: boolean;
-  comment: Nullable<string>;
   address: ClientAddress;
+  comment: Nullable<string>;
 }
 
 export interface ClientAddress {
-  apartment: string;
-  building: string;
   city: string;
+  street: string;
   country: string;
   postCode: string;
-  street: string;
+  building: string;
+  apartment: string;
 }

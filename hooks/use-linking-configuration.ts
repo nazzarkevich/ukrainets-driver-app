@@ -13,10 +13,9 @@ export function useLinkingConfiguration(): {
   linkingConfiguration: LinkingOptions<RootStackList>;
 } {
   const linkingConfiguration = {
-    prefixes: [Linking.makeUrl('/')],
+    prefixes: [Linking.createURL('/')],
     config: {
       screens: {
-        Root: {
           screens: {
             TabOne: {
               screens: {
@@ -29,7 +28,6 @@ export function useLinkingConfiguration(): {
               },
             },
           },
-        },
         Modal: 'modal',
         NotFound: '*',
       },

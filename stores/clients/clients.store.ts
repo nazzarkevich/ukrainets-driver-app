@@ -1,7 +1,6 @@
 import { action, computed, makeObservable, observable } from 'mobx';
 
-import { ClientType, FirestoreCollections } from '../../types';
-import { firebaseService } from '../../services';
+import { ClientType } from '../../types';
 
 export class ClientsStore {
   @observable clients: ClientType[] = [];
@@ -17,13 +16,9 @@ export class ClientsStore {
 
   @action
   async fetchClients(): Promise<void> {
-    this.clients = await firebaseService.getDocuments(
-      FirestoreCollections.clients
-    );
   }
 
   @action
   async addClient(client: ClientType): Promise<void> {
-    await firebaseService.addDocument(FirestoreCollections.clients, client);
   }
 }
