@@ -1,17 +1,20 @@
 import { StyleSheet } from 'react-native';
 
-import { EditScreenInfo, Text, View } from '../../components';
+import { RootStackScreenProps } from '../../types';
+import { NavigationMenu, Text, View } from '../../components';
 
-export function TabParcelsScreen() {
+export function ParcelsScreen({
+  navigation,
+}: RootStackScreenProps<'Parcels'>) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
+      <Text style={styles.title}>Parcels</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <EditScreenInfo path="/screens/tab-parcels-screen/tab-parcels-screen.tsx" />
+      <NavigationMenu/>
     </View>
   );
 }

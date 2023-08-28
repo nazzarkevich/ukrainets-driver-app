@@ -1,20 +1,20 @@
 import { StyleSheet } from 'react-native';
 
-import { EditScreenInfo, Text, View } from '../../components';
-import { RootTabScreenProps } from '../../types';
+import { RootStackScreenProps } from '../../types';
+import { NavigationMenu, Text, View } from '../../components';
 
-export function TabHomeScreen({
+export function JourneysScreen({
   navigation,
-}: RootTabScreenProps<'TabHomeScreen'>) {
+}: RootStackScreenProps<'Journeys'>) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>Journeys</Text>
       <View
-      style={styles.separator}
+        style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <EditScreenInfo path="/screens/tab-home-screen/tab-home-screen.tsx" />
+      <NavigationMenu/>
     </View>
   );
 }

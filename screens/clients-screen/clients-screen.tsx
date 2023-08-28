@@ -1,26 +1,24 @@
-import React from 'react';
 import { StyleSheet } from 'react-native';
-import { observer } from 'mobx-react';
 
-import { NavigationMenu, Text, View } from '../../components';
 import { RootStackScreenProps } from '../../types';
+import { NavigationMenu, Text, View } from '../../components';
 
-
-export const HomeScreen = observer(function HomeScreen({
+export function ClientsScreen({
   navigation,
-}: RootStackScreenProps<'Home'>) {
+}: RootStackScreenProps<'Clients'>) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>HomeScreen</Text>
+      <Text style={styles.title}>Clients</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <NavigationMenu/>
+      
+    <NavigationMenu/>
     </View>
   );
-});
+}
 
 const styles = StyleSheet.create({
   container: {

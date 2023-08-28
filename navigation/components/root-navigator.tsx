@@ -2,48 +2,65 @@ import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import {
+  ClientsScreen,
+  HomeScreen,
+  JourneysScreen,
   ModalScreen,
   NotFoundScreen,
+  ParcelsScreen,
 } from '../../screens';
-import { RootStackList } from '../../types';
-import { BottomTabNavigator } from '../components';
+import { RootStackParams } from '../../types';
 
 /**
  * A root stack navigator is often used for displaying modals on top of all other content.
  * https://reactnavigation.org/docs/modal
  */
-const Stack = createNativeStackNavigator<RootStackList>();
+const RootStack = createNativeStackNavigator<RootStackParams>();
 
 export function RootNavigator() {
-  return (
-    <Stack.Navigator>
-      {/* <Stack.Screen
-        name="Login"
-        component={LoginScreen}
-        options={{ headerShown: false }}
-      /> */}
+  /*
+    TODO: Screens to create:
 
-      {/* <Stack.Screen
+    Поїздки -> Journeys
+    Посилки -> Parcels
+    Клієнти -> Clients
+    Перевізники -> Drivers
+    Автомобілі -> Vans
+               -> Login
+  */
+
+  return (
+    <RootStack.Navigator>
+      <RootStack.Screen
         name="Home"
         component={HomeScreen}
         options={{ headerShown: false }}
-      /> */}
-
-      <Stack.Screen
-        name="Root"
-        component={BottomTabNavigator}
+      />
+      <RootStack.Screen
+        name="Parcels"
+        component={ParcelsScreen}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="Clients"
+        component={ClientsScreen}
+        options={{ headerShown: false }}
+      />
+      <RootStack.Screen
+        name="Journeys"
+        component={JourneysScreen}
         options={{ headerShown: false }}
       />
 
-      <Stack.Screen
+      <RootStack.Screen
         name="NotFound"
         component={NotFoundScreen}
         options={{ title: 'Oops!' }}
       />
 
-      <Stack.Group screenOptions={{ presentation: 'modal' }}>
-        <Stack.Screen name="Modal" component={ModalScreen} />
-      </Stack.Group>
-    </Stack.Navigator>
+      <RootStack.Group screenOptions={{ presentation: 'modal' }}>
+        <RootStack.Screen name="Modal" component={ModalScreen} />
+      </RootStack.Group>
+    </RootStack.Navigator>
   );
 }
