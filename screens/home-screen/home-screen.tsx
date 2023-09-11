@@ -5,7 +5,6 @@ import { observer } from 'mobx-react';
 import { NavigationMenu, Text, View } from '../../components';
 import { RootStackScreenProps } from '../../types';
 
-
 export const HomeScreen = observer(function HomeScreen({
   navigation,
 }: RootStackScreenProps<'Home'>) {
@@ -17,7 +16,7 @@ export const HomeScreen = observer(function HomeScreen({
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <NavigationMenu/>
+      <NavigationMenu />
     </View>
   );
 });

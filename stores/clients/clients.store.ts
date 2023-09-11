@@ -15,10 +15,8 @@ export class ClientsStore {
   }
 
   @action
-  async fetchClients(): Promise<void> {
-  }
+  async fetchClients(): Promise<void> {}
 
   @action
-  async addClient(client: ClientType): Promise<void> {
-  }
+  async addClient(client: ClientType): Promise<void> {}
 }
