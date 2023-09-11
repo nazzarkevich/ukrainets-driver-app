@@ -8,8 +8,8 @@ import {
   ModalScreen,
   NotFoundScreen,
   ParcelsScreen,
-} from '../../screens';
-import { RootStackParams } from '../../types';
+} from '@screens/';
+import { RootStackParams } from '@type/';
 
 /**
  * A root stack navigator is often used for displaying modals on top of all other content.

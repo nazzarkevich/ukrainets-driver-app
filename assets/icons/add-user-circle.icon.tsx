@@ -1,6 +1,6 @@
 import Svg, { Path, Defs, Stop } from 'react-native-svg';
 
-import { SvgProps } from '../../types';
+import { SvgProps } from '@type/';
 
 export const AddUserCircleIcon = ({ width = 65, height = 65 }: SvgProps) => {
   return (

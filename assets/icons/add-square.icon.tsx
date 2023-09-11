@@ -1,6 +1,6 @@
 import Svg, { Path } from 'react-native-svg';
 
-import { SvgProps } from '../../types';
+import { SvgProps } from '@type/';
 
 export const AddSquareIcon = ({
   color = '#C2C6CE',

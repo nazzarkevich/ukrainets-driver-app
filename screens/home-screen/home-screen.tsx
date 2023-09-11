@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { observer } from 'mobx-react';
 
-import { NavigationMenu, Text, View } from '../../components';
-import { RootStackScreenProps } from '../../types';
+import { RootStackScreenProps } from '@type/';
+import { NavigationMenu, Text, View } from '@components/';
 
 export const HomeScreen = observer(function HomeScreen({
   navigation,

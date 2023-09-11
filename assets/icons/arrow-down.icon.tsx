@@ -1,6 +1,6 @@
 import Svg, { Path } from 'react-native-svg';
 
-import { SvgProps } from '../../types';
+import { SvgProps } from '@type/';
 
 export const ArrowDownIcon = ({ width = 50, height = 50 }: SvgProps) => {
   return (

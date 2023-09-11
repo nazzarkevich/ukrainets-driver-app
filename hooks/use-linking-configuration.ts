@@ -7,7 +7,7 @@
 import { LinkingOptions } from '@react-navigation/native';
 import * as Linking from 'expo-linking';
 
-import { RootStackParams } from '../types';
+import { RootStackParams } from '@type/';
 
 export function useLinkingConfiguration(): {
   linkingConfiguration: LinkingOptions<RootStackParams>;
@@ -18,16 +18,16 @@ export function useLinkingConfiguration(): {
     prefixes: [prefix],
     config: {
       screens: {
-            TabOne: {
-              screens: {
-                TabOneScreen: 'one',
-              },
-            },
-            TabTwo: {
-              screens: {
-                TabTwoScreen: 'two',
-              },
-            },
+        TabOne: {
+          screens: {
+            TabOneScreen: 'one',
+          },
+        },
+        TabTwo: {
+          screens: {
+            TabTwoScreen: 'two',
+          },
+        },
         Modal: 'modal',
         NotFound: '*',
       },

@@ -7,7 +7,7 @@ import {
 } from '@react-navigation/native';
 
 import { RootNavigator } from './components';
-import { useLinkingConfiguration } from '../hooks';
+import { useLinkingConfiguration } from '@hooks/';
 
 export function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   const { linkingConfiguration } = useLinkingConfiguration();

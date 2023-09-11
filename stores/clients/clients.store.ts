@@ -1,6 +1,6 @@
 import { action, computed, makeObservable, observable } from 'mobx';
 
-import { ClientType } from '../../types';
+import { ClientType } from '@type/';
 
 export class ClientsStore {
   @observable clients: ClientType[] = [];
