@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["firestore"]
+  "cSpell.words": ["firestore"],
+  "prettier.prettierPath": "./node_modules/prettier/index.cjs"
 }

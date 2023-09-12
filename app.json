@@ -26,8 +26,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/images/favicon.png",
-      "babel": { "include": [ "@ui-kitten/components" ] } 
+      "favicon": "./assets/images/favicon.png"
     }
   }
 }

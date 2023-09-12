@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { PaperProvider } from 'react-native-paper';
 
 import { RootStore } from '@stores/';
 import { Navigation } from '@navigation/';
@@ -19,8 +20,10 @@ export default function App() {
     return (
       <SafeAreaProvider>
         <RootStoreProvider store={rootStore}>
-          <Navigation colorScheme={colorScheme} />
-          <StatusBar />
+          <PaperProvider>
+            <Navigation colorScheme={colorScheme} />
+            <StatusBar />
+          </PaperProvider>
         </RootStoreProvider>
       </SafeAreaProvider>
     );
