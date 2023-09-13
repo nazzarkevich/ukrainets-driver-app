@@ -1,4 +1,11 @@
 {
-  "cSpell.words": ["firestore"],
+  "cSpell.words": ["firestore", "ukrainets"],
+  "editor.formatOnSave": false,
+  "eslint.validate": [
+    "typescript"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
   "prettier.prettierPath": "./node_modules/prettier/index.cjs"
 }

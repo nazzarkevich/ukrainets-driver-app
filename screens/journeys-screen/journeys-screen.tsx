@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
-import { RootStackScreenProps } from '@type/';
 import { NavigationMenu, Text, View } from '@components/';
+import { RootStackScreenProps } from '@type/';
 
 export function JourneysScreen({
   navigation,
