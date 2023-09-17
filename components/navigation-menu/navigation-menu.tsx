@@ -1,29 +1,29 @@
-import { StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Text, View } from '../themed';
 
 export function NavigationMenu() {
-    const navigation = useNavigation();
-    
+  const navigation = useNavigation();
+
   return (
     <View>
       <Text style={styles.title}>Navigation</Text>
 
       <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-      <Text>Home</Text>
+        <Text>Home</Text>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => navigation.navigate('Clients')}>
-      <Text>Clients</Text>
+        <Text>Clients</Text>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => navigation.navigate('Journeys')}>
-      <Text>Journeys</Text>
+        <Text>Journeys</Text>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => navigation.navigate('Parcels')}>
-      <Text>Parcels</Text>
+        <Text>Parcels</Text>
       </TouchableOpacity>
     </View>
   );

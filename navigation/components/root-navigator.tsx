@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import * as React from 'react';
 
 import {
   ClientsScreen,
@@ -30,7 +30,7 @@ export function RootNavigator() {
   */
 
   return (
-    <RootStack.Navigator>
+    <RootStack.Navigator initialRouteName="Home">
       <RootStack.Screen
         name="Home"
         component={HomeScreen}

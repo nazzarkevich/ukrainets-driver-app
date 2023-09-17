@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react';
 import React from 'react';
 import { StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { NavigationMenu, Text, View } from '@components/';
 import { RootStackScreenProps } from '@type/';
@@ -9,7 +10,7 @@ export const HomeScreen = observer(function HomeScreen({
   navigation,
 }: RootStackScreenProps<'Home'>) {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>HomeScreen</Text>
       <View
         style={styles.separator}
@@ -17,7 +18,7 @@ export const HomeScreen = observer(function HomeScreen({
         darkColor="rgba(255,255,255,0.1)"
       />
       <NavigationMenu />
-    </View>
+    </SafeAreaView>
   );
 });
 

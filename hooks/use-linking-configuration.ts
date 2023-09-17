@@ -18,16 +18,7 @@ export function useLinkingConfiguration(): {
     prefixes: [prefix],
     config: {
       screens: {
-        TabOne: {
-          screens: {
-            TabOneScreen: 'one',
-          },
-        },
-        TabTwo: {
-          screens: {
-            TabTwoScreen: 'two',
-          },
-        },
+        home: '',
         Modal: 'modal',
         NotFound: '*',
       },
