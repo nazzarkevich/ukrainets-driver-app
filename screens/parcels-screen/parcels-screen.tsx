@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+import { Text, View } from '@components/';
 import { RootStackScreenProps } from '@type/';
-import { NavigationMenu, Text, View } from '@components/';
 
 export function ParcelsScreen({ navigation }: RootStackScreenProps<'Parcels'>) {
   return (
@@ -12,7 +12,6 @@ export function ParcelsScreen({ navigation }: RootStackScreenProps<'Parcels'>) {
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <NavigationMenu />
     </View>
   );
 }

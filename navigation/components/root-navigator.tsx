@@ -1,23 +1,22 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import * as React from 'react';
+import { Dimensions } from 'react-native';
 
 import {
   ClientsScreen,
   HomeScreen,
   JourneysScreen,
-  ModalScreen,
   NotFoundScreen,
   ParcelsScreen,
 } from '@screens/';
 import { RootStackParams } from '@type/';
 
-/**
- * A root stack navigator is often used for displaying modals on top of all other content.
- * https://reactnavigation.org/docs/modal
- */
-const RootStack = createNativeStackNavigator<RootStackParams>();
+const RootDrawer = createDrawerNavigator<RootStackParams>();
 
 export function RootNavigator() {
+  const { width, height } = Dimensions.get('window');
+  const aspectRation = height / width;
+  const isTablet = aspectRation < 1.6;
   /*
     TODO: Screens to create:
 
@@ -30,37 +29,28 @@ export function RootNavigator() {
   */
 
   return (
-    <RootStack.Navigator initialRouteName="Home">
-      <RootStack.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{ headerShown: false }}
-      />
-      <RootStack.Screen
-        name="Parcels"
-        component={ParcelsScreen}
-        options={{ headerShown: false }}
-      />
-      <RootStack.Screen
-        name="Clients"
-        component={ClientsScreen}
-        options={{ headerShown: false }}
-      />
-      <RootStack.Screen
-        name="Journeys"
-        component={JourneysScreen}
-        options={{ headerShown: false }}
-      />
+    <RootDrawer.Navigator
+      screenOptions={{
+        drawerType: isTablet ? 'permanent' : 'slide',
+        headerShown: !isTablet,
+        drawerStyle: { maxWidth: 200 },
+      }}>
+      <RootDrawer.Screen name="Home" component={HomeScreen} />
+      <RootDrawer.Screen name="Parcels" component={ParcelsScreen} />
+      <RootDrawer.Screen name="Clients" component={ClientsScreen} />
+      <RootDrawer.Screen name="Journeys" component={JourneysScreen} />
 
-      <RootStack.Screen
+      <RootDrawer.Screen
         name="NotFound"
         component={NotFoundScreen}
         options={{ title: 'Oops!' }}
       />
+    </RootDrawer.Navigator>
 
-      <RootStack.Group screenOptions={{ presentation: 'modal' }}>
-        <RootStack.Screen name="Modal" component={ModalScreen} />
-      </RootStack.Group>
-    </RootStack.Navigator>
+    // <RootStack.Navigator initialRouteName="Home">
+    //   <RootStack.Group screenOptions={{ presentation: 'modal' }}>
+    //     <RootStack.Screen name="Modal" component={ModalScreen} />
+    //   </RootStack.Group>
+    // </RootStack.Navigator>
   );
 }

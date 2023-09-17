@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { NavigationMenu, Text, View } from '@components/';
+import { Text, View } from '@components/';
 import { RootStackScreenProps } from '@type/';
 
 export function JourneysScreen({
@@ -14,7 +14,6 @@ export function JourneysScreen({
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <NavigationMenu />
     </View>
   );
 }

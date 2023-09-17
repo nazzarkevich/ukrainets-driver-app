@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+import { Text, View } from '@components/';
 import { RootStackScreenProps } from '@type/';
-import { NavigationMenu, Text, View } from '@components/';
 
 export function ClientsScreen({ navigation }: RootStackScreenProps<'Clients'>) {
   return (
@@ -12,8 +12,6 @@ export function ClientsScreen({ navigation }: RootStackScreenProps<'Clients'>) {
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-
-      <NavigationMenu />
     </View>
   );
 }

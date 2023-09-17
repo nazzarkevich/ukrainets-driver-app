@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { NavigationMenu, Text, View } from '@components/';
+import { Text, View } from '@components/';
 import { RootStackScreenProps } from '@type/';
 
 export const HomeScreen = observer(function HomeScreen({
@@ -17,7 +17,6 @@ export const HomeScreen = observer(function HomeScreen({
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      <NavigationMenu />
     </SafeAreaView>
   );
 });
