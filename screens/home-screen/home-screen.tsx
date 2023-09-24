@@ -1,39 +1,45 @@
 import { observer } from 'mobx-react';
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { Text, View } from '@components/';
+import { ScreenContainer, SectionTitle, View } from '@components/';
 import { RootStackScreenProps } from '@type/';
 
 export const HomeScreen = observer(function HomeScreen({
   navigation,
 }: RootStackScreenProps<'Home'>) {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>HomeScreen</Text>
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
-    </SafeAreaView>
+    <ScreenContainer>
+      <View style={styles.wrapper}>
+        <View style={styles.activeJourney}>
+          <SectionTitle>Активна поїздка</SectionTitle>
+        </View>
+
+        <View style={styles.recentItems}>
+          <View>
+            <SectionTitle>Останні посилки</SectionTitle>
+          </View>
+          <View>
+            <SectionTitle>Нові клієнти</SectionTitle>
+          </View>
+        </View>
+      </View>
+    </ScreenContainer>
   );
 });
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+  wrapper: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    marginTop: 80,
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+  activeJourney: {
+    width: '60%',
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  recentItems: {
+    width: '40%',
   },
 });

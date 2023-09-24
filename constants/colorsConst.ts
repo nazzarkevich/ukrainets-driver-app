@@ -1,33 +1,40 @@
-export const textPrimary = '#080A11';
-export const textSecondary = '#4A4C56';
-export const textTertiary = '#C2C6CE';
-export const textContrast = '#FFFFFF';
+export const colorsConst = {
+  text: {
+    primary: '#080A11',
+    secondary: '#4A4C56',
+    tertiary: '#C2C6CE',
+    contrast: '#FFFFFF',
+  },
+  roles: {
+    primary: '#413ED2',
+    success: '#60CB74',
+    warning: '#E7D859',
+    error: '#D83E34',
+  },
+  foreground: {
+    primary: '#858D9D',
+    secondary: '#C2C6CE',
+    active: '#ECF2FB',
+  },
+  background: {
+    main: '#F9F9FC',
+    Default: '#FFFFFF',
+  },
+};
 
-export const rolesPrimary = '#413ED2';
-export const rolesSuccess = '#60CB74';
-export const rolesWarning = '#E7D859';
-export const rolesError = '#D83E34';
-
-export const foregroundPrimary = '#858D9D';
-export const foregroundSecondary = '#C2C6CE';
-export const foregroundActive = '#ECF2FB';
-
-export const backgroundMain = '#F9F9FC';
-export const backgroundDefault = '#FFFFFF';
-
-export const colors = {
+export const themeColors = {
   light: {
-    text: textPrimary,
-    background: backgroundMain,
-    tint: rolesPrimary,
-    tabIconDefault: foregroundPrimary,
-    tabIconSelected: rolesPrimary,
+    text: colorsConst.text.primary,
+    background: colorsConst.background.main,
+    tint: colorsConst.roles.primary,
+    tabIconDefault: colorsConst.foreground.primary,
+    tabIconSelected: colorsConst.roles.primary,
   },
   dark: {
-    text: textContrast,
+    text: colorsConst.text.contrast,
     background: '#000',
-    tint: textContrast,
+    tint: colorsConst.text.contrast,
     tabIconDefault: '#ccc',
-    tabIconSelected: textContrast,
+    tabIconSelected: colorsConst.text.contrast,
   },
 };
