@@ -1,7 +1,7 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import * as React from 'react';
-import { Dimensions } from 'react-native';
 
+import { layout } from '@constants/';
 import {
   ClientsScreen,
   HomeScreen,
@@ -14,9 +14,7 @@ import { RootStackParams } from '@type/';
 const RootDrawer = createDrawerNavigator<RootStackParams>();
 
 export function RootNavigator() {
-  const { width, height } = Dimensions.get('window');
-  const aspectRation = height / width;
-  const isTablet = aspectRation < 1.6;
+  const { isTablet } = layout;
   /*
     TODO: Screens to create:
 
