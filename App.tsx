@@ -16,14 +16,14 @@ export default function App() {
 
   if (!isLoadingComplete) {
     return null;
-  } else {
-    return (
-      <RootStoreProvider store={rootStore}>
-        <PaperProvider>
-          <Navigation colorScheme={colorScheme} />
-          <StatusBar />
-        </PaperProvider>
-      </RootStoreProvider>
-    );
   }
+
+  return (
+    <RootStoreProvider store={rootStore}>
+      <PaperProvider>
+        <Navigation colorScheme={colorScheme} />
+        <StatusBar />
+      </PaperProvider>
+    </RootStoreProvider>
+  );
 }
