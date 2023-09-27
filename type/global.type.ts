@@ -18,6 +18,8 @@ export type RootStackParams = {
   Journeys: undefined;
   Parcels: undefined;
   Clients: undefined;
+  Drivers: undefined;
+  Vans: undefined;
   Modal: undefined;
   NotFound: undefined;
 };

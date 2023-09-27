@@ -9,7 +9,6 @@ export function NavigationMenu() {
   return (
     <View>
       <Text style={styles.title}>Navigation</Text>
-
       <TouchableOpacity onPress={() => navigation.navigate('Home')}>
         <Text>Home</Text>
       </TouchableOpacity>
