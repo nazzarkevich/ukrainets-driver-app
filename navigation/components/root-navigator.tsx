@@ -50,9 +50,7 @@ export function RootNavigator() {
         component={HomeScreen}
         options={{
           title: 'Головна панель',
-          drawerIcon: () => (
-            <CategoryIcon width={20} height={20} color="#7B47E1" />
-          ),
+          drawerIcon: () => <CategoryIcon width={20} height={20} />,
         }}
       />
       <RootDrawer.Screen
