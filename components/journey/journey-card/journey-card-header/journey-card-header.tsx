@@ -26,8 +26,8 @@ export const JourneyCardHeader = ({
   };
 
   const countryFlags = {
-    [Country.UKRAINE]: <UaFlagIcon width={20} />,
-    [Country.UNITED_KINGDOM]: <GbFlagIcon width={20} />,
+    [Country.UKRAINE]: <UaFlagIcon size={20} />,
+    [Country.UNITED_KINGDOM]: <GbFlagIcon size={20} />,
   };
 
   return (
