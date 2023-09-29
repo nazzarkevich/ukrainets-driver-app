@@ -5,10 +5,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Text, View } from '@components/';
 import { RootStackScreenProps } from '@type/';
+import { ColorLogoIcon } from 'assets/icons';
 
 export const HomeScreen = observer(function HomeScreen({
   navigation,
-}: RootStackScreenProps<'Home'>) {
+}: RootStackScreenProps<'Home' | 'Logo'>) {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>HomeScreen</Text>
@@ -17,6 +18,7 @@ export const HomeScreen = observer(function HomeScreen({
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
+      <ColorLogoIcon />
     </SafeAreaView>
   );
 });
