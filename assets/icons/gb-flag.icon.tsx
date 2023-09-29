@@ -1,4 +1,4 @@
-import Svg, { Path, Defs, Rect } from 'react-native-svg';
+import Svg, { Defs, Path, Rect } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 

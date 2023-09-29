@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { PaperProvider } from 'react-native-paper';
+import Toast from 'react-native-toast-message';
 
 import { RootStoreProvider } from '@components/';
 import { useCachedResources, useColorScheme } from '@hooks/';
@@ -23,6 +24,7 @@ export default function App() {
       <PaperProvider>
         <Navigation colorScheme={colorScheme} />
         <StatusBar />
+        <Toast />
       </PaperProvider>
     </RootStoreProvider>
   );

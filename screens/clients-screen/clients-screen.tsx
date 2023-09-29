@@ -1,13 +1,13 @@
 import { StyleSheet } from 'react-native';
 
-import { ScreenContainer, Text, View } from '@components/';
+import { ScreenContainer, StyledView, Text } from '@components/';
 import { RootStackScreenProps } from '@type/';
 
 export function ClientsScreen({ navigation }: RootStackScreenProps<'Clients'>) {
   return (
     <ScreenContainer>
       <Text style={styles.title}>Clients</Text>
-      <View
+      <StyledView
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"

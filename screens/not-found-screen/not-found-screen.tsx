@@ -1,13 +1,13 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { RootStackScreenProps } from '@type/';
-import { Text, View } from '@components/themed';
+import { Text, StyledView } from '@components/themed';
 
 export function NotFoundScreen({
   navigation,
 }: RootStackScreenProps<'NotFound'>) {
   return (
-    <View style={styles.container}>
+    <StyledView style={styles.container}>
       <Text style={styles.title}>This screen doesn't exist.</Text>
       <TouchableOpacity
         onPress={() => navigation.replace('Home')}
@@ -15,7 +15,7 @@ export function NotFoundScreen({
       >
         <Text style={styles.linkText}>Go to home screen!</Text>
       </TouchableOpacity>
-    </View>
+    </StyledView>
   );
 }
 

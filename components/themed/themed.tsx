@@ -5,8 +5,8 @@
 
 import { Text as DefaultText, View as DefaultView } from 'react-native';
 
-import { themeColors } from '@constants/';
 import { useColorScheme } from '@hooks/';
+import { themeColors } from 'consts';
 
 import { TextProps, ViewProps } from './themed.types';
 
@@ -24,6 +24,7 @@ export function useThemeColor(
   }
 }
 
+// TODO: Add Gilroy font globally https://trello.com/c/dqJQEJjZ
 export function Text(props: TextProps) {
   const { style, lightColor, darkColor, ...otherProps } = props;
 
@@ -32,7 +33,7 @@ export function Text(props: TextProps) {
   return <DefaultText style={[{ color }, style]} {...otherProps} />;
 }
 
-export function View(props: ViewProps) {
+export function StyledView(props: ViewProps) {
   const { style, lightColor, darkColor, ...otherProps } = props;
 
   const backgroundColor = useThemeColor(
@@ -41,4 +42,10 @@ export function View(props: ViewProps) {
   );
 
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
+}
+
+export function View(props: ViewProps) {
+  const { style, ...otherProps } = props;
+
+  return <DefaultView style={[style]} {...otherProps} />;
 }

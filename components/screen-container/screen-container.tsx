@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { View } from '../themed';
+import { StyledView } from '../themed';
 
 export const ScreenContainer = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  return <View style={styles.container}>{children}</View>;
+  return <StyledView style={styles.container}>{children}</StyledView>;
 };
 
 const styles = StyleSheet.create({

@@ -47,12 +47,12 @@ import {
   TruckIcon,
   TwoWayArrowsIcon,
 } from '.';
-import { View } from '../../components';
+import { StyledView } from '../../components';
 
 // Helper component to view all the icons
 export const AllIcons = () => {
   return (
-    <View style={styles.iconsContainer}>
+    <StyledView style={styles.iconsContainer}>
       <ColorLogoIcon />
       <ColorArrowsLogoIcon />
       <DarkArrowsLogoIcon />
@@ -98,7 +98,7 @@ export const AllIcons = () => {
       <TrashIcon />
       <TruckIcon />
       <TwoWayArrowsIcon />
-    </View>
+    </StyledView>
   );
 };
 

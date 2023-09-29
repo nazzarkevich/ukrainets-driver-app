@@ -4,6 +4,7 @@ export const colorsConst = {
     secondary: '#4A4C56',
     tertiary: '#C2C6CE',
     contrast: '#FFFFFF',
+    green: '#60CB74',
   },
   roles: {
     primary: '#413ED2',
@@ -15,10 +16,11 @@ export const colorsConst = {
     primary: '#858D9D',
     secondary: '#C2C6CE',
     active: '#ECF2FB',
+    green: '#d2ffda',
   },
   background: {
     main: '#F9F9FC',
-    Default: '#FFFFFF',
+    default: '#FFFFFF',
   },
 };
 

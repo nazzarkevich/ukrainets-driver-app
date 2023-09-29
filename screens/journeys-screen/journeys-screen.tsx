@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { ScreenContainer, Text, View } from '@components/';
+import { ScreenContainer, Text, StyledView } from '@components/';
 import { RootStackScreenProps } from '@type/';
 
 export function JourneysScreen({
@@ -9,7 +9,7 @@ export function JourneysScreen({
   return (
     <ScreenContainer>
       <Text style={styles.title}>Journeys</Text>
-      <View
+      <StyledView
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"

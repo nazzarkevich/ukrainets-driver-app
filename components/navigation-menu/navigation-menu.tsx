@@ -1,13 +1,13 @@
 import { useNavigation } from '@react-navigation/core';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
-import { Text, View } from '../themed';
+import { Text, StyledView } from '../themed';
 
 export function NavigationMenu() {
   const navigation = useNavigation();
 
   return (
-    <View>
+    <StyledView>
       <Text style={styles.title}>Navigation</Text>
 
       <TouchableOpacity onPress={() => navigation.navigate('Home')}>
@@ -25,7 +25,7 @@ export function NavigationMenu() {
       <TouchableOpacity onPress={() => navigation.navigate('Parcels')}>
         <Text>Parcels</Text>
       </TouchableOpacity>
-    </View>
+    </StyledView>
   );
 }
 
