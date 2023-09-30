@@ -8,11 +8,18 @@ import {
   DriversScreen,
   HomeScreen,
   JourneysScreen,
-  NotFoundScreen,
   ParcelsScreen,
   VansScreen,
 } from '@screens/';
 import { RootStackParams } from '@type/';
+import {
+  BoxIcon,
+  CarIcon,
+  CategoryIcon,
+  DriverIcon,
+  GroupIcon,
+  PeopleIcon,
+} from 'assets/icons';
 
 const RootDrawer = createDrawerNavigator<RootStackParams>();
 
@@ -25,21 +32,80 @@ export function RootNavigator() {
       screenOptions={{
         drawerType: isTablet ? 'permanent' : 'slide',
         headerShown: !isTablet,
-        drawerStyle: { maxWidth: 250 },
-        drawerActiveBackgroundColor: '#EEF1FC',
-        drawerActiveTintColor: '#000000',
+        drawerActiveBackgroundColor: '#EDF2FA',
+        drawerActiveTintColor: '#413ECA',
+        drawerStyle: { maxWidth: 220 },
+        drawerLabelStyle: {
+          marginLeft: -25,
+          color: '#464850',
+          fontFamily: 'Gilroy',
+        },
       }}>
-      <RootDrawer.Screen name="Home" component={HomeScreen} />
-      <RootDrawer.Screen name="Journeys" component={JourneysScreen} />
-      <RootDrawer.Screen name="Parcels" component={ParcelsScreen} />
-      <RootDrawer.Screen name="Clients" component={ClientsScreen} />
-      <RootDrawer.Screen name="Drivers" component={DriversScreen} />
-      <RootDrawer.Screen name="Vans" component={VansScreen} />
       <RootDrawer.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          title: 'Головна панель',
+          drawerIcon: ({ color }) => (
+            <CategoryIcon width={22} height={22} color={color} />
+          ),
+        }}
+      />
+      <RootDrawer.Screen
+        name="Journeys"
+        component={JourneysScreen}
+        options={{
+          title: 'Поїздки',
+          drawerIcon: ({ color }) => (
+            <GroupIcon width={22} height={22} color={color} />
+          ),
+        }}
+      />
+      <RootDrawer.Screen
+        name="Parcels"
+        component={ParcelsScreen}
+        options={{
+          title: 'Посилки',
+          drawerIcon: ({ color }) => (
+            <BoxIcon width={22} height={22} color={color} />
+          ),
+        }}
+      />
+      <RootDrawer.Screen
+        name="Clients"
+        component={ClientsScreen}
+        options={{
+          title: 'Клієнти',
+          drawerIcon: ({ color }) => (
+            <PeopleIcon width={22} height={22} color={color} />
+          ),
+        }}
+      />
+      <RootDrawer.Screen
+        name="Drivers"
+        component={DriversScreen}
+        options={{
+          title: 'Перевізники',
+          drawerIcon: ({ color }) => (
+            <DriverIcon width={22} height={22} color={color} />
+          ),
+        }}
+      />
+      <RootDrawer.Screen
+        name="Vans"
+        component={VansScreen}
+        options={{
+          title: 'Автомобілі',
+          drawerIcon: ({ color }) => (
+            <CarIcon width={22} height={22} color={color} />
+          ),
+        }}
+      />
+      {/* <RootDrawer.Screen
         name="NotFound"
         component={NotFoundScreen}
         options={{ title: 'Oops!' }}
-      />
+      /> */}
     </RootDrawer.Navigator>
 
     // <RootStack.Navigator initialRouteName="Home">

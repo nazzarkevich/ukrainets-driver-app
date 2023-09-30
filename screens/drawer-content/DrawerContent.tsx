@@ -1,72 +1,29 @@
-import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
+import {
+  DrawerContentScrollView,
+  DrawerItemList,
+} from '@react-navigation/drawer';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Avatar, Button } from 'react-native-paper';
 
-import {
-  BoxIcon,
-  CarIcon,
-  CategoryIcon,
-  ColorLogoIcon,
-  DotsMenuIcon,
-  DriverIcon,
-  GroupIcon,
-  PeopleIcon,
-} from 'assets/icons';
+import { ColorLogoIcon, DotsMenuIcon } from 'assets/icons';
 
 export function DrawerContent(props) {
   return (
     <View style={{ flex: 1 }}>
       <DrawerContentScrollView {...props}>
         <View style={styles.drawerContent}>
-          <View style={{ paddingHorizontal: 20, paddingVertical: 24 }}>
-            <ColorLogoIcon width={117} height={20} />
+          <View style={{ padding: 15 }}>
+            <ColorLogoIcon width={120} height={20} />
           </View>
-          <DrawerItem
-            icon={() => <CategoryIcon width={20} height={20} />}
-            label="Головна панель"
-            labelStyle={{ color: '#4A4C55', marginLeft: -25 }}
-            onPress={() => props.navigation.navigate('Home')}
-          />
-          <DrawerItem
-            icon={() => <GroupIcon width={20} height={20} />}
-            label="Поїздки"
-            labelStyle={{ color: '#4A4C55', marginLeft: -25 }}
-            onPress={() => props.navigation.navigate('Journeys')}
-          />
-          <DrawerItem
-            icon={() => <BoxIcon width={20} height={20} />}
-            label="Посилки"
-            labelStyle={{ color: '#4A4C55', marginLeft: -25 }}
-            onPress={() => props.navigation.navigate('Parcels')}
-          />
-          <DrawerItem
-            icon={() => <PeopleIcon width={20} height={20} />}
-            label="Клієнти"
-            labelStyle={{ color: '#4A4C55', marginLeft: -25 }}
-            onPress={() => props.navigation.navigate('Clients')}
-          />
-          <DrawerItem
-            icon={() => <DriverIcon width={20} height={20} />}
-            label="Перевізники"
-            labelStyle={{ color: '#4A4C55', marginLeft: -25 }}
-            onPress={() => props.navigation.navigate('Drivers')}
-          />
-          <DrawerItem
-            icon={() => <CarIcon width={20} height={20} />}
-            label="Автомобілі"
-            labelStyle={{ color: '#4A4C55', marginLeft: -25 }}
-            onPress={() => props.navigation.navigate('Vans')}
-          />
+          <DrawerItemList {...props} />
+          <Button style={styles.btn} onPress={() => null}>
+            <Text style={styles.textBtn}>Створити поїздку</Text>
+          </Button>
         </View>
       </DrawerContentScrollView>
 
       <View style={styles.userInfoSection}>
-        <Button style={styles.btn} onPress={() => null}>
-          <Text style={{ color: '#fff', fontWeight: '400' }}>
-            Створити поїздку
-          </Text>
-        </Button>
         <View style={styles.user}>
           <View>
             <Avatar.Image
@@ -109,19 +66,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#413ECA',
     color: '#FFFFFF',
     borderRadius: 10,
-    width: 173,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'row',
+    width: 180,
+    marginTop: 230,
+    marginLeft: 15,
+  },
+  textBtn: {
+    color: '#FFFFFF',
+    fontWeight: 'normal',
   },
   user: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: 173,
-    marginTop: 15,
-    marginBottom: 15,
+    marginBottom: 20,
     alignItems: 'center',
   },
   name: {
