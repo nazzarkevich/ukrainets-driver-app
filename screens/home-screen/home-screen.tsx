@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   },
   destinationName: {
     fontWeight: 'bold',
-    fontSize: typographyConst.large,
+    fontSize: typographyConst.font.l,
   },
 
   journeyStatus: {

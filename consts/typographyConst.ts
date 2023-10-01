@@ -1,7 +1,16 @@
 export const typographyConst = {
-  giant: 24,
-  large: 16,
-  medium: 14,
-  small: 12,
-  tiny: 10,
+  font: {
+    xs: 10,
+    s: 12,
+    m: 14,
+    l: 16,
+    xl: 24,
+  },
+  spacing: {
+    xs: 4,
+    s: 8,
+    m: 16,
+    l: 24,
+    xl: 40,
+  },
 };

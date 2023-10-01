@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
+import { typographyConst } from 'consts';
+
 import { StyledView } from '../themed';
 
 export const ScreenContainer = ({
@@ -14,6 +16,6 @@ export const ScreenContainer = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
+    padding: typographyConst.spacing.l,
   },
 });

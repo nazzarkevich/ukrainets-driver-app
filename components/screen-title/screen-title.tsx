@@ -11,6 +11,6 @@ export const ScreenTitle = ({ children }: { children: React.ReactNode }) => {
 const styles = StyleSheet.create({
   title: {
     fontWeight: 'bold',
-    fontSize: typographyConst.giant,
+    fontSize: typographyConst.font.xl,
   },
 });

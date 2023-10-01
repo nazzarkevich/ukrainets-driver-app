@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   journeyDestination: {
-    columnGap: 5,
+    columnGap: typographyConst.spacing.xs,
     maxHeight: 25,
     flexDirection: 'row',
     alignItems: 'center',
@@ -61,6 +61,6 @@ const styles = StyleSheet.create({
   },
   country: {
     fontWeight: 'bold',
-    fontSize: typographyConst.large,
+    fontSize: typographyConst.font.l,
   },
 });

@@ -3,12 +3,13 @@ import { StyleSheet } from 'react-native';
 import { Divider } from 'react-native-paper';
 
 import { View } from 'components';
-import { colorsConst } from 'consts';
+import { colorsConst, typographyConst } from 'consts';
 import { Country } from 'type';
 
 import { JourneyCardDetails } from './journey-card-details';
 import { JourneyCardHeader } from './journey-card-header';
-import { JourneyLoadDetails } from './journey-load-details';
+import { JourneyDrivers } from './journey-drivers';
+import { JourneyLoadIndicator } from './journey-load-indicator';
 
 interface JourneyCardType {
   journeyLoad: string;
@@ -27,6 +28,11 @@ export const JourneyCard = ({
   carPlateNumber,
   isCompleted,
 }: JourneyCardType) => {
+  const drivers = [
+    { firstName: 'Дмитро', lastName: 'Гнатюк', role: 'Водій' },
+    { firstName: 'Карпо', lastName: 'Чумак', role: 'Водій' },
+  ];
+
   return (
     <View style={styles.journeyCard}>
       <JourneyCardHeader
@@ -41,7 +47,9 @@ export const JourneyCard = ({
         carPlateNumber={carPlateNumber}
       />
 
-      <JourneyLoadDetails />
+      <JourneyDrivers drivers={drivers} />
+
+      <JourneyLoadIndicator />
 
       <Divider />
     </View>
@@ -50,9 +58,9 @@ export const JourneyCard = ({
 
 const styles = StyleSheet.create({
   journeyCard: {
-    padding: 16,
+    gap: typographyConst.spacing.m,
     borderRadius: 14,
-    gap: 12,
+    padding: typographyConst.spacing.m,
     backgroundColor: colorsConst.background.default,
   },
 });

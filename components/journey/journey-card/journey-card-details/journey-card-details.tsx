@@ -4,8 +4,8 @@ import { Pressable, StyleSheet } from 'react-native';
 import Toast from 'react-native-toast-message';
 
 import { CopyIcon } from 'assets/icons';
-import { Text, View } from 'components';
-import { colorsConst } from 'consts';
+import { Text, Title, View } from 'components';
+import { colorsConst, typographyConst } from 'consts';
 
 interface JourneyCardDetailsType {
   carPlateNumber: string;
@@ -33,12 +33,12 @@ export const JourneyCardDetails = ({
   return (
     <View style={styles.journeyDetails}>
       <View style={styles.journeyDetailsTextRow}>
-        <Text>Авто</Text>
+        <Title size="s">Авто</Title>
         <Text style={styles.journeyDetailsText}>{carPlateNumber}</Text>
       </View>
 
       <View style={styles.journeyDetailsTextRow}>
-        <Text>Номер поїздки</Text>
+        <Title size="s">Номер поїздки</Title>
         <Text style={[styles.journeyDetailsText, styles.journeyNumber]}>
           #{journeyNumber}
           <Pressable onPress={handleCopyText}>
@@ -48,7 +48,7 @@ export const JourneyCardDetails = ({
       </View>
 
       <View style={styles.journeyDetailsTextRow}>
-        <Text>Навантаження</Text>
+        <Title size="s">Навантаження</Title>
         <Text style={styles.journeyDetailsText}>{journeyLoad}кг</Text>
       </View>
     </View>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   journeyDetailsTextRow: {
-    gap: 6,
+    gap: typographyConst.spacing.s,
   },
   journeyDetailsText: {
     fontWeight: '700',

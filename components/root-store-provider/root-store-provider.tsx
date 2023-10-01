@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Nullable } from '@type/';
 import { RootStore } from '@stores/';
+import { Nullable } from '@type/';
 
 const RootStoreContext = React.createContext<Nullable<RootStore>>(null);
 

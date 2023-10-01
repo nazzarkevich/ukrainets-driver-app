@@ -11,23 +11,25 @@ export const ActiveJourneySection = () => {
     <View style={styles.activeJourneySection}>
       <SectionTitle>Активна поїздка</SectionTitle>
 
-      <JourneyCard
-        isCompleted
-        journeyLoad="1200"
-        journeyNumber="2331223"
-        carPlateNumber="BO4122BO"
-        origin={Country.UKRAINE}
-        destination={Country.UNITED_KINGDOM}
-      />
+      <View style={styles.activeJourney}>
+        <JourneyCard
+          isCompleted
+          journeyLoad="1200"
+          journeyNumber="2331223"
+          carPlateNumber="BO4122BO"
+          origin={Country.UKRAINE}
+          destination={Country.UNITED_KINGDOM}
+        />
 
-      <JourneyCard
-        journeyLoad="800"
-        isCompleted={false}
-        journeyNumber="883111"
-        carPlateNumber="BO1212BO"
-        origin={Country.UNITED_KINGDOM}
-        destination={Country.UKRAINE}
-      />
+        <JourneyCard
+          journeyLoad="800"
+          isCompleted={false}
+          journeyNumber="883111"
+          carPlateNumber="BO1212BO"
+          origin={Country.UNITED_KINGDOM}
+          destination={Country.UKRAINE}
+        />
+      </View>
     </View>
   );
 };
@@ -36,6 +38,8 @@ const styles = StyleSheet.create({
   activeJourneySection: {
     width: '60%',
     maxWidth: 440,
+  },
+  activeJourney: {
     gap: 25,
   },
 });

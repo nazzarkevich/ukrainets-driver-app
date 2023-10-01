@@ -11,7 +11,7 @@ export const SectionTitle = ({ children }: { children: React.ReactNode }) => {
 const styles = StyleSheet.create({
   title: {
     fontWeight: 'bold',
-    marginBottom: 12,
-    fontSize: typographyConst.large,
+    fontSize: typographyConst.font.l,
+    marginBottom: typographyConst.spacing.m,
   },
 });

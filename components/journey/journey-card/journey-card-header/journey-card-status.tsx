@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 import { Text, View } from 'components';
-import { colorsConst } from 'consts';
+import { colorsConst, colorsPalette, typographyConst } from 'consts';
 
 export const JourneyStatus = ({ isCompleted }: { isCompleted: boolean }) => {
   if (isCompleted) {
@@ -34,28 +34,28 @@ export const JourneyStatus = ({ isCompleted }: { isCompleted: boolean }) => {
 
 const styles = StyleSheet.create({
   journeyStatus: {
-    borderRadius: 4,
-    paddingTop: 4,
-    paddingBottom: 4,
-    paddingLeft: 8,
-    paddingRight: 8,
+    borderRadius: typographyConst.spacing.xs,
+    paddingTop: typographyConst.spacing.xs,
+    paddingBottom: typographyConst.spacing.xs,
+    paddingLeft: typographyConst.spacing.s,
+    paddingRight: typographyConst.spacing.s,
     maxWidth: 120,
     alignItems: 'center',
     justifyContent: 'center',
   },
   journeyStatusCompleted: {
-    backgroundColor: colorsConst.foreground.green,
+    backgroundColor: colorsPalette.lightGreen,
   },
   journeyStatusNotCompleted: {
     backgroundColor: colorsConst.foreground.secondary,
   },
   journeyStatusLabel: {
-    fontSize: 12,
     fontWeight: '600',
     letterSpacing: 0.5,
+    fontSize: typographyConst.font.s,
   },
   journeyStatusCompletedLabel: {
-    color: colorsConst.text.green,
+    color: colorsPalette.green,
   },
   journeyStatusNotCompletedLabel: {
     color: colorsConst.text.contrast,
