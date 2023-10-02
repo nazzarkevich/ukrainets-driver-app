@@ -18,10 +18,12 @@ export const backgroundDefault = '#FFFFFF';
 export const colors = {
   light: {
     text: textPrimary,
+    textSecondary,
     background: backgroundMain,
     tint: rolesPrimary,
     tabIconDefault: foregroundPrimary,
     tabIconSelected: rolesPrimary,
+    foregroundActive,
   },
   dark: {
     text: textContrast,

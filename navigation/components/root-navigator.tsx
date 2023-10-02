@@ -1,10 +1,9 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import * as React from 'react';
 
-import { layout } from '@constants/';
+import { colors, layout } from '@constants/';
 import {
   ClientsScreen,
-  DrawerContent,
   DriversScreen,
   HomeScreen,
   JourneysScreen,
@@ -21,6 +20,8 @@ import {
   PeopleIcon,
 } from 'assets/icons';
 
+import { DrawerContent } from './drawer-content';
+
 const RootDrawer = createDrawerNavigator<RootStackParams>();
 
 export function RootNavigator() {
@@ -32,12 +33,13 @@ export function RootNavigator() {
       screenOptions={{
         drawerType: isTablet ? 'permanent' : 'slide',
         headerShown: !isTablet,
-        drawerActiveBackgroundColor: '#EDF2FA',
-        drawerActiveTintColor: '#413ECA',
-        drawerStyle: { maxWidth: 220 },
+        drawerActiveBackgroundColor: colors.light.foregroundActive,
+        drawerActiveTintColor: colors.light.tabIconSelected,
+        drawerItemStyle: { width: '100%', paddingLeft: 10, marginLeft: 0 },
+        drawerStyle: { maxWidth: 212 },
         drawerLabelStyle: {
           marginLeft: -25,
-          color: '#464850',
+          color: colors.light.textSecondary,
           fontFamily: 'Gilroy',
         },
       }}>

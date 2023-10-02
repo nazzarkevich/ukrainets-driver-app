@@ -6,4 +6,3 @@ export * from './not-found-screen';
 export * from './parcels-screen';
 export * from './drivers-screen';
 export * from './vans-screen';
-export * from './drawer-content';
