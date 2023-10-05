@@ -1,7 +1,8 @@
 import 'react-native-gesture-handler';
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider } from '@ui-kitten/components';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { PaperProvider } from 'react-native-paper';
 
 import { RootStoreProvider } from '@components/';
 import { useCachedResources, useColorScheme } from '@hooks/';
@@ -20,10 +21,10 @@ export default function App() {
 
   return (
     <RootStoreProvider store={rootStore}>
-      <PaperProvider>
+      <ApplicationProvider {...eva} theme={eva.light}>
         <Navigation colorScheme={colorScheme} />
         <StatusBar />
-      </PaperProvider>
+      </ApplicationProvider>
     </RootStoreProvider>
   );
 }
