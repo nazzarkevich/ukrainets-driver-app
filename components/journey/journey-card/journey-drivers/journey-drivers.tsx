@@ -3,18 +3,9 @@ import { StyleSheet } from 'react-native';
 
 import { Title, UserCard, View } from 'components';
 import { typographyConst } from 'consts';
+import { User } from 'type';
 
-export interface JourneyDriversType {
-  firstName: string;
-  lastName: string;
-  role: string;
-}
-
-export const JourneyDrivers = ({
-  drivers,
-}: {
-  drivers: JourneyDriversType[];
-}) => {
+export const JourneyDrivers = ({ drivers }: { drivers: User[] }) => {
   return (
     <View style={styles.journeyDriversWrapper}>
       <Title>Перевізники</Title>
@@ -22,7 +13,8 @@ export const JourneyDrivers = ({
       <View style={styles.journeyDrivers}>
         {drivers.map((driver) => (
           <UserCard
-            role={driver.role}
+            key={driver.id}
+            type={driver.type}
             lastName={driver.lastName}
             firstName={driver.firstName}
           />

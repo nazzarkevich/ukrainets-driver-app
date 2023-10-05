@@ -1,38 +1,35 @@
+import { Divider } from '@ui-kitten/components';
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Divider } from 'react-native-paper';
 
 import { View } from 'components';
 import { colorsConst, typographyConst } from 'consts';
-import { Country } from 'type';
+import { Journey } from 'type';
 
 import { JourneyCardDetails } from './journey-card-details';
 import { JourneyCardHeader } from './journey-card-header';
 import { JourneyDrivers } from './journey-drivers';
 import { JourneyLoadIndicator } from './journey-load-indicator';
 
-interface JourneyCardType {
-  journeyLoad: string;
-  journeyNumber: string;
-  carPlateNumber: string;
-  origin: Country;
-  destination: Country;
-  isCompleted: boolean;
-}
+export type JourneyCardType = Pick<
+  Journey,
+  | 'origin'
+  | 'journeyNumber'
+  | 'destination'
+  | 'isCompleted'
+  | 'drivers'
+  | 'vehicle'
+> & { journeyLoadCapacity: number };
 
 export const JourneyCard = ({
   origin,
   destination,
-  journeyLoad,
+  journeyLoadCapacity,
   journeyNumber,
-  carPlateNumber,
   isCompleted,
+  drivers,
+  vehicle,
 }: JourneyCardType) => {
-  const drivers = [
-    { firstName: 'Дмитро', lastName: 'Гнатюк', role: 'Водій' },
-    { firstName: 'Карпо', lastName: 'Чумак', role: 'Водій' },
-  ];
-
   return (
     <View style={styles.journeyCard}>
       <JourneyCardHeader
@@ -42,14 +39,14 @@ export const JourneyCard = ({
       />
 
       <JourneyCardDetails
-        journeyLoad={journeyLoad}
+        vehicle={vehicle}
         journeyNumber={journeyNumber}
-        carPlateNumber={carPlateNumber}
+        journeyLoadCapacity={journeyLoadCapacity}
       />
 
       <JourneyDrivers drivers={drivers} />
 
-      <JourneyLoadIndicator />
+      <JourneyLoadIndicator journeyLoadCapacity={journeyLoadCapacity} />
 
       <Divider />
     </View>

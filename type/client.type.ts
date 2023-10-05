@@ -1,6 +1,7 @@
 import { Nullable } from './global.type';
 
-export interface ClientType {
+export interface Client {
+  id: string;
   phone: string;
   lastName: string;
   firstName: string;
@@ -14,6 +15,6 @@ export interface ClientAddress {
   street: string;
   country: string;
   postCode: string;
-  building: string;
-  apartment: string;
+  building: Nullable<string>;
+  apartment: Nullable<string>;
 }

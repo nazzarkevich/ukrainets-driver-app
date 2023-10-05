@@ -1,29 +1,36 @@
+import { Avatar } from '@ui-kitten/components';
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Avatar } from 'react-native-paper';
 
 import { Text, View } from 'components';
 import { colorsConst, typographyConst } from 'consts';
+import { UserTypesEnum } from 'type';
 
 export const UserCard = ({
   firstName,
   lastName,
-  role,
+  type,
 }: {
   firstName: string;
   lastName: string;
-  role: string;
+  type: UserTypesEnum;
 }) => {
-  const getFirstLetter = (str: string) => str[0];
-  const avatarLetters = getFirstLetter(firstName) + getFirstLetter(lastName);
+  const userTypes = {
+    [UserTypesEnum.Driver]: 'Водій',
+    [UserTypesEnum.Manager]: 'Менеджер',
+    [UserTypesEnum.ParcelDriver]: `Кур'єр`,
+  };
 
   return (
     <View style={styles.userCard}>
-      <Avatar.Text size={40} label={avatarLetters} />
+      <Avatar
+        size="medium"
+        source={require('../../assets/images/user-avatar.png')}
+      />
 
       <View>
         <Text style={styles.userName}>{firstName + ' ' + lastName}</Text>
-        <Text style={styles.userRole}>{role}</Text>
+        <Text style={styles.userRole}>{userTypes[type]}</Text>
       </View>
     </View>
   );

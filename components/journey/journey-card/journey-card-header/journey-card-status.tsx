@@ -44,10 +44,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   journeyStatusCompleted: {
-    backgroundColor: colorsPalette.lightGreen,
+    backgroundColor: colorsConst.foreground.secondary,
   },
   journeyStatusNotCompleted: {
-    backgroundColor: colorsConst.foreground.secondary,
+    backgroundColor: colorsPalette.lightGreen,
   },
   journeyStatusLabel: {
     fontWeight: '600',
@@ -55,9 +55,9 @@ const styles = StyleSheet.create({
     fontSize: typographyConst.font.s,
   },
   journeyStatusCompletedLabel: {
-    color: colorsPalette.green,
+    color: colorsConst.text.contrast,
   },
   journeyStatusNotCompletedLabel: {
-    color: colorsConst.text.contrast,
+    color: colorsPalette.green,
   },
 });

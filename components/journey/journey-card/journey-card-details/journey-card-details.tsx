@@ -6,17 +6,17 @@ import Toast from 'react-native-toast-message';
 import { CopyIcon } from 'assets/icons';
 import { Text, Title, View } from 'components';
 import { colorsConst, typographyConst } from 'consts';
+import { Journey } from 'type';
 
-interface JourneyCardDetailsType {
-  carPlateNumber: string;
-  journeyNumber: string;
-  journeyLoad: string;
-}
+export type JourneyCardDetailsType = Pick<
+  Journey,
+  'journeyNumber' | 'vehicle'
+> & { journeyLoadCapacity: number };
 
 export const JourneyCardDetails = ({
-  carPlateNumber,
   journeyNumber,
-  journeyLoad,
+  journeyLoadCapacity,
+  vehicle,
 }: JourneyCardDetailsType) => {
   const showToast = () => {
     Toast.show({
@@ -34,7 +34,7 @@ export const JourneyCardDetails = ({
     <View style={styles.journeyDetails}>
       <View style={styles.journeyDetailsTextRow}>
         <Title size="s">Авто</Title>
-        <Text style={styles.journeyDetailsText}>{carPlateNumber}</Text>
+        <Text style={styles.journeyDetailsText}>{vehicle.plateNumber}</Text>
       </View>
 
       <View style={styles.journeyDetailsTextRow}>
@@ -49,7 +49,7 @@ export const JourneyCardDetails = ({
 
       <View style={styles.journeyDetailsTextRow}>
         <Title size="s">Навантаження</Title>
-        <Text style={styles.journeyDetailsText}>{journeyLoad}кг</Text>
+        <Text style={styles.journeyDetailsText}>{journeyLoadCapacity}кг</Text>
       </View>
     </View>
   );

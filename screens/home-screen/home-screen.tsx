@@ -1,12 +1,14 @@
 import { observer } from 'mobx-react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 
 import {
   ActiveJourneySection,
   ScreenContainer,
   SectionTitle,
+  Text,
   View,
+  useRootStore,
 } from 'components';
 import { colorsConst, typographyConst } from 'consts';
 import { RootStackScreenProps } from 'type';
@@ -14,6 +16,22 @@ import { RootStackScreenProps } from 'type';
 export const HomeScreen = observer(function HomeScreen({
   navigation,
 }: RootStackScreenProps<'Home'>) {
+  const { journeyStore } = useRootStore();
+
+  useEffect(() => {
+    journeyStore.fetchActiveJourney();
+  }, []);
+
+  if (journeyStore.isJourneyLoading) {
+    return (
+      <ScreenContainer>
+        <View style={styles.homeScreen}>
+          <Text>LOADING...</Text>
+        </View>
+      </ScreenContainer>
+    );
+  }
+
   return (
     <ScreenContainer>
       <View style={styles.homeScreen}>

@@ -4,16 +4,15 @@ import { StyleSheet } from 'react-native';
 import { GbFlagIcon, UaFlagIcon } from 'assets/icons';
 import { Text, View } from 'components';
 import { colorsConst, typographyConst } from 'consts';
-import { Country } from 'type';
+import { Country, Journey } from 'type';
 
 import { JourneyCardActions } from './journey-card-actions';
 import { JourneyStatus } from './journey-card-status';
 
-interface JourneyCardHeaderType {
-  origin: Country;
-  destination: Country;
-  isCompleted: boolean;
-}
+export type JourneyCardHeaderType = Pick<
+  Journey,
+  'origin' | 'destination' | 'isCompleted'
+>;
 
 export const JourneyCardHeader = ({
   origin,

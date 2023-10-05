@@ -1,35 +1,38 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { SectionTitle, View } from 'components';
-import { Country } from 'type';
+import { SectionTitle, View, useRootStore } from 'components';
 
 import { JourneyCard } from '../journey-card';
+
+export const ActiveJourney = () => {
+  const { journeyStore } = useRootStore();
+
+  if (!journeyStore.activeJourney) {
+    return <h2>No Active Journey</h2>;
+  }
+
+  return (
+    <View style={styles.activeJourney}>
+      <JourneyCard
+        origin={journeyStore.activeJourney.origin}
+        drivers={journeyStore.activeJourney.drivers}
+        vehicle={journeyStore.activeJourney.vehicle}
+        isCompleted={journeyStore.activeJourney.isCompleted}
+        destination={journeyStore.activeJourney.destination}
+        journeyLoadCapacity={journeyStore.journeyLoadCapacity}
+        journeyNumber={journeyStore.activeJourney.journeyNumber}
+      />
+    </View>
+  );
+};
 
 export const ActiveJourneySection = () => {
   return (
     <View style={styles.activeJourneySection}>
       <SectionTitle>Активна поїздка</SectionTitle>
 
-      <View style={styles.activeJourney}>
-        <JourneyCard
-          isCompleted
-          journeyLoad="1200"
-          journeyNumber="2331223"
-          carPlateNumber="BO4122BO"
-          origin={Country.UKRAINE}
-          destination={Country.UNITED_KINGDOM}
-        />
-
-        <JourneyCard
-          journeyLoad="800"
-          isCompleted={false}
-          journeyNumber="883111"
-          carPlateNumber="BO1212BO"
-          origin={Country.UNITED_KINGDOM}
-          destination={Country.UKRAINE}
-        />
-      </View>
+      <ActiveJourney />
     </View>
   );
 };
