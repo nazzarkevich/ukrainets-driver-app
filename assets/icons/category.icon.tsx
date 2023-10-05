@@ -2,13 +2,9 @@ import Svg, { Path } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
-export const CategoryIcon = ({
-  color = '#858D9D',
-  width = 50,
-  height = 50,
-}: SvgProps) => {
+export const CategoryIcon = ({ color = '#858D9D', size = 50 }: SvgProps) => {
   return (
-    <Svg width={width} height={height} viewBox="0 0 20 20" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 20 20" fill="none">
       <Path
         d="M4.45831 8.41659H6.04165C7.62498 8.41659 8.41665 7.62492 8.41665 6.04159V4.45825C8.41665 2.87492 7.62498 2.08325 6.04165 2.08325H4.45831C2.87498 2.08325 2.08331 2.87492 2.08331 4.45825V6.04159C2.08331 7.62492 2.87498 8.41659 4.45831 8.41659Z"
         stroke={color}

@@ -2,13 +2,9 @@ import Svg, { Path } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
-export const CopyIcon = ({
-  color = '#858D9D',
-  width = 50,
-  height = 50,
-}: SvgProps) => {
+export const CopyIcon = ({ color = '#858D9D', size = 50 }: SvgProps) => {
   return (
-    <Svg width={width} height={height} viewBox="0 0 15 14" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 15 14" fill="none">
       <Path
         d="M9.99998 7.52508V9.97508C9.99998 12.0167 9.18331 12.8334 7.14165 12.8334H4.69165C2.64998 12.8334 1.83331 12.0167 1.83331 9.97508V7.52508C1.83331 5.48341 2.64998 4.66675 4.69165 4.66675H7.14165C9.18331 4.66675 9.99998 5.48341 9.99998 7.52508Z"
         stroke={color}

@@ -1,18 +1,12 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
+import { StyledView } from '../../components';
+
 import {
-  DarkLogoIcon,
-  LogoWordIcon,
-  ColorLogoIcon,
-  DarkArrowsLogoIcon,
-  ColorArrowsLogoIcon,
-  ParcelIcon,
-  GbFlagIcon,
-  UaFlagIcon,
+  AddIcon,
   AddSquareIcon,
   AddUserCircleIcon,
-  AddIcon,
   ArchiveIcon,
   ArrowDownIcon,
   ArrowLeftIcon,
@@ -22,19 +16,26 @@ import {
   CategoryIcon,
   CheckIcon,
   CloseIcon,
+  ColorArrowsLogoIcon,
+  ColorLogoIcon,
   CopyIcon,
+  DarkArrowsLogoIcon,
+  DarkLogoIcon,
   DotsMenuIcon,
   DriverIcon,
   EditIcon,
   EyeSlashIcon,
+  GbFlagIcon,
   GroupIcon,
   LetterIcon,
   LocationIcon,
   LogOutIcon,
+  LogoWordIcon,
   MinusSquareIcon,
   MoneyBillIcon,
-  PhoneIcon,
+  ParcelIcon,
   PeopleIcon,
+  PhoneIcon,
   PhoneSquareIcon,
   PointIcon,
   RoutingIcon,
@@ -46,13 +47,13 @@ import {
   TrashIcon,
   TruckIcon,
   TwoWayArrowsIcon,
+  UaFlagIcon,
 } from '.';
-import { View } from '../../components';
 
 // Helper component to view all the icons
 export const AllIcons = () => {
   return (
-    <View style={styles.iconsContainer}>
+    <StyledView style={styles.iconsContainer}>
       <ColorLogoIcon />
       <ColorArrowsLogoIcon />
       <DarkArrowsLogoIcon />
@@ -98,7 +99,7 @@ export const AllIcons = () => {
       <TrashIcon />
       <TruckIcon />
       <TwoWayArrowsIcon />
-    </View>
+    </StyledView>
   );
 };
 

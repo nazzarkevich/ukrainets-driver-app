@@ -2,13 +2,9 @@ import Svg, { Path } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
-export const LogOutIcon = ({
-  color = '#858D9D',
-  width = 50,
-  height = 50,
-}: SvgProps) => {
+export const LogOutIcon = ({ color = '#858D9D', size = 50 }: SvgProps) => {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
       <Path
         d="M14.2512 8.24357V7.38622C14.2512 5.51622 12.735 4 10.865 4H6.3853C4.51622 4 3 5.51622 3 7.38622V17.6138C3 19.4838 4.51622 21 6.3853 21H10.8742C12.7387 21 14.2512 19.4884 14.2512 17.6239V16.7574"
         stroke={color}

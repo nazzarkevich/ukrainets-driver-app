@@ -1,10 +1,10 @@
-import Svg, { Path, Defs, Stop } from 'react-native-svg';
+import Svg, { Defs, Path, Stop } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
-export const TruckIcon = ({ width = 65, height = 65 }: SvgProps) => {
+export const TruckIcon = ({ size = 65 }: SvgProps) => {
   return (
-    <Svg width={width} height={height} viewBox="0 0 56 65" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 56 65" fill="none">
       <Path
         d="M4.43311 37.4701L8.95423 34.8706L8.95436 34.871C9.77861 34.4342 10.8374 34.4964 11.9926 35.1634C14.6209 36.6807 16.7515 40.7517 16.7515 44.256C16.7515 46.1826 16.1066 47.535 15.09 48.1117L15.0907 48.1132L10.7499 50.6121L4.43311 37.4701Z"
         fill="url(#paint0_linear_232_1500)"
@@ -100,8 +100,7 @@ export const TruckIcon = ({ width = 65, height = 65 }: SvgProps) => {
           y1="41.3029"
           x2="9.09085"
           y2="37.9137"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stop-color="#43386B" />
           <Stop offset="1" stop-color="#7662BD" />
         </linearGradient>
@@ -111,8 +110,7 @@ export const TruckIcon = ({ width = 65, height = 65 }: SvgProps) => {
           y1="54.8547"
           x2="32.5636"
           y2="51.4656"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stop-color="#43386B" />
           <Stop offset="1" stop-color="#7662BD" />
         </linearGradient>
@@ -122,8 +120,7 @@ export const TruckIcon = ({ width = 65, height = 65 }: SvgProps) => {
           y1="26.5837"
           x2="17.2131"
           y2="26.5837"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stop-color="#DEA861" />
           <Stop offset="1" stop-color="#CC8241" />
         </linearGradient>
@@ -133,8 +130,7 @@ export const TruckIcon = ({ width = 65, height = 65 }: SvgProps) => {
           y1="5.31459"
           x2="9.7041"
           y2="15.6525"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stop-color="#DEA861" />
           <Stop offset="1" stop-color="#EBCBA0" />
         </linearGradient>
@@ -144,8 +140,7 @@ export const TruckIcon = ({ width = 65, height = 65 }: SvgProps) => {
           y1="54.3445"
           x2="30.6327"
           y2="20.5445"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stop-color="#E37A34" />
           <Stop offset="1" stop-color="#FFC538" />
         </linearGradient>
@@ -155,8 +150,7 @@ export const TruckIcon = ({ width = 65, height = 65 }: SvgProps) => {
           y1="40.9577"
           x2="39.7404"
           y2="28.1185"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stop-color="#43386B" />
           <Stop offset="1" stop-color="#7662BD" />
         </linearGradient>
@@ -166,8 +160,7 @@ export const TruckIcon = ({ width = 65, height = 65 }: SvgProps) => {
           y1="66.4524"
           x2="31.0763"
           y2="49.2817"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stop-color="#43386B" />
           <Stop offset="1" stop-color="#7662BD" />
         </linearGradient>
@@ -177,8 +170,7 @@ export const TruckIcon = ({ width = 65, height = 65 }: SvgProps) => {
           y1="52.9007"
           x2="7.6036"
           y2="35.7299"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stop-color="#43386B" />
           <Stop offset="1" stop-color="#7662BD" />
         </linearGradient>
@@ -188,8 +180,7 @@ export const TruckIcon = ({ width = 65, height = 65 }: SvgProps) => {
           y1="56.8427"
           x2="41.4232"
           y2="56.8427"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stop-color="#43386B" />
           <Stop offset="1" stop-color="#7662BD" />
         </linearGradient>
@@ -199,8 +190,7 @@ export const TruckIcon = ({ width = 65, height = 65 }: SvgProps) => {
           y1="51.9152"
           x2="47.8285"
           y2="47.2986"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stop-color="#43386B" />
           <Stop offset="1" stop-color="#594A8E" />
         </linearGradient>
@@ -210,8 +200,7 @@ export const TruckIcon = ({ width = 65, height = 65 }: SvgProps) => {
           y1="41.4682"
           x2="25.0791"
           y2="29.9683"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stop-color="#43386B" />
           <Stop offset="1" stop-color="#7662BD" />
         </linearGradient>

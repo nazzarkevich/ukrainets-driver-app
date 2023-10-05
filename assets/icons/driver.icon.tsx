@@ -2,13 +2,9 @@ import Svg, { Path } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
-export const DriverIcon = ({
-  color = '#858D9D',
-  width = 50,
-  height = 50,
-}: SvgProps) => {
+export const DriverIcon = ({ color = '#858D9D', size = 50 }: SvgProps) => {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
       <Path
         d="M17 17.7167H16.3667C15.7 17.7167 15.0667 17.9751 14.6 18.4417L13.175 19.8501C12.525 20.4917 11.4667 20.4917 10.8167 19.8501L9.39166 18.4417C8.925 17.9751 8.28333 17.7167 7.625 17.7167H7C5.61667 17.7167 4.5 16.6084 4.5 15.2417V6.14175C4.5 4.77508 5.61667 3.66675 7 3.66675H17C18.3833 3.66675 19.5 4.77508 19.5 6.14175V15.2334C19.5 16.6001 18.3833 17.7167 17 17.7167Z"
         stroke={color}

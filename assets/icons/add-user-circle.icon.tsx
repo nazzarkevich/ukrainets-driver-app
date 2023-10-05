@@ -1,10 +1,10 @@
-import Svg, { Path, Defs, Stop } from 'react-native-svg';
+import Svg, { Defs, Path, Stop } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
-export const AddUserCircleIcon = ({ width = 65, height = 65 }: SvgProps) => {
+export const AddUserCircleIcon = ({ size = 65 }: SvgProps) => {
   return (
-    <Svg width={width} height={height} viewBox="0 0 66 65" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 66 65" fill="none">
       <Path
         d="M60.4175 6.31009C58.4375 4.08926 55.495 2.70801 52.25 2.70801C49.17 2.70801 46.365 3.95384 44.3575 5.98509C43.2025 7.14967 42.3225 8.55801 41.8 10.1288C41.4425 11.2122 41.25 12.3497 41.25 13.5413C41.25 15.5726 41.8275 17.4955 42.845 19.1205C43.395 20.0413 44.11 20.8809 44.935 21.5851C46.86 23.3184 49.4175 24.3747 52.25 24.3747C53.46 24.3747 54.615 24.1851 55.6875 23.8059C58.2175 23.0205 60.335 21.3143 61.655 19.1205C62.2325 18.1997 62.6725 17.1434 62.92 16.0601C63.14 15.2476 63.25 14.408 63.25 13.5413C63.25 10.7788 62.1775 8.23301 60.4175 6.31009ZM56.3475 15.5184H54.3125V17.6309C54.3125 18.7413 53.3775 19.6622 52.25 19.6622C51.1225 19.6622 50.1875 18.7413 50.1875 17.6309V15.5184H48.1525C47.025 15.5184 46.09 14.5976 46.09 13.4872C46.09 12.3768 47.025 11.4559 48.1525 11.4559H50.1875V9.53301C50.1875 8.42259 51.1225 7.50176 52.25 7.50176C53.3775 7.50176 54.3125 8.42259 54.3125 9.53301V11.4559H56.3475C57.475 11.4559 58.41 12.3768 58.41 13.4872C58.41 14.5976 57.5025 15.5184 56.3475 15.5184Z"
         fill="url(#paint0_linear_134_7861)"
@@ -24,8 +24,7 @@ export const AddUserCircleIcon = ({ width = 65, height = 65 }: SvgProps) => {
           y1="13.5414"
           x2="61"
           y2="9"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stopColor="#43386B" />
           <Stop offset="1" stopColor="#7662BD" />
         </linearGradient>
@@ -35,8 +34,7 @@ export const AddUserCircleIcon = ({ width = 65, height = 65 }: SvgProps) => {
           y1="50.0683"
           x2="32.3807"
           y2="5.7414"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stopColor="#E37A34" />
           <Stop offset="1" stopColor="#FFC538" />
         </linearGradient>

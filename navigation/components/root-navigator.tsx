@@ -1,15 +1,15 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import * as React from 'react';
 
-import { layout } from '@constants/';
 import {
   ClientsScreen,
   HomeScreen,
   JourneysScreen,
-  NotFoundScreen,
+  // NotFoundScreen,
   ParcelsScreen,
 } from '@screens/';
 import { RootStackParams } from '@type/';
+import { layout } from 'consts';
 
 const RootDrawer = createDrawerNavigator<RootStackParams>();
 
@@ -38,11 +38,11 @@ export function RootNavigator() {
       <RootDrawer.Screen name="Clients" component={ClientsScreen} />
       <RootDrawer.Screen name="Journeys" component={JourneysScreen} />
 
-      <RootDrawer.Screen
+      {/* <RootDrawer.Screen
         name="NotFound"
         component={NotFoundScreen}
         options={{ title: 'Oops!' }}
-      />
+      /> */}
     </RootDrawer.Navigator>
 
     // <RootStack.Navigator initialRouteName="Home">

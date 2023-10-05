@@ -1,9 +1,9 @@
 import { action, computed, makeObservable, observable } from 'mobx';
 
-import { ClientType } from '@type/';
+import { Client } from '@type/';
 
 export class ClientsStore {
-  @observable clients: ClientType[] = [];
+  @observable clients: Client[] = [];
 
   constructor() {
     makeObservable(this);
@@ -18,5 +18,5 @@ export class ClientsStore {
   async fetchClients(): Promise<void> {}
 
   @action
-  async addClient(client: ClientType): Promise<void> {}
+  async addClient(client: Client): Promise<void> {}
 }

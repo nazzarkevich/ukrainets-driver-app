@@ -2,13 +2,9 @@ import Svg, { Path } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
-export const DotsMenuIcon = ({
-  color = '#858D9D',
-  width = 50,
-  height = 50,
-}: SvgProps) => {
+export const DotsMenuIcon = ({ color = '#858D9D', size = 50 }: SvgProps) => {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 25" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 24 25" fill="none">
       <Path
         fill={color}
         d="M4.50001 14C5.32845 14 6.00002 13.3285 6.00002 12.5C6.00002 11.6716 5.32845 11 4.50001 11C3.67158 11 3 11.6716 3 12.5C3 13.3285 3.67158 14 4.50001 14Z"
