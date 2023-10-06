@@ -2,7 +2,6 @@ import { Divider } from '@ui-kitten/components';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { View } from 'components';
 import { colorsConst, typographyConst } from 'consts';
 import { Journey } from 'type';
 
@@ -10,6 +9,7 @@ import { JourneyCardDetails } from './journey-card-details';
 import { JourneyCardHeader } from './journey-card-header';
 import { JourneyDrivers } from './journey-drivers';
 import { JourneyLoadIndicator } from './journey-load-indicator';
+import { View } from '../../themed';
 
 export type JourneyCardType = Pick<
   Journey,

@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { Text } from '@components/';
 import { typographyConst } from 'consts';
+
+import { Text } from '../themed';
 
 export const SectionTitle = ({ children }: { children: React.ReactNode }) => {
   return <Text style={styles.title}>{children}</Text>;

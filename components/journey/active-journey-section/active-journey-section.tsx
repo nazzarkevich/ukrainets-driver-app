@@ -1,15 +1,16 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { SectionTitle, View, useRootStore } from 'components';
-
+import { useRootStore } from '../../root-store-provider';
+import { SectionTitle } from '../../section-title';
+import { Text, View } from '../../themed';
 import { JourneyCard } from '../journey-card';
 
 export const ActiveJourney = () => {
   const { journeyStore } = useRootStore();
 
   if (!journeyStore.activeJourney) {
-    return <h2>No Active Journey</h2>;
+    return <Text>No Active Journey</Text>;
   }
 
   return (

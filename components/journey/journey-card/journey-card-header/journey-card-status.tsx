@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { Text, View } from 'components';
 import { colorsConst, colorsPalette, typographyConst } from 'consts';
+
+import { Text, View } from '../../../themed';
 
 export const JourneyStatus = ({ isCompleted }: { isCompleted: boolean }) => {
   if (isCompleted) {

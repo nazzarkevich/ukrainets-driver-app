@@ -1,11 +1,11 @@
-import Svg, { Defs, Path, Rect } from 'react-native-svg';
+import Svg, { ClipPath, Defs, G, Path, Rect } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
 export const ParcelIcon = ({ size = 65 }: SvgProps) => {
   return (
     <Svg width={size} height={size} viewBox="0 0 64 64" fill="none">
-      <g clipPath="url(#clip0_132_1164)">
+      <G>
         <Path
           d="M30.4301 0.390729L5.72866 13.5038C5.04349 13.8675 4.61523 14.5798 4.61523 15.3557V48.2722C4.61523 49.6019 5.36236 50.8184 6.54792 51.4197L30.7706 63.7056C31.5435 64.0976 32.457 64.0976 33.2297 63.7056L57.4526 51.4197C58.6381 50.8184 59.3853 49.6016 59.3853 48.2722V15.3557C59.3853 14.5798 58.957 13.8675 58.2716 13.5038L33.5704 0.390729C32.5887 -0.130243 31.412 -0.130243 30.4301 0.390729Z"
           fill="#FFCE94"
@@ -34,11 +34,11 @@ export const ParcelIcon = ({ size = 65 }: SvgProps) => {
           d="M14.2061 19.3721V24.0064C14.2061 24.4557 14.4539 24.8684 14.8503 25.0798L19.6246 27.6244C20.0035 27.8263 20.4607 27.5519 20.4607 27.1225V22.7533L20.5073 22.7284C18.8902 21.8671 16.2637 20.468 14.2061 19.3721Z"
           fill="#B6C8CE"
         />
-      </g>
+      </G>
       <Defs>
-        <clipPath id="clip0_132_1164">
+        <ClipPath id="clip0_132_1164">
           <Rect width="64" height="64" fill="white" />
-        </clipPath>
+        </ClipPath>
       </Defs>
     </Svg>
   );

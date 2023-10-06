@@ -2,9 +2,10 @@ import { Avatar } from '@ui-kitten/components';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { Text, View } from 'components';
 import { colorsConst, typographyConst } from 'consts';
 import { UserTypesEnum } from 'type';
+
+import { Text, View } from '../themed';
 
 export const UserCard = ({
   firstName,

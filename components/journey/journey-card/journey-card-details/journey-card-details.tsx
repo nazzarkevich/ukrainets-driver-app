@@ -1,12 +1,14 @@
-import Clipboard from '@react-native-clipboard/clipboard';
+import * as Clipboard from 'expo-clipboard';
 import React from 'react';
 import { Pressable, StyleSheet } from 'react-native';
 import Toast from 'react-native-toast-message';
 
 import { CopyIcon } from 'assets/icons';
-import { Text, Title, View } from 'components';
 import { colorsConst, typographyConst } from 'consts';
 import { Journey } from 'type';
+
+import { Text, View } from '../../../themed';
+import { Title } from '../../../title';
 
 export type JourneyCardDetailsType = Pick<
   Journey,
@@ -25,9 +27,9 @@ export const JourneyCardDetails = ({
     });
   };
 
-  const handleCopyText = () => {
+  const copyToClipboard = () => {
     showToast();
-    Clipboard.setString(journeyNumber);
+    Clipboard.setStringAsync(journeyNumber);
   };
 
   return (
@@ -41,7 +43,7 @@ export const JourneyCardDetails = ({
         <Title size="s">Номер поїздки</Title>
         <Text style={[styles.journeyDetailsText, styles.journeyNumber]}>
           #{journeyNumber}
-          <Pressable onPress={handleCopyText}>
+          <Pressable onPress={copyToClipboard}>
             <CopyIcon size={20} color={colorsConst.roles.primary} />
           </Pressable>
         </Text>
