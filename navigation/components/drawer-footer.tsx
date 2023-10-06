@@ -1,6 +1,6 @@
+import { Avatar } from '@ui-kitten/components';
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { Avatar } from 'react-native-paper';
 
 import { colors } from '@constants/';
 import { DotsMenuIcon } from 'assets/icons';
@@ -18,11 +18,10 @@ export function UserInfoSection({ driver }: UserInfoSectionProps) {
       </Pressable>
       <View style={styles.user}>
         <View>
-          <Avatar.Image
+          <Avatar
             source={{
               uri: 'https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1236',
             }}
-            size={32}
           />
         </View>
         <View style={styles.name}>
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 12,
     color: colors.light.text,
-    paddingBottom: 2,
+    paddingBottom: 3,
   },
   caption: {
     fontSize: 10,
