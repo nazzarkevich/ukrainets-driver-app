@@ -2,9 +2,9 @@ import Svg, { Defs, Path, Stop } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
-export const TruckIcon = ({ width = 65, height = 65 }: SvgProps) => {
+export const TruckIcon = ({ size = 65 }: SvgProps) => {
   return (
-    <Svg width={width} height={height} viewBox="0 0 56 65" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 56 65" fill="none">
       <Path
         d="M4.43311 37.4701L8.95423 34.8706L8.95436 34.871C9.77861 34.4342 10.8374 34.4964 11.9926 35.1634C14.6209 36.6807 16.7515 40.7517 16.7515 44.256C16.7515 46.1826 16.1066 47.535 15.09 48.1117L15.0907 48.1132L10.7499 50.6121L4.43311 37.4701Z"
         fill="url(#paint0_linear_232_1500)"

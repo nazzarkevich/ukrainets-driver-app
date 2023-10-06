@@ -3,6 +3,7 @@ import * as eva from '@eva-design/eva';
 import { ApplicationProvider } from '@ui-kitten/components';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import Toast from 'react-native-toast-message';
 
 import { RootStoreProvider } from '@components/';
 import { useCachedResources, useColorScheme } from '@hooks/';
@@ -24,6 +25,7 @@ export default function App() {
       <ApplicationProvider {...eva} theme={eva.light}>
         <Navigation colorScheme={colorScheme} />
         <StatusBar />
+        <Toast />
       </ApplicationProvider>
     </RootStoreProvider>
   );

@@ -1,41 +1,126 @@
 import { observer } from 'mobx-react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { Text, View } from '@components/';
-import { RootStackScreenProps } from '@type/';
-import { ColorLogoIcon } from 'assets/icons';
+import {
+  ActiveJourneySection,
+  ScreenContainer,
+  SectionTitle,
+  Text,
+  View,
+  useRootStore,
+} from 'components';
+import { colorsConst, typographyConst } from 'consts';
+import { RootStackScreenProps } from 'type';
 
 export const HomeScreen = observer(function HomeScreen({
   navigation,
-}: RootStackScreenProps<'Home' | 'Logo'>) {
+}: RootStackScreenProps<'Home'>) {
+  const { journeyStore } = useRootStore();
+
+  useEffect(() => {
+    journeyStore.fetchActiveJourney();
+  }, []);
+
+  if (journeyStore.isJourneyLoading) {
+    return (
+      <ScreenContainer>
+        <View style={styles.homeScreen}>
+          <Text>LOADING...</Text>
+        </View>
+      </ScreenContainer>
+    );
+  }
+
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>HomeScreen</Text>
-      <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
-      <ColorLogoIcon />
-    </SafeAreaView>
+    <ScreenContainer>
+      <View style={styles.homeScreen}>
+        <ActiveJourneySection />
+
+        <View style={styles.recentItems}>
+          <View>
+            <SectionTitle>Останні посилки</SectionTitle>
+          </View>
+          <View>
+            <SectionTitle>Нові клієнти</SectionTitle>
+          </View>
+        </View>
+      </View>
+    </ScreenContainer>
   );
 });
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  homeScreen: {
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    marginTop: 80,
+    columnGap: 16,
+  },
+  activeJourney: {
+    width: '60%',
+    maxWidth: 440,
+  },
+  recentItems: {
+    width: '40%',
+  },
+
+  journeyCard: {
+    padding: 16,
+    borderRadius: 14,
+    gap: 12,
+    backgroundColor: colorsConst.background.default,
+  },
+  journeyCardHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  journeyDestination: {
+    columnGap: 5,
+    maxHeight: 25,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    backgroundColor: colorsConst.background.default,
+  },
+  destinationName: {
+    fontWeight: 'bold',
+    fontSize: typographyConst.font.l,
+  },
+
+  journeyStatus: {
+    borderRadius: 4,
+    paddingTop: 4,
+    paddingBottom: 4,
+    paddingLeft: 8,
+    paddingRight: 8,
+    maxWidth: 120,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: colorsConst.roles.warning,
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
+
+  journeyDetails: {
+    columnGap: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  journeyDetailsTextRow: {
+    gap: 6,
+  },
+  journeyDetailsText: {
+    fontWeight: '700',
+  },
+
+  journeyLoadDetails: {
+    gap: 6,
+  },
+  journeyLoadIndicator: {
+    height: 12,
+    width: '100%',
+    borderRadius: 15,
+    backgroundColor: 'papayawhip',
   },
 });

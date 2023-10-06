@@ -2,13 +2,9 @@ import Svg, { Path } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
-export const SimpleBoxIcon = ({
-  color = '#858D9D',
-  width = 50,
-  height = 50,
-}: SvgProps) => {
+export const SimpleBoxIcon = ({ color = '#858D9D', size = 50 }: SvgProps) => {
   return (
-    <Svg width={width} height={height} viewBox="0 0 25 26" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 25 26" fill="none">
       <Path
         d="M3.302 8.25L12.4999 13.5729L21.6353 8.28125"
         stroke={color}

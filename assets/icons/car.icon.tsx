@@ -2,13 +2,9 @@ import Svg, { Path } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
-export const CarIcon = ({
-  color = '#858D9D',
-  width = 50,
-  height = 50,
-}: SvgProps) => {
+export const CarIcon = ({ color = '#858D9D', size = 50 }: SvgProps) => {
   return (
-    <Svg width={width} height={height} viewBox="0 0 24 24" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
       <Path
         d="M14.5 3.66675V12.0001C14.5 12.9167 13.75 13.6667 12.8333 13.6667H3.66663V7.00008C3.66663 5.15841 5.15829 3.66675 6.99996 3.66675H14.5Z"
         stroke={color}

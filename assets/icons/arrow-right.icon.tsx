@@ -2,13 +2,9 @@ import Svg, { Path } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
-export const ArrowRightIcon = ({
-  color = '#858D9D',
-  width = 50,
-  height = 50,
-}: SvgProps) => {
+export const ArrowRightIcon = ({ color = '#858D9D', size = 50 }: SvgProps) => {
   return (
-    <Svg width={width} height={height} viewBox="0 0 18 18" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 18 18" fill="none">
       <Path
         fill={color}
         fillRule="evenodd"

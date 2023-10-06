@@ -1,4 +1,4 @@
-import Svg, { Path, Defs, Stop } from 'react-native-svg';
+import Svg, { Defs, Path, Stop } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
@@ -34,8 +34,7 @@ export const PointIcon = ({ width = 50, height = 140 }: SvgProps) => {
           y1="44.9999"
           x2="9.94416"
           y2="81.3874"
-          gradientUnits="userSpaceOnUse"
-        >
+          gradientUnits="userSpaceOnUse">
           <Stop stopColor="#413ED2" />
           <Stop offset="1" stopColor="#413ED2" stopOpacity="0" />
         </linearGradient>

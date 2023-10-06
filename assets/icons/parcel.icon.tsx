@@ -2,9 +2,9 @@ import Svg, { Defs, Path, Rect } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
-export const ParcelIcon = ({ width = 65, height = 65 }: SvgProps) => {
+export const ParcelIcon = ({ size = 65 }: SvgProps) => {
   return (
-    <Svg width={width} height={height} viewBox="0 0 64 64" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 64 64" fill="none">
       <g clipPath="url(#clip0_132_1164)">
         <Path
           d="M30.4301 0.390729L5.72866 13.5038C5.04349 13.8675 4.61523 14.5798 4.61523 15.3557V48.2722C4.61523 49.6019 5.36236 50.8184 6.54792 51.4197L30.7706 63.7056C31.5435 64.0976 32.457 64.0976 33.2297 63.7056L57.4526 51.4197C58.6381 50.8184 59.3853 49.6016 59.3853 48.2722V15.3557C59.3853 14.5798 58.957 13.8675 58.2716 13.5038L33.5704 0.390729C32.5887 -0.130243 31.412 -0.130243 30.4301 0.390729Z"

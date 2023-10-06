@@ -38,3 +38,4 @@ export * from './trash.icon';
 export * from './truck.icon';
 export * from './two-way-arrows.icon';
 export * from './ua-flag.icon';
+export * from './user-avatar.icon';

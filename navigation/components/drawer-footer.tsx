@@ -2,8 +2,8 @@ import { Avatar } from '@ui-kitten/components';
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-import { colors } from '@constants/';
 import { DotsMenuIcon } from 'assets/icons';
+import { colorsConst } from 'consts';
 import { DriverType } from 'type/driver.type';
 
 interface UserInfoSectionProps {
@@ -29,11 +29,7 @@ export function UserInfoSection({ driver }: UserInfoSectionProps) {
           <Text style={styles.caption}>{driver.description}</Text>
         </View>
         <Pressable onPress={() => null}>
-          <DotsMenuIcon
-            color={colors.light.tabIconSelected}
-            width={24}
-            height={24}
-          />
+          <DotsMenuIcon color={colorsConst.roles.primary} size={24} />
         </Pressable>
       </View>
     </View>
@@ -46,7 +42,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btn: {
-    backgroundColor: colors.light.tint,
+    backgroundColor: colorsConst.roles.primary,
     borderRadius: 10,
     width: 173,
     height: 36,
@@ -56,16 +52,16 @@ const styles = StyleSheet.create({
   },
   textBtn: {
     textAlign: 'center',
-    color: colors.dark.text,
+    color: colorsConst.text.contrast,
   },
   title: {
     fontSize: 12,
-    color: colors.light.text,
+    color: colorsConst.text.primary,
     paddingBottom: 3,
   },
   caption: {
     fontSize: 10,
-    color: colors.light.textSecondary,
+    color: colorsConst.text.secondary,
   },
   user: {
     display: 'flex',

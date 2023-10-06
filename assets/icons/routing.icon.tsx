@@ -2,13 +2,9 @@ import Svg, { Path } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
-export const RoutingIcon = ({
-  color = '#858D9D',
-  width = 50,
-  height = 50,
-}: SvgProps) => {
+export const RoutingIcon = ({ color = '#858D9D', size = 50 }: SvgProps) => {
   return (
-    <Svg width={width} height={height} viewBox="0 0 14 14" fill="none">
+    <Svg width={size} height={size} viewBox="0 0 14 14" fill="none">
       <Path
         d="M1.20751 2.68331C1.67417 0.664972 4.71334 0.664972 5.17417 2.68331C5.44834 3.86747 4.69584 4.87081 4.04251 5.49497C3.56417 5.94997 2.81167 5.94414 2.33334 5.49497C1.68584 4.87081 0.93334 3.86747 1.20751 2.68331Z"
         stroke={color}

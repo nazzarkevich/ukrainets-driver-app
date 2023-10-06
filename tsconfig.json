@@ -14,7 +14,7 @@
       "@services/*": ["./services"],
       "@navigation/*": ["./navigation"],
       "@screens/*": ["./screens"],
-      "@constants/*": ["./constants"],
+      "@constants/*": ["consts"],
     }
   }
 }
