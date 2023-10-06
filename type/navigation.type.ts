@@ -6,8 +6,8 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 export type RootStackParams = {
-  Vans: undefined;
-  Drivers: undefined;
+  Vehicle: undefined;
+  Couriers: undefined;
   Home: undefined;
   Journeys: undefined;
   Parcels: undefined;

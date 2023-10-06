@@ -6,6 +6,20 @@ import {
   UserTypesEnum,
 } from 'type';
 
+export const DRIVER_MOCK = {
+  id: '1332',
+  firstName: 'Дмитро',
+  lastName: 'Гнатюк',
+  email: 'dmytro@gmail.com',
+  uaPhone: '380971233211',
+  ukPhone: null,
+  isAdmin: false,
+  isSuperAdmin: false,
+  type: UserTypesEnum.Driver,
+  isBlocked: false,
+  imageUrl: null,
+};
+
 export const JOURNEY_MOCK = {
   id: '55555',
   isCompleted: false,

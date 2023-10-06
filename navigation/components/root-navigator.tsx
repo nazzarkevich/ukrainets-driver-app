@@ -3,12 +3,11 @@ import * as React from 'react';
 
 import {
   ClientsScreen,
-  DriversScreen,
+  CouriersScreen,
   HomeScreen,
   JourneysScreen,
-  // NotFoundScreen,
   ParcelsScreen,
-  VansScreen,
+  VehicleScreen,
 } from '@screens/';
 import { RootStackParams } from '@type/';
 import {
@@ -35,20 +34,19 @@ export function RootNavigator() {
         drawerType: isTablet ? 'permanent' : 'slide',
         headerShown: !isTablet,
         drawerActiveBackgroundColor: colorsConst.foreground.active,
-        drawerActiveTintColor: colorsConst.text.contrast,
+        drawerActiveTintColor: colorsConst.roles.primary,
         drawerItemStyle: { width: '100%', paddingLeft: 10, marginLeft: 0 },
-        drawerStyle: { maxWidth: 212 },
+        drawerStyle: { maxWidth: 200 },
         drawerLabelStyle: {
           marginLeft: -25,
           color: colorsConst.text.secondary,
-          // fontFamily: 'Gilroy',
         },
       }}>
       <RootDrawer.Screen
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'Головна панель',
+          title: 'Головна',
           drawerIcon: ({ color }) => <CategoryIcon size={22} color={color} />,
         }}
       />
@@ -77,16 +75,16 @@ export function RootNavigator() {
         }}
       />
       <RootDrawer.Screen
-        name="Drivers"
-        component={DriversScreen}
+        name="Couriers"
+        component={CouriersScreen}
         options={{
           title: 'Перевізники',
           drawerIcon: ({ color }) => <DriverIcon size={22} color={color} />,
         }}
       />
       <RootDrawer.Screen
-        name="Vans"
-        component={VansScreen}
+        name="Vehicle"
+        component={VehicleScreen}
         options={{
           title: 'Автомобілі',
           drawerIcon: ({ color }) => <CarIcon size={22} color={color} />,

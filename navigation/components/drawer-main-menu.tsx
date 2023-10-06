@@ -15,6 +15,7 @@ export function DrawerMainContentMenu(props: DrawerContentComponentProps) {
         <View style={styles.logoIcon}>
           <ColorLogoIcon width={120} height={20} />
         </View>
+
         <View style={styles.itemList}>
           <DrawerItemList {...props} />
         </View>

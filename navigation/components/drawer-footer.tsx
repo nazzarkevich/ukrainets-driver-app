@@ -1,36 +1,33 @@
-import { Avatar } from '@ui-kitten/components';
+import { Button } from '@ui-kitten/components';
 import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import { DotsMenuIcon } from 'assets/icons';
-import { colorsConst } from 'consts';
-import { DriverType } from 'type/driver.type';
+import { UserCard } from 'components';
+import { colorsConst, typographyConst } from 'consts';
+import { User } from 'type';
 
-interface UserInfoSectionProps {
-  driver: DriverType;
-}
-
-export function UserInfoSection({ driver }: UserInfoSectionProps) {
+export function UserInfoSection({ driver }: { driver: User }) {
   return (
     <View style={styles.userInfoSection}>
-      <Pressable style={styles.btn} onPress={() => null}>
-        <Text style={styles.textBtn}>Створити поїздку</Text>
-      </Pressable>
+      <Button style={styles.createJourneyButton} onPress={() => null}>
+        <Text style={styles.label}>Створити поїздку</Text>
+      </Button>
+
       <View style={styles.user}>
-        <View>
-          <Avatar
-            source={{
-              uri: 'https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=1236',
-            }}
-          />
-        </View>
-        <View style={styles.name}>
-          <Text style={styles.title}>{driver.title}</Text>
-          <Text style={styles.caption}>{driver.description}</Text>
-        </View>
-        <Pressable onPress={() => null}>
-          <DotsMenuIcon color={colorsConst.roles.primary} size={24} />
-        </Pressable>
+        <UserCard
+          key={driver.id}
+          type={driver.type}
+          firstName={driver.firstName}
+        />
+
+        <Button
+          appearance="ghost"
+          onPress={() => null}
+          accessoryLeft={
+            <DotsMenuIcon color={colorsConst.roles.primary} size={24} />
+          }
+        />
       </View>
     </View>
   );
@@ -38,41 +35,35 @@ export function UserInfoSection({ driver }: UserInfoSectionProps) {
 
 const styles = StyleSheet.create({
   userInfoSection: {
-    display: 'flex',
     alignItems: 'center',
   },
-  btn: {
-    backgroundColor: colorsConst.roles.primary,
+  createJourneyButton: {
+    width: 170,
+    height: 35,
     borderRadius: 10,
-    width: 173,
-    height: 36,
     marginBottom: 25,
     justifyContent: 'center',
     alignSelf: 'center',
+    backgroundColor: colorsConst.roles.primary,
   },
-  textBtn: {
+  label: {
     textAlign: 'center',
     color: colorsConst.text.contrast,
   },
   title: {
-    fontSize: 12,
     color: colorsConst.text.primary,
-    paddingBottom: 3,
+    fontSize: typographyConst.font.s,
+    paddingBottom: typographyConst.spacing.xs,
   },
   caption: {
-    fontSize: 10,
+    fontSize: typographyConst.font.xs,
     color: colorsConst.text.secondary,
   },
   user: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
     width: 170,
     marginBottom: 20,
+    flexDirection: 'row',
     alignItems: 'center',
-  },
-  name: {
-    marginRight: 50,
-    alignContent: 'center',
+    justifyContent: 'space-between',
   },
 });
