@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { StyledView } from '../../components';
+import { StyledView } from '../../components/themed';
 
 import {
   AddIcon,

@@ -12,8 +12,8 @@ export const UserCard = ({
   type,
 }: {
   firstName: string;
-  lastName: string;
   type: UserTypesEnum;
+  lastName?: string;
 }) => {
   const userTypes = {
     [UserTypesEnum.Driver]: 'Водій',
@@ -29,7 +29,10 @@ export const UserCard = ({
       />
 
       <View>
-        <Text style={styles.userName}>{firstName + ' ' + lastName}</Text>
+        <View style={styles.userName}>
+          <Text style={styles.name}>{firstName}</Text>
+          {lastName && <Text style={styles.name}>{lastName}</Text>}
+        </View>
         <Text style={styles.userRole}>{userTypes[type]}</Text>
       </View>
     </View>
@@ -42,6 +45,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   userName: {
+    gap: 3,
+    flexDirection: 'row',
+  },
+  name: {
     fontWeight: '500',
     fontSize: typographyConst.font.m,
   },

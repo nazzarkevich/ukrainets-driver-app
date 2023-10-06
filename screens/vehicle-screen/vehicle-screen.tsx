@@ -3,9 +3,9 @@ import { Divider } from '@ui-kitten/components';
 import { ScreenContainer } from '@components/';
 import { RootStackScreenProps } from '@type/';
 
-export function ClientsScreen({ navigation }: RootStackScreenProps<'Clients'>) {
+export function VehicleScreen({ navigation }: RootStackScreenProps<'Vehicle'>) {
   return (
-    <ScreenContainer title="Клієнти">
+    <ScreenContainer title="Автомобілі">
       <Divider />
     </ScreenContainer>
   );
