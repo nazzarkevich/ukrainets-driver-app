@@ -11,11 +11,11 @@ import {
   useRootStore,
 } from 'components';
 import { colorsConst, typographyConst } from 'consts';
-import { RootStackScreenProps } from 'type';
+import { RootDrawerScreenProps } from 'type';
 
 export const HomeScreen = observer(function HomeScreen({
   navigation,
-}: RootStackScreenProps<'Home'>) {
+}: RootDrawerScreenProps<'Home'>) {
   const { journeyStore } = useRootStore();
 
   useEffect(() => {
