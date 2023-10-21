@@ -36,7 +36,7 @@ export const JourneyCardDetails = ({
     <View style={styles.journeyDetails}>
       <View style={styles.journeyDetailsTextRow}>
         <Title size="s">Авто</Title>
-        <Text style={styles.journeyDetailsText}>{vehicle.plateNumber}</Text>
+        <Text style={styles.journeyDetailsText}>{vehicle?.plateNumber}</Text>
       </View>
 
       <View style={styles.journeyDetailsTextRow}>

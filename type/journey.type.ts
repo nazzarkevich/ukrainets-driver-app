@@ -15,5 +15,5 @@ export interface Journey {
   isCompleted: boolean;
   arrivalDate: Nullable<string>;
   journeyNumber: string;
-  vehicle: Vehicle;
+  vehicle: Vehicle | undefined;
 }

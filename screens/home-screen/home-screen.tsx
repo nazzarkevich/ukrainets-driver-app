@@ -5,21 +5,22 @@ import { StyleSheet } from 'react-native';
 import {
   ActiveJourneySection,
   ScreenContainer,
-  SectionTitle,
   Text,
   View,
   useRootStore,
 } from 'components';
+import { LastJourneysSection } from 'components/journey/last-journeys-section';
 import { colorsConst, typographyConst } from 'consts';
 import { RootStackScreenProps } from 'type';
 
 export const HomeScreen = observer(function HomeScreen({
   navigation,
 }: RootStackScreenProps<'Home'>) {
-  const { journeyStore } = useRootStore();
+  const { journeyStore, journeysStore } = useRootStore();
 
   useEffect(() => {
     journeyStore.fetchActiveJourney();
+    journeysStore.fetchLastJourneys();
   }, []);
 
   if (journeyStore.isJourneyLoading) {
@@ -31,20 +32,21 @@ export const HomeScreen = observer(function HomeScreen({
       </ScreenContainer>
     );
   }
+  // робити перевірку на активну поїздку
 
   return (
     <ScreenContainer>
       <View style={styles.homeScreen}>
         <ActiveJourneySection />
-
-        <View style={styles.recentItems}>
+        <LastJourneysSection />
+        {/* <View style={styles.recentItems}>
           <View>
             <SectionTitle>Останні посилки</SectionTitle>
           </View>
           <View>
             <SectionTitle>Нові клієнти</SectionTitle>
           </View>
-        </View>
+        </View> */}
       </View>
     </ScreenContainer>
   );
