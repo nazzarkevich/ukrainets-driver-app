@@ -1,3 +1,4 @@
+import { Divider } from '@ui-kitten/components';
 import { observer } from 'mobx-react';
 import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
@@ -5,21 +6,22 @@ import { StyleSheet } from 'react-native';
 import {
   ActiveJourneySection,
   ScreenContainer,
-  SectionTitle,
   Text,
   View,
   useRootStore,
 } from 'components';
+import { LastParcelsSection } from 'components/parcels/last-parcels-section/last-parcels-section';
 import { colorsConst, typographyConst } from 'consts';
 import { RootStackScreenProps } from 'type';
 
 export const HomeScreen = observer(function HomeScreen({
   navigation,
 }: RootStackScreenProps<'Home'>) {
-  const { journeyStore } = useRootStore();
+  const { journeyStore, parcelsStore } = useRootStore();
 
   useEffect(() => {
     journeyStore.fetchActiveJourney();
+    parcelsStore.fetchLastParcels();
   }, []);
 
   if (journeyStore.isJourneyLoading) {
@@ -33,18 +35,19 @@ export const HomeScreen = observer(function HomeScreen({
   }
 
   return (
-    <ScreenContainer>
+    <ScreenContainer title="Головна">
+      <Divider />
       <View style={styles.homeScreen}>
         <ActiveJourneySection />
-
-        <View style={styles.recentItems}>
+        <LastParcelsSection />
+        {/* <View style={styles.recentItems}>
           <View>
             <SectionTitle>Останні посилки</SectionTitle>
           </View>
           <View>
             <SectionTitle>Нові клієнти</SectionTitle>
           </View>
-        </View>
+        </View> */}
       </View>
     </ScreenContainer>
   );

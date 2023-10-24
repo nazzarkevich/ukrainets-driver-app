@@ -1,0 +1,50 @@
+import React from 'react';
+import { StyleSheet } from 'react-native';
+
+import { Text, View } from 'components/themed';
+import { Parcel, ParcelTypeEnum } from 'type';
+
+export type ParcelCardDetailsType = Pick<
+  Parcel,
+  'id' | 'sender' | 'recipient' | 'type' | 'deliveryDate'
+>;
+
+export const ParcelCardDetails = ({
+  id,
+  sender,
+  recipient,
+  type,
+  deliveryDate,
+}: ParcelCardDetailsType) => {
+  const parcelType = {
+    [ParcelTypeEnum.Regular]: 'Одяг',
+    [ParcelTypeEnum.Document]: 'Документи',
+    [ParcelTypeEnum.Passport]: 'Паспорт',
+    [ParcelTypeEnum.Money]: 'Гроші',
+  };
+  return (
+    <View style={styles.parcelCardDetails}>
+      <View style={styles.parcelCardHeader}>
+        <Text>
+          {sender.address.city}-{recipient.address.city} ({deliveryDate})
+        </Text>
+      </View>
+      <View style={styles.parcel}>
+        <Text>{parcelType[type]}</Text>
+        <Text>ID {id}</Text>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  parcelCardHeader: {
+    marginBottom: 8,
+  },
+  parcelCardDetails: {
+    width: '80%',
+  },
+  parcel: {
+    gap: 4,
+  },
+});
