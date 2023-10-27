@@ -5,7 +5,7 @@ import Toast from 'react-native-toast-message';
 
 import { CopyIcon } from 'assets/icons';
 import { Text, View } from 'components/themed';
-import { colorsConst } from 'consts';
+import { colorsConst, colorsPalette, typographyConst } from 'consts';
 import { Client } from 'type';
 
 export type ClientCardDetailsType = Pick<
@@ -60,11 +60,12 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    color: colorsPalette.black,
   },
   clientName: {
-    fontSize: 17,
+    fontSize: typographyConst.font.l,
   },
   clientNumber: {
-    fontSize: 14,
+    fontSize: typographyConst.font.s,
   },
 });
