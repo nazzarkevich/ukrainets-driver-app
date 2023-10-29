@@ -8,11 +8,15 @@ export const JourneyCardActions = ({
 }: {
   isCompleted: boolean;
 }) => {
+  if (isCompleted) {
+    return null;
+  }
+
   return (
     <Pressable
       style={styles.journeyCardActions}
       onPress={() => console.log('Click on actions')}>
-      {!isCompleted ? <DotsMenuIcon size={25} /> : <></>}
+      <DotsMenuIcon size={25} />
     </Pressable>
   );
 };

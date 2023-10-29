@@ -16,11 +16,10 @@ import { RootStackScreenProps } from 'type';
 export const HomeScreen = observer(function HomeScreen({
   navigation,
 }: RootStackScreenProps<'Home'>) {
-  const { journeyStore, journeysStore } = useRootStore();
+  const { journeyStore } = useRootStore();
 
   useEffect(() => {
     journeyStore.fetchActiveJourney();
-    journeysStore.fetchLastJourneys();
   }, []);
 
   if (journeyStore.isJourneyLoading) {
@@ -32,21 +31,12 @@ export const HomeScreen = observer(function HomeScreen({
       </ScreenContainer>
     );
   }
-  // робити перевірку на активну поїздку
 
   return (
     <ScreenContainer>
       <View style={styles.homeScreen}>
         <ActiveJourneySection />
         <LastJourneysSection />
-        {/* <View style={styles.recentItems}>
-          <View>
-            <SectionTitle>Останні посилки</SectionTitle>
-          </View>
-          <View>
-            <SectionTitle>Нові клієнти</SectionTitle>
-          </View>
-        </View> */}
       </View>
     </ScreenContainer>
   );

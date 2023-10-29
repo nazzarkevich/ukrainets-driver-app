@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 
 import { colorsConst, typographyConst } from 'consts';
@@ -12,20 +12,25 @@ import { JourneyCard } from '../journey-card';
 export const LastJourneys = observer(() => {
   const { journeysStore } = useRootStore();
 
+  useEffect(() => {
+    journeysStore.fetchJourneys();
+  }, []);
+
   if (!journeysStore.lastJourneys) {
     return <Text>No Last Journeys</Text>;
   }
 
   return (
     <View style={styles.lastJourney}>
-      {journeysStore.lastJourneys.map((journeys) => (
+      {journeysStore.lastJourneys.map((journey) => (
         <JourneyCard
-          origin={journeys.origin}
-          vehicle={journeys.vehicle}
-          isCompleted={journeys.isCompleted}
-          destination={journeys.destination}
+          key={journey.id}
+          origin={journey.origin}
+          vehicle={journey.vehicle}
+          isCompleted={journey.isCompleted}
+          destination={journey.destination}
           journeyLoadCapacity={1800}
-          journeyNumber={journeys.journeyNumber}
+          journeyNumber={journey.journeyNumber}
         />
       ))}
     </View>

@@ -2,32 +2,26 @@ import { action, computed, makeObservable, observable } from 'mobx';
 
 import { Journey } from '@type/';
 
-import { LAST_JOURNEY_MOCK } from './lastJourneysMock';
+import { JOURNEYS_MOCK } from './journeysMock';
 
 export class JourneysStore {
-  @observable lastJourneys: Journey[] = [];
+  @observable journeys: Journey[] = [];
   @observable isJourneysLoading = false;
 
   constructor() {
     makeObservable(this);
   }
 
-  // @computed get journeyLoadCapacity(): number {
-  //   const parcelsLoad = this.lastJourneys?.parcels?.reduce((acc, parcel) => {
-  //     return acc + parcel.weight;
-  //   }, 0);
-
-  //   return parcelsLoad || 0;
-  // }
-
   @computed
-  get journeysCount(): number {
-    return this.lastJourneys.length;
+  get lastJourneys(): Journey[] {
+    const lastJourneys = this.journeys.slice(-3);
+
+    return lastJourneys;
   }
 
   @action
   setLastJourney(lastJourneys: Journey[]): void {
-    this.lastJourneys = lastJourneys;
+    this.journeys = lastJourneys;
   }
 
   @action
@@ -36,9 +30,9 @@ export class JourneysStore {
   }
 
   @action
-  async fetchLastJourneys(): Promise<void> {
+  async fetchJourneys(): Promise<void> {
     const journeyPromise = new Promise((resolve) =>
-      setTimeout(resolve, 1000, LAST_JOURNEY_MOCK),
+      setTimeout(resolve, 1000, JOURNEYS_MOCK),
     );
 
     this.setJourneysLoading(true);

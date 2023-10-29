@@ -5,7 +5,7 @@ import {
   PaymentStatusEnum,
 } from 'type';
 
-export const LAST_JOURNEY_MOCK = [
+export const JOURNEYS_MOCK = [
   {
     id: '55555',
     isCompleted: true,
@@ -130,7 +130,7 @@ export const LAST_JOURNEY_MOCK = [
     ],
   },
   {
-    id: '55555',
+    id: '55556',
     isCompleted: true,
     origin: Country.UNITED_KINGDOM,
     destination: Country.UKRAINE,
@@ -253,7 +253,7 @@ export const LAST_JOURNEY_MOCK = [
     ],
   },
   {
-    id: '55555',
+    id: '55557',
     isCompleted: true,
     origin: Country.UNITED_KINGDOM,
     destination: Country.UKRAINE,
@@ -376,7 +376,7 @@ export const LAST_JOURNEY_MOCK = [
     ],
   },
   {
-    id: '55555',
+    id: '55558',
     isCompleted: true,
     origin: Country.UNITED_KINGDOM,
     destination: Country.UKRAINE,
@@ -499,7 +499,7 @@ export const LAST_JOURNEY_MOCK = [
     ],
   },
   {
-    id: '55555',
+    id: '55559',
     isCompleted: true,
     origin: Country.UNITED_KINGDOM,
     destination: Country.UKRAINE,
@@ -622,7 +622,7 @@ export const LAST_JOURNEY_MOCK = [
     ],
   },
   {
-    id: '55555',
+    id: '60000',
     isCompleted: true,
     origin: Country.UNITED_KINGDOM,
     destination: Country.UKRAINE,
@@ -745,7 +745,7 @@ export const LAST_JOURNEY_MOCK = [
     ],
   },
   {
-    id: '55555',
+    id: '60001',
     isCompleted: true,
     origin: Country.UNITED_KINGDOM,
     destination: Country.UKRAINE,
