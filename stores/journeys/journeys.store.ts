@@ -20,8 +20,8 @@ export class JourneysStore {
   }
 
   @action
-  setLastJourney(lastJourneys: Journey[]): void {
-    this.journeys = lastJourneys;
+  setJourneys(journeys: Journey[]): void {
+    this.journeys = journeys;
   }
 
   @action
@@ -38,8 +38,8 @@ export class JourneysStore {
     this.setJourneysLoading(true);
 
     try {
-      const lastJourneys = await journeyPromise;
-      this.setLastJourney(lastJourneys as Journey[]);
+      const journeys = await journeyPromise;
+      this.setJourneys(journeys as Journey[]);
     } finally {
       this.setJourneysLoading(false);
     }
