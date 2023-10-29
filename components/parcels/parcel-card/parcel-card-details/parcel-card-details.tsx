@@ -21,7 +21,9 @@ export const ParcelCardDetails = ({
     [ParcelTypeEnum.Document]: 'Документи',
     [ParcelTypeEnum.Passport]: 'Паспорт',
     [ParcelTypeEnum.Money]: 'Гроші',
+    [ParcelTypeEnum.Unknown]: 'Інше',
   };
+
   return (
     <View style={styles.parcelCardDetails}>
       <View style={styles.parcelCardHeader}>
@@ -30,7 +32,7 @@ export const ParcelCardDetails = ({
         </Text>
       </View>
       <View style={styles.parcel}>
-        <Text>{parcelType[type]}</Text>
+        <Text>{parcelType[type] || parcelType[ParcelTypeEnum.Unknown]}</Text>
         <Text>ID {id}</Text>
       </View>
     </View>

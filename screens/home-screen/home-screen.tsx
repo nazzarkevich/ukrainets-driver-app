@@ -21,7 +21,7 @@ export const HomeScreen = observer(function HomeScreen({
 
   useEffect(() => {
     journeyStore.fetchActiveJourney();
-    parcelsStore.fetchLastParcels();
+    parcelsStore.fetchParcels();
   }, []);
 
   if (journeyStore.isJourneyLoading) {
@@ -40,14 +40,6 @@ export const HomeScreen = observer(function HomeScreen({
       <View style={styles.homeScreen}>
         <ActiveJourneySection />
         <LastParcelsSection />
-        {/* <View style={styles.recentItems}>
-          <View>
-            <SectionTitle>Останні посилки</SectionTitle>
-          </View>
-          <View>
-            <SectionTitle>Нові клієнти</SectionTitle>
-          </View>
-        </View> */}
       </View>
     </ScreenContainer>
   );

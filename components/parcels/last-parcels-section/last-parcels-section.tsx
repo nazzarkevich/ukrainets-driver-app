@@ -11,20 +11,20 @@ import { ParcelCard } from '../parcel-card';
 export const LastParcels = observer(() => {
   const { parcelsStore } = useRootStore();
 
-  if (!parcelsStore.lastParcels) {
+  if (!parcelsStore.parcels.length) {
     return <Text>No Last Parcels</Text>;
   }
 
   return (
     <View style={styles.lastParcel}>
-      {parcelsStore.lastParcels.map((parcels) => (
+      {parcelsStore.lastParcels.map((parcel) => (
         <ParcelCard
-          key={parcels.id}
-          id={parcels.id}
-          sender={parcels.sender}
-          recipient={parcels.recipient}
-          type={parcels.type}
-          deliveryDate={parcels.deliveryDate}
+          key={parcel.id}
+          id={parcel.id}
+          sender={parcel.sender}
+          recipient={parcel.recipient}
+          type={parcel.type}
+          deliveryDate={parcel.deliveryDate}
         />
       ))}
     </View>

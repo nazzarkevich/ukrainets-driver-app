@@ -2,10 +2,10 @@ import { action, computed, makeObservable, observable } from 'mobx';
 
 import { Parcel } from '@type/';
 
-import { LAST_PARCELS_MOCK } from './parcelsMock';
+import { PARCELS_MOCK } from './parcelsMock';
 
 export class ParcelsStore {
-  @observable lastParcels: Parcel[] = [];
+  @observable parcels: Parcel[] = [];
   @observable isParcelsLoading = false;
 
   constructor() {
@@ -14,12 +14,19 @@ export class ParcelsStore {
 
   @computed
   get parcelsCount(): number {
-    return this.lastParcels.length;
+    return this.parcels.length;
+  }
+
+  @computed
+  get lastParcels(): Parcel[] {
+    const lastParcels = this.parcels.slice(-3);
+
+    return lastParcels;
   }
 
   @action
-  setLastParcels(lastParcels: Parcel[]): void {
-    this.lastParcels = lastParcels;
+  setParcels(parcels: Parcel[]): void {
+    this.parcels = parcels;
   }
 
   @action
@@ -28,16 +35,16 @@ export class ParcelsStore {
   }
 
   @action
-  async fetchLastParcels(): Promise<void> {
+  async fetchParcels(): Promise<void> {
     const parcelsPromise = new Promise((resolve) =>
-      setTimeout(resolve, 1000, LAST_PARCELS_MOCK),
+      setTimeout(resolve, 1000, PARCELS_MOCK),
     );
 
     this.setParcelsLoading(true);
 
     try {
-      const lastParcels = await parcelsPromise;
-      this.setLastParcels(lastParcels as Parcel[]);
+      const parcels = await parcelsPromise;
+      this.setParcels(parcels as Parcel[]);
     } finally {
       this.setParcelsLoading(false);
     }

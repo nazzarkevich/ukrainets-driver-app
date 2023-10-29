@@ -1,6 +1,6 @@
 import { DeliveryStatusEnum, ParcelTypeEnum, PaymentStatusEnum } from 'type';
 
-export const LAST_PARCELS_MOCK = [
+export const PARCELS_MOCK = [
   {
     id: '21',
     sender: {
@@ -192,7 +192,7 @@ export const LAST_PARCELS_MOCK = [
       },
     },
     weight: 150,
-    type: ParcelTypeEnum.Document,
+    type: null,
     notes: null,
     isLost: false,
     moneyAmount: null,

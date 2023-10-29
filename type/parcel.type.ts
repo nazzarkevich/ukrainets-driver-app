@@ -2,6 +2,7 @@ import { Client } from './client.type';
 import { Nullable } from './global.type';
 
 export enum ParcelTypeEnum {
+  Unknown = 0,
   Regular = 1,
   Passport = 2,
   Document = 3,
