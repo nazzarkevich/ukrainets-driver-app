@@ -3,13 +3,7 @@ import { observer } from 'mobx-react';
 import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 
-import {
-  ActiveJourneySection,
-  ScreenContainer,
-  Text,
-  View,
-  useRootStore,
-} from 'components';
+import { ScreenContainer, Text, View, useRootStore } from 'components';
 import { LastParcelsSection } from 'components/parcels/last-parcels-section/last-parcels-section';
 import { colorsConst, typographyConst } from 'consts';
 import { RootStackScreenProps } from 'type';
@@ -38,7 +32,6 @@ export const HomeScreen = observer(function HomeScreen({
     <ScreenContainer title="Головна">
       <Divider />
       <View style={styles.homeScreen}>
-        <ActiveJourneySection />
         <LastParcelsSection />
       </View>
     </ScreenContainer>

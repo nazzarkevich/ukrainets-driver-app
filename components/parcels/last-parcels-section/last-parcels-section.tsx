@@ -11,7 +11,7 @@ import { ParcelCard } from '../parcel-card';
 export const LastParcels = observer(() => {
   const { parcelsStore } = useRootStore();
 
-  if (!parcelsStore.parcels.length) {
+  if (!parcelsStore.lastParcels.length) {
     return <Text>No Last Parcels</Text>;
   }
 
