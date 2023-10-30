@@ -2,10 +2,10 @@ import { action, computed, makeObservable, observable } from 'mobx';
 
 import { Client } from '@type/';
 
-import { NEW_CLIENTS_MOCK } from './clientsMock';
+import { CLIENTS_MOCK } from './clientsMock';
 
 export class ClientsStore {
-  @observable newClients: Client[] = [];
+  @observable clients: Client[] = [];
   @observable isClientsLoading = false;
 
   constructor() {
@@ -14,12 +14,19 @@ export class ClientsStore {
 
   @computed
   get clientsCount(): number {
-    return this.newClients.length;
+    return this.clients.length;
+  }
+
+  @computed
+  get newClients(): Client[] {
+    const newClients = this.clients.slice(-3);
+
+    return newClients;
   }
 
   @action
-  setNewClients(newClients: Client[]): void {
-    this.newClients = newClients;
+  setClients(clients: Client[]): void {
+    this.clients = clients;
   }
 
   @action
@@ -30,14 +37,14 @@ export class ClientsStore {
   @action
   async fetchClients(): Promise<void> {
     const clientsPromise = new Promise((resolve) =>
-      setTimeout(resolve, 1000, NEW_CLIENTS_MOCK),
+      setTimeout(resolve, 1000, CLIENTS_MOCK),
     );
 
     this.setClientsLoading(true);
 
     try {
-      const newClients = await clientsPromise;
-      this.setNewClients(newClients as Client[]);
+      const clients = await clientsPromise;
+      this.setClients(clients as Client[]);
     } finally {
       this.setClientsLoading(false);
     }

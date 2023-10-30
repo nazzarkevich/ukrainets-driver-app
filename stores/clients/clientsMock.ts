@@ -1,4 +1,4 @@
-export const NEW_CLIENTS_MOCK = [
+export const CLIENTS_MOCK = [
   {
     id: '1',
     phone: '+38 093 444 44 44',

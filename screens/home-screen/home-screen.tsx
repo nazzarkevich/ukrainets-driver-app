@@ -40,14 +40,6 @@ export const HomeScreen = observer(function HomeScreen({
       <View style={styles.homeScreen}>
         <ActiveJourneySection />
         <NewClientsSection />
-        {/* <View style={styles.recentItems}>
-          <View>
-            <SectionTitle>Останні посилки</SectionTitle>
-          </View>
-          <View>
-            <SectionTitle>Нові клієнти</SectionTitle>
-          </View>
-        </View> */}
       </View>
     </ScreenContainer>
   );
