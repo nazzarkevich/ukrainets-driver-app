@@ -1,13 +1,10 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 
-import { colorsConst, typographyConst } from 'consts';
+import { SmallCard } from 'components/small-card';
 import { Client } from 'type';
 
-import { ClientCardArrow } from './client-card-arrow';
 import { ClientCardDetails } from './client-card-details';
 import { ClientCardImage } from './client-card-image';
-import { View } from '../../themed';
 
 export type ClientCardType = Pick<
   Client,
@@ -21,7 +18,7 @@ export const ClientCard = ({
   address,
 }: ClientCardType) => {
   return (
-    <View style={styles.clientCard}>
+    <SmallCard>
       <ClientCardImage />
 
       <ClientCardDetails
@@ -30,22 +27,6 @@ export const ClientCard = ({
         phone={phone}
         address={address}
       />
-
-      <ClientCardArrow />
-    </View>
+    </SmallCard>
   );
 };
-
-const styles = StyleSheet.create({
-  clientCard: {
-    gap: typographyConst.spacing.s,
-    borderRadius: 20,
-    padding: typographyConst.spacing.m,
-    backgroundColor: colorsConst.background.default,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    width: '100%',
-    justifyContent: 'space-between',
-  },
-});

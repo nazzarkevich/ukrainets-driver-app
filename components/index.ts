@@ -4,5 +4,7 @@ export * from './screen-container';
 export * from './screen-title';
 export * from './section-title';
 export * from './journey';
+export * from './clients';
 export * from './user-card';
 export * from './title';
+export * from './small-card';
