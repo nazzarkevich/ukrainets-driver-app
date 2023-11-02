@@ -1,13 +1,10 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 
-import { colorsConst, typographyConst } from 'consts';
+import { SmallCard } from 'components/small-card';
 import { Parcel } from 'type';
 
-import { ParcelCardArrow } from './parcel-card-arrow';
 import { ParcelCardDetails } from './parcel-card-details';
 import { ParcelCardIcon } from './parcel-card-icon';
-import { View } from '../../themed';
 
 export type ParcelCardType = Pick<
   Parcel,
@@ -22,7 +19,7 @@ export const ParcelCard = ({
   deliveryDate,
 }: ParcelCardType) => {
   return (
-    <View style={styles.parcelCard}>
+    <SmallCard>
       <ParcelCardIcon type={type} />
 
       <ParcelCardDetails
@@ -32,22 +29,6 @@ export const ParcelCard = ({
         type={type}
         deliveryDate={deliveryDate}
       />
-
-      <ParcelCardArrow />
-    </View>
+    </SmallCard>
   );
 };
-
-const styles = StyleSheet.create({
-  parcelCard: {
-    gap: typographyConst.spacing.m,
-    borderRadius: 14,
-    padding: typographyConst.spacing.m,
-    backgroundColor: colorsConst.background.default,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    width: '100%',
-    justifyContent: 'space-between',
-  },
-});
