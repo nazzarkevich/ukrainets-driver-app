@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
@@ -6,7 +7,7 @@ import { SectionTitle } from '../../section-title';
 import { Text, View } from '../../themed';
 import { JourneyCard } from '../journey-card';
 
-export const ActiveJourney = () => {
+export const ActiveJourney = observer(() => {
   const { journeyStore } = useRootStore();
 
   if (!journeyStore.activeJourney) {
@@ -26,7 +27,7 @@ export const ActiveJourney = () => {
       />
     </View>
   );
-};
+});
 
 export const ActiveJourneySection = () => {
   return (
