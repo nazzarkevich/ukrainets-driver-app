@@ -1,18 +1,26 @@
+import { Divider } from '@ui-kitten/components';
 import { observer } from 'mobx-react';
 import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 
-import { ScreenContainer, Text, View, useRootStore } from 'components';
-import { LastJourneysSection } from 'components/journey/last-journeys-section';
+import {
+  LastJourneysSection,
+  LastParcelsSection,
+  ScreenContainer,
+  Text,
+  View,
+  useRootStore,
+} from 'components';
 import { colorsConst, typographyConst } from 'consts';
 import { RootDrawerScreenProps } from 'type';
 
 export const HomeScreen = observer(function HomeScreen({
   navigation,
 }: RootDrawerScreenProps<'Home'>) {
-  const { journeyStore, journeysStore } = useRootStore();
+  const { journeyStore, journeysStore, parcelsStore } = useRootStore();
 
   useEffect(() => {
+    parcelsStore.fetchParcels();
     journeyStore.fetchActiveJourney();
     journeysStore.fetchJourneys();
   }, []);
@@ -28,8 +36,10 @@ export const HomeScreen = observer(function HomeScreen({
   }
 
   return (
-    <ScreenContainer>
+    <ScreenContainer title="Головна">
+      <Divider />
       <View style={styles.homeScreen}>
+        <LastParcelsSection />
         <LastJourneysSection />
       </View>
     </ScreenContainer>
