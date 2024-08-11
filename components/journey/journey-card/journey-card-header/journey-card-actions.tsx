@@ -3,7 +3,15 @@ import { Pressable, StyleSheet } from 'react-native';
 
 import { DotsMenuIcon } from 'assets/icons';
 
-export const JourneyCardActions = () => {
+export const JourneyCardActions = ({
+  isCompleted,
+}: {
+  isCompleted: boolean;
+}) => {
+  if (isCompleted) {
+    return null;
+  }
+
   return (
     <Pressable
       style={styles.journeyCardActions}

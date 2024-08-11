@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 
 import { ScreenContainer, Text, View, useRootStore } from 'components';
+import { LastJourneysSection } from 'components/journey/last-journeys-section';
 import { LastParcelsSection } from 'components/parcels/last-parcels-section/last-parcels-section';
 import { colorsConst, typographyConst } from 'consts';
 import { RootStackScreenProps } from 'type';
@@ -11,10 +12,12 @@ import { RootStackScreenProps } from 'type';
 export const HomeScreen = observer(function HomeScreen({
   navigation,
 }: RootStackScreenProps<'Home'>) {
-  const { journeyStore, parcelsStore } = useRootStore();
+  const { journeyStore, journeysStore, parcelsStore } = useRootStore();
 
   useEffect(() => {
     parcelsStore.fetchParcels();
+    journeyStore.fetchActiveJourney();
+    journeysStore.fetchJourneys();
   }, []);
 
   if (journeyStore.isJourneyLoading) {
@@ -32,6 +35,7 @@ export const HomeScreen = observer(function HomeScreen({
       <Divider />
       <View style={styles.homeScreen}>
         <LastParcelsSection />
+        <LastJourneysSection />
       </View>
     </ScreenContainer>
   );
