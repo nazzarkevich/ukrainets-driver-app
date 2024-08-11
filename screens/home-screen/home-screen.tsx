@@ -6,6 +6,7 @@ import { StyleSheet } from 'react-native';
 import {
   LastJourneysSection,
   LastParcelsSection,
+  NewClientsSection,
   ScreenContainer,
   Text,
   View,
@@ -17,11 +18,13 @@ import { RootDrawerScreenProps } from 'type';
 export const HomeScreen = observer(function HomeScreen({
   navigation,
 }: RootDrawerScreenProps<'Home'>) {
-  const { journeyStore, journeysStore, parcelsStore } = useRootStore();
+  const { journeyStore, journeysStore, clientsStore, parcelsStore } =
+    useRootStore();
 
   useEffect(() => {
     parcelsStore.fetchParcels();
     journeyStore.fetchActiveJourney();
+    clientsStore.fetchClients();
     journeysStore.fetchJourneys();
   }, []);
 
@@ -39,6 +42,7 @@ export const HomeScreen = observer(function HomeScreen({
     <ScreenContainer title="Головна">
       <Divider />
       <View style={styles.homeScreen}>
+        <NewClientsSection />
         <LastParcelsSection />
         <LastJourneysSection />
       </View>
