@@ -8,3 +8,5 @@ export * from './parcels';
 export * from './user-card';
 export * from './title';
 export * from './small-card';
+export * from './button';
+export * from './stepper';

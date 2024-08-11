@@ -4,7 +4,8 @@ import * as eva from '@eva-design/eva';
 import { useCachedResources, useColorScheme } from '@hooks/';
 import { Navigation } from '@navigation/';
 import { RootStore } from '@stores/';
-import { ApplicationProvider } from '@ui-kitten/components';
+import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import Toast from 'react-native-toast-message';
@@ -21,6 +22,8 @@ export default function App() {
 
   return (
     <RootStoreProvider store={rootStore}>
+      <IconRegistry icons={EvaIconsPack} />
+
       <ApplicationProvider {...eva} theme={eva.light}>
         <Navigation colorScheme={colorScheme} />
         <StatusBar />

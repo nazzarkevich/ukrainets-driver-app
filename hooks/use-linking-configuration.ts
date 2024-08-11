@@ -7,10 +7,10 @@
 import { LinkingOptions } from '@react-navigation/native';
 import * as Linking from 'expo-linking';
 
-import { RootStackParams } from '@type/';
+import { RootDrawerParams } from '@type/';
 
 export function useLinkingConfiguration(): {
-  linkingConfiguration: LinkingOptions<RootStackParams>;
+  linkingConfiguration: LinkingOptions<RootDrawerParams>;
 } {
   const prefix = Linking.createURL('/');
 

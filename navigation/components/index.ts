@@ -1,4 +1,3 @@
+export * from './drawer-menu';
 export * from './root-navigator';
-export * from './drawer-content';
-export * from './drawer-main-menu';
-export * from './drawer-footer';
+export * from './drawer-menu/drawer-content';

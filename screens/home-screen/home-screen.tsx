@@ -3,15 +3,20 @@ import { observer } from 'mobx-react';
 import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 
-import { ScreenContainer, Text, View, useRootStore } from 'components';
-import { LastJourneysSection } from 'components/journey/last-journeys-section';
-import { LastParcelsSection } from 'components/parcels/last-parcels-section/last-parcels-section';
+import {
+  LastJourneysSection,
+  LastParcelsSection,
+  ScreenContainer,
+  Text,
+  View,
+  useRootStore,
+} from 'components';
 import { colorsConst, typographyConst } from 'consts';
-import { RootStackScreenProps } from 'type';
+import { RootDrawerScreenProps } from 'type';
 
 export const HomeScreen = observer(function HomeScreen({
   navigation,
-}: RootStackScreenProps<'Home'>) {
+}: RootDrawerScreenProps<'Home'>) {
   const { journeyStore, journeysStore, parcelsStore } = useRootStore();
 
   useEffect(() => {

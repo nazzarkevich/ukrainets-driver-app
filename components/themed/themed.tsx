@@ -1,6 +1,6 @@
+import { useColorScheme } from '@hooks/';
 import { Text as DefaultText, View as DefaultView } from 'react-native';
 
-import { useColorScheme } from '@hooks/';
 import { themeColors } from 'consts';
 
 import { TextProps, ViewProps } from './themed.types';
