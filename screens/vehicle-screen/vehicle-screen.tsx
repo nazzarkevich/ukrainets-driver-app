@@ -1,9 +1,9 @@
 import { Divider } from '@ui-kitten/components';
 
 import { ScreenContainer } from '@components/';
-import { RootStackScreenProps } from '@type/';
+import { RootDrawerScreenProps } from '@type/';
 
-export function VehicleScreen({ navigation }: RootStackScreenProps<'Vehicle'>) {
+export function VehicleScreen({ navigation }: RootDrawerScreenProps<'Vehicle'>) {
   return (
     <ScreenContainer title="Автомобілі">
       <Divider />

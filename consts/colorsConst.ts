@@ -7,6 +7,7 @@ export const colorsPalette = {
   white: '#FFFFFF',
   black: '#080A11',
   orange: '#E7A659',
+  blue: '#20B5E3',
 };
 
 export const colorsConst = {

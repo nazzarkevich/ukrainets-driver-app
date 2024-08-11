@@ -8,7 +8,11 @@ import { View } from '../../../themed';
 import { Title } from '../../../title';
 import { UserCard } from '../../../user-card';
 
-export const JourneyDrivers = ({ drivers }: { drivers: User[] }) => {
+export const JourneyDrivers = ({ drivers }: { drivers?: User[] }) => {
+  if (!drivers?.length) {
+    return null;
+  }
+
   return (
     <View style={styles.journeyDriversWrapper}>
       <Title>Перевізники</Title>

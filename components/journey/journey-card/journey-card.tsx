@@ -1,9 +1,8 @@
-import { Divider } from '@ui-kitten/components';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
 import { colorsConst, typographyConst } from 'consts';
-import { Journey } from 'type';
+import { Journey, User } from 'type';
 
 import { JourneyCardDetails } from './journey-card-details';
 import { JourneyCardHeader } from './journey-card-header';
@@ -13,13 +12,8 @@ import { View } from '../../themed';
 
 export type JourneyCardType = Pick<
   Journey,
-  | 'origin'
-  | 'journeyNumber'
-  | 'destination'
-  | 'isCompleted'
-  | 'drivers'
-  | 'vehicle'
-> & { journeyLoadCapacity: number };
+  'origin' | 'journeyNumber' | 'destination' | 'isCompleted' | 'vehicle'
+> & { journeyLoadCapacity: number; drivers?: User[] };
 
 export const JourneyCard = ({
   origin,
@@ -47,8 +41,6 @@ export const JourneyCard = ({
       <JourneyDrivers drivers={drivers} />
 
       <JourneyLoadIndicator journeyLoadCapacity={journeyLoadCapacity} />
-
-      <Divider />
     </View>
   );
 };

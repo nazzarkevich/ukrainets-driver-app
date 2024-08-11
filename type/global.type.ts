@@ -1,8 +1,8 @@
-import { RootStackParams } from './navigation.type';
+import { RootDrawerParams } from './navigation.type';
 
 declare global {
   namespace ReactNavigation {
-    interface RootParamList extends RootStackParams {}
+    interface RootParamList extends RootDrawerParams {}
   }
 }
 

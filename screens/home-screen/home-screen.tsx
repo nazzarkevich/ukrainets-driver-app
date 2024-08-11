@@ -3,18 +3,29 @@ import { observer } from 'mobx-react';
 import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 
-import { ScreenContainer, Text, View, useRootStore } from 'components';
-import { NewClientsSection } from 'components/clients';
+import {
+  LastJourneysSection,
+  LastParcelsSection,
+  NewClientsSection,
+  ScreenContainer,
+  Text,
+  View,
+  useRootStore,
+} from 'components';
 import { colorsConst, typographyConst } from 'consts';
-import { RootStackScreenProps } from 'type';
+import { RootDrawerScreenProps } from 'type';
 
 export const HomeScreen = observer(function HomeScreen({
   navigation,
-}: RootStackScreenProps<'Home'>) {
-  const { journeyStore, clientsStore } = useRootStore();
+}: RootDrawerScreenProps<'Home'>) {
+  const { journeyStore, journeysStore, clientsStore, parcelsStore } =
+    useRootStore();
 
   useEffect(() => {
+    parcelsStore.fetchParcels();
+    journeyStore.fetchActiveJourney();
     clientsStore.fetchClients();
+    journeysStore.fetchJourneys();
   }, []);
 
   if (journeyStore.isJourneyLoading) {
@@ -32,6 +43,8 @@ export const HomeScreen = observer(function HomeScreen({
       <Divider />
       <View style={styles.homeScreen}>
         <NewClientsSection />
+        <LastParcelsSection />
+        <LastJourneysSection />
       </View>
     </ScreenContainer>
   );

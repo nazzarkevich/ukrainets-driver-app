@@ -5,11 +5,10 @@ import {
   ClientsScreen,
   CouriersScreen,
   HomeScreen,
-  JourneysScreen,
   ParcelsScreen,
   VehicleScreen,
 } from '@screens/';
-import { RootStackParams } from '@type/';
+import { RootDrawerParams } from '@type/';
 import {
   BoxIcon,
   CarIcon,
@@ -19,10 +18,11 @@ import {
   PeopleIcon,
 } from 'assets/icons';
 import { colorsConst, layout } from 'consts';
+import { JourneyStackScreen } from 'screens/journeys-stack-screen';
 
-import { DrawerContent } from './drawer-content';
+import { DrawerContent } from './drawer-menu/drawer-content';
 
-const RootDrawer = createDrawerNavigator<RootStackParams>();
+const RootDrawer = createDrawerNavigator<RootDrawerParams>();
 
 export function RootNavigator() {
   const { isTablet } = layout;
@@ -51,8 +51,8 @@ export function RootNavigator() {
         }}
       />
       <RootDrawer.Screen
-        name="Journeys"
-        component={JourneysScreen}
+        name="JourneyStackScreen"
+        component={JourneyStackScreen}
         options={{
           title: 'Поїздки',
           drawerIcon: ({ color }) => <GroupIcon size={22} color={color} />,

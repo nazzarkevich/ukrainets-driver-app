@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   journeyStatusCompleted: {
+    marginLeft: 90,
     backgroundColor: colorsConst.foreground.secondary,
   },
   journeyStatusNotCompleted: {
