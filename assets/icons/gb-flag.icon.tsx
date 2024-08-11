@@ -1,11 +1,11 @@
-import Svg, { Defs, Path, Rect } from 'react-native-svg';
+import Svg, { ClipPath, Defs, G, Path, Rect } from 'react-native-svg';
 
 import { SvgProps } from '@type/';
 
 export const GbFlagIcon = ({ size = 50 }: SvgProps) => {
   return (
     <Svg width={size} height={size} viewBox="0 0 17 12" fill="none">
-      <g clipPath="url(#clip0_104_5680)">
+      <G>
         <Path d="M0 0.5H17V11.5001H0V0.5Z" fill="white" />
         <Path
           d="M9.5625 0.499756H7.4375V4.96849H0V7.03099H7.4375V11.4997H9.5625V7.03099H17V4.96849H9.5625V0.499756Z"
@@ -51,11 +51,11 @@ export const GbFlagIcon = ({ size = 50 }: SvgProps) => {
           d="M12.2289 4.08695L17 1.5143V0.5L10.3478 4.08695H12.2289Z"
           fill="#D80027"
         />
-      </g>
+      </G>
       <Defs>
-        <clipPath id="clip0_104_5680">
+        <ClipPath id="clip0_104_5680">
           <Rect y="0.5" width="17" height="11" rx="2" fill="white" />
-        </clipPath>
+        </ClipPath>
       </Defs>
     </Svg>
   );

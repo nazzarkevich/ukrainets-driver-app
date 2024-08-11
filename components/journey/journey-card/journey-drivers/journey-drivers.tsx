@@ -1,11 +1,18 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { Title, UserCard, View } from 'components';
 import { typographyConst } from 'consts';
 import { User } from 'type';
 
-export const JourneyDrivers = ({ drivers }: { drivers: User[] }) => {
+import { View } from '../../../themed';
+import { Title } from '../../../title';
+import { UserCard } from '../../../user-card';
+
+export const JourneyDrivers = ({ drivers }: { drivers?: User[] }) => {
+  if (!drivers?.length) {
+    return null;
+  }
+
   return (
     <View style={styles.journeyDriversWrapper}>
       <Title>Перевізники</Title>

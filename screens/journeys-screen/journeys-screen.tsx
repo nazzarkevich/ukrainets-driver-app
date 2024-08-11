@@ -1,7 +1,6 @@
-import { Divider } from '@ui-kitten/components';
-
 import { ScreenContainer } from '@components/';
 import { RootDrawerScreenProps } from '@type/';
+import { Divider } from '@ui-kitten/components';
 
 export function JourneysScreen({
   navigation,

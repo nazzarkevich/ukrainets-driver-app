@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { ScreenContainer, Stepper, View } from 'components';
+import { ScreenContainer, Stepper, Text, View } from 'components';
 import { typographyConst } from 'consts';
 import { RootDrawerScreenProps } from 'type';
 
@@ -9,9 +9,9 @@ export function CreateJourneyScreen({
   navigation,
 }: RootDrawerScreenProps<'CreateJourneyScreen'>) {
   const stepPages = [
-    { label: 'Головна інформація', component: <>Content 1</> },
-    { label: 'Навантаження', component: <>Content 2</> },
-    { label: 'Готово', component: <>Content 3</> },
+    { label: 'Головна інформація', component: <Text>Content 1</Text> },
+    { label: 'Навантаження', component: <Text>Content 2</Text> },
+    { label: 'Готово', component: <Text>Content 3</Text> },
   ];
 
   return (

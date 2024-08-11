@@ -1,6 +1,6 @@
+import { RootDrawerScreenProps } from '@type/';
 import { Divider } from '@ui-kitten/components';
 
-import { RootDrawerScreenProps } from '@type/';
 import { ScreenContainer } from 'components';
 
 export function CouriersScreen({

@@ -2,24 +2,19 @@ import { observer } from 'mobx-react';
 import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 
-import {
-  ActiveJourneySection,
-  ScreenContainer,
-  SectionTitle,
-  Text,
-  View,
-  useRootStore,
-} from 'components';
+import { ScreenContainer, Text, View, useRootStore } from 'components';
+import { LastJourneysSection } from 'components/journey/last-journeys-section';
 import { colorsConst, typographyConst } from 'consts';
 import { RootDrawerScreenProps } from 'type';
 
 export const HomeScreen = observer(function HomeScreen({
   navigation,
 }: RootDrawerScreenProps<'Home'>) {
-  const { journeyStore } = useRootStore();
+  const { journeyStore, journeysStore } = useRootStore();
 
   useEffect(() => {
     journeyStore.fetchActiveJourney();
+    journeysStore.fetchJourneys();
   }, []);
 
   if (journeyStore.isJourneyLoading) {
@@ -35,16 +30,7 @@ export const HomeScreen = observer(function HomeScreen({
   return (
     <ScreenContainer>
       <View style={styles.homeScreen}>
-        <ActiveJourneySection />
-
-        <View style={styles.recentItems}>
-          <View>
-            <SectionTitle>Останні посилки</SectionTitle>
-          </View>
-          <View>
-            <SectionTitle>Нові клієнти</SectionTitle>
-          </View>
-        </View>
+        <LastJourneysSection />
       </View>
     </ScreenContainer>
   );

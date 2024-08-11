@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { Text, Title, View } from 'components';
 import { colorsConst, colorsPalette, typographyConst } from 'consts';
+
+import { Text, View } from '../../../themed';
+import { Title } from '../../../title';
 
 const MAX_LOAD_CAPACITY = 2000;
 
@@ -55,6 +57,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    textAlign: 'center',
     zIndex: 99,
     color: colorsConst.text.contrast,
   },

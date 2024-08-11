@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { Text } from 'components';
 import { colorsConst, typographyConst } from 'consts';
+
+import { Text } from '../themed';
 
 export const Title = ({
   size = 'm',
