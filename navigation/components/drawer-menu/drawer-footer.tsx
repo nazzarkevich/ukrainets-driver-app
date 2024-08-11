@@ -1,18 +1,18 @@
 import { Button } from '@ui-kitten/components';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import { DotsMenuIcon } from 'assets/icons';
 import { UserCard } from 'components';
 import { colorsConst, typographyConst } from 'consts';
 import { User } from 'type';
 
+import { CreateJourneyButton } from './create-journey-button';
+
 export function UserInfoSection({ driver }: { driver: User }) {
   return (
     <View style={styles.userInfoSection}>
-      <Button style={styles.createJourneyButton} onPress={() => null}>
-        <Text style={styles.label}>Створити поїздку</Text>
-      </Button>
+      <CreateJourneyButton />
 
       <View style={styles.user}>
         <UserCard
@@ -36,19 +36,6 @@ export function UserInfoSection({ driver }: { driver: User }) {
 const styles = StyleSheet.create({
   userInfoSection: {
     alignItems: 'center',
-  },
-  createJourneyButton: {
-    width: 170,
-    height: 35,
-    borderRadius: 10,
-    marginBottom: 25,
-    justifyContent: 'center',
-    alignSelf: 'center',
-    backgroundColor: colorsConst.roles.primary,
-  },
-  label: {
-    textAlign: 'center',
-    color: colorsConst.text.contrast,
   },
   title: {
     color: colorsConst.text.primary,

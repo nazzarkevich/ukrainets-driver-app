@@ -6,3 +6,5 @@ export * from './section-title';
 export * from './journey';
 export * from './user-card';
 export * from './title';
+export * from './button';
+export * from './stepper';

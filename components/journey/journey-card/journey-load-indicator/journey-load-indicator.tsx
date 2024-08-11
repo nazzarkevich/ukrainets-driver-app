@@ -41,13 +41,13 @@ const styles = StyleSheet.create({
     gap: typographyConst.spacing.s,
   },
   loadIndicator: {
-    height: 18,
+    height: 20,
     width: '100%',
     borderRadius: 15,
     backgroundColor: colorsConst.foreground.active,
   },
   loadActiveIndicator: {
-    height: 18,
+    height: 20,
     borderRadius: 15,
     backgroundColor: colorsPalette.orange,
   },
