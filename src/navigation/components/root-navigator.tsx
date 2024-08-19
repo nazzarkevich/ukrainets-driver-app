@@ -2,14 +2,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import * as React from 'react';
 
 import {
-  ClientsScreen,
-  CouriersScreen,
-  HomeScreen,
-  ParcelsScreen,
-  VehicleScreen,
-} from 'src/screens';
-import { RootDrawerParams } from '@type/';
-import {
   BoxIcon,
   CarIcon,
   CategoryIcon,
@@ -18,7 +10,15 @@ import {
   PeopleIcon,
 } from 'src/assets/icons';
 import { colorsConst, layout } from 'src/consts';
+import {
+  ClientsScreen,
+  CouriersScreen,
+  HomeScreen,
+  ParcelsScreen,
+  VehicleScreen,
+} from 'src/screens';
 import { JourneyStackScreen } from 'src/screens/journeys-stack-screen';
+import { RootDrawerParams } from 'src/type/';
 
 import { DrawerContent } from './drawer-menu/drawer-content';
 
