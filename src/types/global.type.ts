@@ -7,3 +7,13 @@ declare global {
 }
 
 export type Nullable<T> = T | null;
+
+export interface DevConfig {
+  api: {
+    driverApiUrl: string;
+  };
+}
+
+export interface ResponseData {
+  // errors?: {[]:};
+}

@@ -1,6 +1,6 @@
 import Svg, { Path } from 'react-native-svg';
 
-import { SvgProps } from '@type/';
+import { SvgProps } from 'src/types';
 
 export const SimpleUserIcon = ({ color = '#858D9D', size = 50 }: SvgProps) => {
   return (

@@ -1,6 +1,6 @@
 import Svg, { ClipPath, Defs, G, Path, Rect } from 'react-native-svg';
 
-import { SvgProps } from '@type/';
+import { SvgProps } from 'src/types';
 
 export const ParcelIcon = ({ size = 65 }: SvgProps) => {
   return (

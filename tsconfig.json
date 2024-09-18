@@ -5,16 +5,24 @@
     "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
-      "*": ["./*"],
+      "@root/*": ["src/*"],
       "@assets/*": ["src/assets"],
       "@components/*": ["src/components"],
       "@hooks/*": ["src/hooks"],
-      "@type/*": ["src/type"],
+      "@types/*": ["src/types"],
       "@stores/*": ["src/stores"],
       "@services/*": ["src/services"],
       "@navigation/*": ["src/navigation"],
       "@screens/*": ["src/screens"],
       "@constants/*": ["src/consts"],
-    }
+      "@injector/*": ["src/injector"],
+    },
+    "target": "es5",
+    "lib": ["es6"],
+    "types": ["reflect-metadata"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
   }
 }

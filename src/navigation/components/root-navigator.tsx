@@ -18,7 +18,7 @@ import {
   VehicleScreen,
 } from 'src/screens';
 import { JourneyStackScreen } from 'src/screens/journeys-stack-screen';
-import { RootDrawerParams } from 'src/type/';
+import { RootDrawerParams } from 'src/types';
 
 import { DrawerContent } from './drawer-menu/drawer-content';
 

@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 
 import { GbFlagIcon, UaFlagIcon } from 'src/assets/icons';
 import { colorsConst, typographyConst } from 'src/consts';
-import { Country, Journey } from 'src/type';
+import { Country, Journey } from 'src/types';
 
 import { JourneyCardActions } from './journey-card-actions';
 import { JourneyStatus } from './journey-card-status';

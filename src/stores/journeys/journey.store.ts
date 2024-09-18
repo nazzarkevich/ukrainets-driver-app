@@ -1,6 +1,6 @@
 import { action, computed, makeObservable, observable } from 'mobx';
 
-import { Journey, Nullable } from '@type/';
+import { Journey, Nullable } from 'src/types';
 
 import { JOURNEY_MOCK } from './journeyMock';
 

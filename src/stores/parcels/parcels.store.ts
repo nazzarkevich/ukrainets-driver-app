@@ -1,6 +1,6 @@
 import { action, computed, makeObservable, observable } from 'mobx';
 
-import { Parcel } from '@type/';
+import { Parcel } from 'src/types';
 
 import { PARCELS_MOCK } from './parcelsMock';
 

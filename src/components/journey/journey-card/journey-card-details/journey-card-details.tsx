@@ -5,7 +5,7 @@ import Toast from 'react-native-toast-message';
 
 import { CopyIcon } from 'src/assets/icons';
 import { colorsConst, typographyConst } from 'src/consts';
-import { Journey } from 'src/type';
+import { Journey } from 'src/types';
 
 import { Text, View } from '../../../themed';
 import { Title } from '../../../title';

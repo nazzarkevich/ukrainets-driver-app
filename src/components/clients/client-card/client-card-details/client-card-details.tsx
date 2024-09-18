@@ -6,7 +6,7 @@ import Toast from 'react-native-toast-message';
 import { CopyIcon } from 'src/assets/icons';
 import { Text, View } from 'src/components/themed';
 import { colorsConst, colorsPalette, typographyConst } from 'src/consts';
-import { Client } from 'src/type';
+import { Client } from 'src/types';
 
 export type ClientCardDetailsType = Pick<
   Client,

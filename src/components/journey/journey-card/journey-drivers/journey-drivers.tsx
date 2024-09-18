@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 import { typographyConst } from 'src/consts';
-import { User } from 'src/type';
+import { User } from 'src/types';
 
 import { View } from '../../../themed';
 import { Title } from '../../../title';

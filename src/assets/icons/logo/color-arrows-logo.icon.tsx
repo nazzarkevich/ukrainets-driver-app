@@ -1,6 +1,6 @@
 import Svg, { Path } from 'react-native-svg';
 
-import { SvgProps } from '@type/';
+import { SvgProps } from 'src/types';
 
 export const ColorArrowsLogoIcon = ({ width = 25, height = 25 }: SvgProps) => {
   return (

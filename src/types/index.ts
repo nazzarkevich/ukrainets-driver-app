@@ -7,3 +7,5 @@ export * from './journey.type';
 export * from './user.type';
 export * from './parcel.type';
 export * from './vehicle.type';
+export * from './injection-tokens';
+export * from './status.type';

@@ -1,6 +1,6 @@
 import { action, computed, makeObservable, observable } from 'mobx';
 
-import { Client } from '@type/';
+import { Client } from 'src/types';
 
 import { CLIENTS_MOCK } from './clientsMock';
 

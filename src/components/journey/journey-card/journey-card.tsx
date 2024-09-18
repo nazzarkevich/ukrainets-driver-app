@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 import { colorsConst, typographyConst } from 'src/consts';
-import { Journey, User } from 'src/type';
+import { Journey, User } from 'src/types';
 
 import { JourneyCardDetails } from './journey-card-details';
 import { JourneyCardHeader } from './journey-card-header';

@@ -1,0 +1,17 @@
+export const defaults = {
+  defaultCurrency: 'GBP',
+  ukraineCurrency: 'UAH',
+  emptyString: '',
+  emptyNumber: 0,
+  stringZero: '0',
+  defaultNegativeNumber: -1,
+  defaultPositiveNumber: 1,
+  notAvailable: 'N/A',
+  none: 'None',
+  slash: '/',
+  plus: '+',
+  minus: '-',
+  dot: '.',
+  pound: '£',
+  uah: '₴',
+};

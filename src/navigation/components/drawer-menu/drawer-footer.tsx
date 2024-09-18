@@ -5,7 +5,7 @@ import { StyleSheet, View } from 'react-native';
 import { DotsMenuIcon } from 'src/assets/icons';
 import { UserCard } from 'src/components';
 import { colorsConst, typographyConst } from 'src/consts';
-import { User } from 'src/type';
+import { User } from 'src/types';
 
 import { CreateJourneyButton } from './create-journey-button';
 

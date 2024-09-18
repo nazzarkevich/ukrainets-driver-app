@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 
 import { ScreenContainer, Stepper, Text, View } from 'src/components';
 import { typographyConst } from 'src/consts';
-import { RootDrawerScreenProps } from 'src/type';
+import { RootDrawerScreenProps } from 'src/types';
 
 export function CreateJourneyScreen({
   navigation,

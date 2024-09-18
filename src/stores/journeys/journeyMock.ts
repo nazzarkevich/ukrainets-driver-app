@@ -4,7 +4,7 @@ import {
   ParcelTypeEnum,
   PaymentStatusEnum,
   UserTypesEnum,
-} from 'src/type';
+} from 'src/types';
 
 export const DRIVER_MOCK = {
   id: '1332',

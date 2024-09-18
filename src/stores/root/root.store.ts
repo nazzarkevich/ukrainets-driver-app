@@ -1,19 +1,21 @@
+import { inject, injectable } from 'inversify';
+
 import { ParcelsStore } from 'src/stores/parcels';
+import { injectionTokens } from 'src/types';
 
+import { AuthStore } from '../auth';
 import { ClientsStore } from '../clients';
-import { JourneyStore } from '../journey';
-import { JourneysStore } from '../journeys';
+import { JourneyStore, JourneysStore } from '../journeys';
+import { UserStore } from '../user';
 
+@injectable()
 export class RootStore {
-  clientsStore: ClientsStore;
-  journeysStore: JourneysStore;
-  journeyStore: JourneyStore;
-  parcelsStore: ParcelsStore;
-
-  constructor() {
-    this.clientsStore = new ClientsStore();
-    this.journeysStore = new JourneysStore();
-    this.journeyStore = new JourneyStore();
-    this.parcelsStore = new ParcelsStore();
-  }
+  constructor(
+    @inject(injectionTokens.authStore) public authStore: AuthStore,
+    @inject(injectionTokens.clientsStore) public clientsStore: ClientsStore,
+    @inject(injectionTokens.journeyStore) public journeyStore: JourneyStore,
+    @inject(injectionTokens.journeysStore) public journeysStore: JourneysStore,
+    @inject(injectionTokens.parcelsStore) public parcelsStore: ParcelsStore,
+    @inject(injectionTokens.userStore) public userStore: UserStore,
+  ) {}
 }

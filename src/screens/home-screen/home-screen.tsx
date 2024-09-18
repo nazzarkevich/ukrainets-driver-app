@@ -13,12 +13,12 @@ import {
   useRootStore,
 } from 'src/components';
 import { colorsConst, typographyConst } from 'src/consts';
-import { RootDrawerScreenProps } from 'src/type';
+import { RootDrawerScreenProps } from 'src/types';
 
 export const HomeScreen = observer(function HomeScreen({
   navigation,
 }: RootDrawerScreenProps<'Home'>) {
-  const { journeyStore, journeysStore, clientsStore, parcelsStore } =
+  const { journeyStore, journeysStore, clientsStore, parcelsStore, userStore } =
     useRootStore();
 
   useEffect(() => {
@@ -26,6 +26,7 @@ export const HomeScreen = observer(function HomeScreen({
     journeyStore.fetchActiveJourney();
     clientsStore.fetchClients();
     journeysStore.fetchJourneys();
+    userStore.fetchUserDetails();
   }, []);
 
   if (journeyStore.isJourneyLoading) {

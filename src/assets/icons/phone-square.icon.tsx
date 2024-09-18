@@ -1,6 +1,6 @@
 import Svg, { Path, Rect } from 'react-native-svg';
 
-import { SvgProps } from '@type/';
+import { SvgProps } from 'src/types';
 
 export const PhoneSquareIcon = ({ color = '#60CB74', size = 50 }: SvgProps) => {
   return (

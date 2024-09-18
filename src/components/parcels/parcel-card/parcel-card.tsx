@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { SmallCard } from 'src/components/small-card';
-import { Parcel } from 'src/type';
+import { Parcel } from 'src/types';
 
 import { ParcelCardDetails } from './parcel-card-details';
 import { ParcelCardIcon } from './parcel-card-icon';

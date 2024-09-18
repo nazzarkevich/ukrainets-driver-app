@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 import { Text, View } from 'src/components/themed';
-import { Parcel, ParcelTypeEnum } from 'src/type';
+import { Parcel, ParcelTypeEnum } from 'src/types';
 
 export type ParcelCardDetailsType = Pick<
   Parcel,

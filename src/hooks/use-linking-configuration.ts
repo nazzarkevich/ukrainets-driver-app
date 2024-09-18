@@ -7,7 +7,7 @@
 import { LinkingOptions } from '@react-navigation/native';
 import * as Linking from 'expo-linking';
 
-import { RootDrawerParams } from '@type/';
+import { RootDrawerParams } from 'src/types';
 
 export function useLinkingConfiguration(): {
   linkingConfiguration: LinkingOptions<RootDrawerParams>;

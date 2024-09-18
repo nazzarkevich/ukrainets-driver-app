@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 
 import { colorsConst, typographyConst } from 'src/consts';
-import { UserTypesEnum } from 'src/type';
+import { UserTypesEnum } from 'src/types';
 
 import { Text, View } from '../themed';
 

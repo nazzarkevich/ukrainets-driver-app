@@ -3,7 +3,7 @@ import {
   DeliveryStatusEnum,
   ParcelTypeEnum,
   PaymentStatusEnum,
-} from 'src/type';
+} from 'src/types';
 
 export const JOURNEYS_MOCK = [
   {

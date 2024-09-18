@@ -2,7 +2,7 @@ import { DrawerContentComponentProps } from '@react-navigation/drawer';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { DRIVER_MOCK } from 'src/stores/journey/journeyMock';
+import { DRIVER_MOCK } from 'src/stores/journeys/journeyMock';
 
 import { UserInfoSection } from './drawer-footer';
 import { DrawerMainContentMenu } from './drawer-main-menu';

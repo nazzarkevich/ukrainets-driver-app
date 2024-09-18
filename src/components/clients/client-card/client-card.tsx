@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { SmallCard } from 'src/components/small-card';
-import { Client } from 'src/type';
+import { Client } from 'src/types';
 
 import { ClientCardDetails } from './client-card-details';
 import { ClientCardImage } from './client-card-image';

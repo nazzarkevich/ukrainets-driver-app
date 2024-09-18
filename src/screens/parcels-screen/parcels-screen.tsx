@@ -1,9 +1,11 @@
 import { Divider } from '@ui-kitten/components';
 
 import { ScreenContainer } from '@components/';
-import { RootDrawerScreenProps } from '@type/';
+import { RootDrawerScreenProps } from 'src/types';
 
-export function ParcelsScreen({ navigation }: RootDrawerScreenProps<'Parcels'>) {
+export function ParcelsScreen({
+  navigation,
+}: RootDrawerScreenProps<'Parcels'>) {
   return (
     <ScreenContainer title="Посилки">
       <Divider />

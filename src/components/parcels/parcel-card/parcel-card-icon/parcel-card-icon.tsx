@@ -9,7 +9,7 @@ import {
 } from 'src/assets/icons';
 import { View } from 'src/components/themed';
 import { colorsPalette } from 'src/consts';
-import { Parcel, ParcelTypeEnum } from 'src/type';
+import { Parcel, ParcelTypeEnum } from 'src/types';
 
 export type ParcelCardIcon = Pick<Parcel, 'type'>;
 
