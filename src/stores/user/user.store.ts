@@ -1,12 +1,13 @@
-import { AuthResource } from '@root/services';
-import { injectionTokens, Nullable } from '@root/types';
-import { inject } from 'inversify';
+import { AuthResource } from 'src/services';
+import { injectionTokens, Nullable } from 'src/types';
+import { inject, injectable } from 'inversify';
 import { action, makeObservable, observable } from 'mobx';
 
 interface UserDetails {
   name: string;
 }
 
+@injectable()
 export class UserStore {
   @observable user: Nullable<UserDetails> = null;
 
@@ -19,7 +20,9 @@ export class UserStore {
     try {
       const userDetails = await this.api.fetchMe();
 
-      this.setUserDetails(userDetails);
+      console.log('userDetails: ', userDetails);
+      console.log('TEST');
+      // this.setUserDetails(userDetails);
     } catch (err) {
       console.log('ERROR: ', err);
     }

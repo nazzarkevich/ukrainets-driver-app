@@ -1,4 +1,4 @@
-import { Avatar } from '@ui-kitten/components';
+// import { Avatar } from '@ui-kitten/components';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
@@ -24,10 +24,10 @@ export const UserCard = ({
 
   return (
     <View style={styles.userCard}>
-      <Avatar
+      {/* <Avatar
         size="medium"
         source={require('../../assets/images/user-avatar.png')}
-      />
+      /> */}
 
       <View>
         <View style={styles.userName}>

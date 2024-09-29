@@ -3,7 +3,9 @@ import { action, computed, makeObservable, observable } from 'mobx';
 import { Journey, Nullable } from 'src/types';
 
 import { JOURNEY_MOCK } from './journeyMock';
+import { injectable } from 'inversify';
 
+@injectable()
 export class JourneyStore {
   @observable activeJourney: Nullable<Journey> = null;
   @observable isJourneyLoading = false;

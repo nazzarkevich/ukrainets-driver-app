@@ -3,10 +3,10 @@ import { inject, injectable } from 'inversify';
 import { ParcelsStore } from 'src/stores/parcels';
 import { injectionTokens } from 'src/types';
 
+import { UserStore } from '../user';
 import { AuthStore } from '../auth';
 import { ClientsStore } from '../clients';
 import { JourneyStore, JourneysStore } from '../journeys';
-import { UserStore } from '../user';
 
 @injectable()
 export class RootStore {

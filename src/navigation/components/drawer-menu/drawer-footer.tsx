@@ -1,4 +1,4 @@
-import { Button } from '@ui-kitten/components';
+// import { Button } from '@ui-kitten/components';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
@@ -21,13 +21,13 @@ export function UserInfoSection({ driver }: { driver: User }) {
           firstName={driver.firstName}
         />
 
-        <Button
+        {/* <Button
           appearance="ghost"
           onPress={() => null}
           accessoryLeft={
             <DotsMenuIcon color={colorsConst.roles.primary} size={24} />
           }
-        />
+        /> */}
       </View>
     </View>
   );

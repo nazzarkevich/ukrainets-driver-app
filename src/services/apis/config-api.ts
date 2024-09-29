@@ -6,24 +6,22 @@ import Axios, {
   InternalAxiosRequestConfig,
 } from 'axios';
 
-import { AuthStore } from 'src/stores';
 import { StatusCodes } from 'src/types';
 
 import { notificationService } from '../notification';
 
-interface ResponseError {
-  code: string;
+interface ErrorDetails {
+  error: string;
   message: string;
-  values?: any;
+  statusCode: number;
 }
 
 interface ApiInstanceOptions {
   baseURL: string;
-  authStore: () => AuthStore;
+  getAccessToken: () => Promise<string>;
 }
 
 interface CustomHandlers {
-  useCustomRequestInterceptor?: (data: unknown) => InternalAxiosRequestConfig;
   useCustomResponseErrorHandler?: boolean;
   useAnonRequestHeader?: boolean;
 }
@@ -32,14 +30,16 @@ export class ApiConfig {
   httpRequest: AxiosInstance;
   fileRequest: AxiosInstance;
 
-  private readonly authStore: () => AuthStore;
+  private readonly getAccessToken: () => Promise<string>;
 
   constructor(options: ApiInstanceOptions) {
+    console.log('CONSTRUCTOR');
+    console.log('this.authStore(): ', options.getAccessToken);
     this.initInstance(options);
     this.applyRequestInterceptors(this.httpRequest);
     this.applyResponseInterceptors(this.httpRequest);
 
-    this.authStore = options.authStore;
+    this.getAccessToken = options.getAccessToken;
   }
 
   private initInstance({ baseURL }: ApiInstanceOptions): void {
@@ -51,15 +51,14 @@ export class ApiConfig {
   private applyRequestInterceptors(instance: AxiosInstance): void {
     instance.interceptors.request.use(
       async (request: InternalAxiosRequestConfig) => {
+        // console.log('request: ', request);
         const requestData = request.data as CustomHandlers;
 
-        if (requestData && requestData.useCustomRequestInterceptor) {
-          return requestData.useCustomRequestInterceptor(
-            request,
-          ) as InternalAxiosRequestConfig;
+        if (requestData && requestData?.useAnonRequestHeader) {
+          return request;
         }
 
-        const token = await this.authStore().getAccessToken();
+        const token = await this.getAccessToken();
 
         request.headers = {
           ...request.headers,
@@ -104,18 +103,14 @@ export class ApiConfig {
   }
 
   private showErrorNotifications(
-    error: AxiosError<{ errors: ResponseError[] }>,
+    error: AxiosError<{ errorDetails: ErrorDetails }>,
   ) {
     if (error.response && error.response.data) {
-      error.response.data.errors.forEach((error: ResponseError) => {
-        notificationService.showError({
-          message: error.values,
-          details: error.message,
-        });
-      });
-    } else {
+      const errorDetails = error.response.data.errorDetails;
+
       notificationService.showError({
-        message: error.message,
+        message: errorDetails.message,
+        details: errorDetails.error,
       });
     }
   }

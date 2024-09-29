@@ -3,7 +3,9 @@ import { action, computed, makeObservable, observable } from 'mobx';
 import { Client } from 'src/types';
 
 import { CLIENTS_MOCK } from './clientsMock';
+import { injectable } from 'inversify';
 
+@injectable()
 export class ClientsStore {
   @observable clients: Client[] = [];
   @observable isClientsLoading = false;

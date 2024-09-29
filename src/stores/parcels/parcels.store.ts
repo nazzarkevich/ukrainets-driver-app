@@ -3,7 +3,9 @@ import { action, computed, makeObservable, observable } from 'mobx';
 import { Parcel } from 'src/types';
 
 import { PARCELS_MOCK } from './parcelsMock';
+import { injectable } from 'inversify';
 
+@injectable()
 export class ParcelsStore {
   @observable parcels: Parcel[] = [];
   @observable isParcelsLoading = false;

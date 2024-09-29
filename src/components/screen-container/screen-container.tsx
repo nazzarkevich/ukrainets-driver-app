@@ -1,4 +1,4 @@
-import { Text as EvaText } from '@ui-kitten/components';
+// import { Text as EvaText } from '@ui-kitten/components';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
@@ -20,7 +20,7 @@ export const ScreenContainer = ({
     <StyledView style={styles.container}>
       <View style={styles.header}>
         {showBack && <BackButton />}
-        {title && <EvaText category="h5">{title}</EvaText>}
+        {/* {title && <EvaText category="h5">{title}</EvaText>} */}
       </View>
       {children}
     </StyledView>

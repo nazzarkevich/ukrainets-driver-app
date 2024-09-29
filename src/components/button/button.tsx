@@ -1,6 +1,6 @@
-import { Button as UIButton } from '@ui-kitten/components';
+// import { Button as UIButton } from '@ui-kitten/components';
 import React from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View, Button as RnButton } from 'react-native';
 
 import { colorsConst } from 'src/consts';
 
@@ -10,7 +10,7 @@ export const Button = ({
   disabled = false,
   onPress,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   type?: 'primary' | 'secondary';
   disabled?: boolean;
   onPress: () => void;
@@ -18,23 +18,29 @@ export const Button = ({
   const isPrimary = type === 'primary';
 
   return (
-    <UIButton
-      disabled={disabled}
-      onPress={() => onPress()}
-      status={isPrimary ? 'primary' : 'basic'}
-      style={[styles.buttonContainer, isPrimary && styles.primary]}>
-      <Text style={[styles.label, isPrimary && styles.primaryLabel]}>
-        {children}
-      </Text>
-    </UIButton>
+    <View>
+      <RnButton title="Press Me" onPress={() => console.log('test')} />
+    </View>
   );
+
+  // return (
+  //   <UIButton
+  //     disabled={disabled}
+  //     onPress={() => onPress()}
+  //     status={isPrimary ? 'primary' : 'basic'}
+  //     style={[styles.buttonContainer, isPrimary && styles.primary]}>
+  //     <Text style={[styles.label, isPrimary && styles.primaryLabel]}>
+  //       {children}
+  //     </Text>
+  //   </UIButton>
+  // );
 };
 
 const styles = StyleSheet.create({
   buttonContainer: {
     width: 170,
     height: 35,
-    border: 0,
+    // border: 0,
     borderRadius: 10,
     alignSelf: 'center',
     justifyContent: 'center',

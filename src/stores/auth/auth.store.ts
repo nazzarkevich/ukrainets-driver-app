@@ -1,9 +1,11 @@
-import { defaults } from '@root/consts';
-import { AuthResource } from '@root/services';
-import { injectionTokens } from '@root/types';
-import { inject } from 'inversify';
-import { action, makeObservable, observable } from 'mobx';
+import { defaults } from 'src/consts';
+import { AuthResource } from 'src/services';
+import { injectionTokens } from 'src/types';
+import { inject, injectable } from 'inversify';
+import { makeObservable, observable } from 'mobx';
 
+// @provide(injectionTokens.authStore)
+@injectable()
 export class AuthStore {
   @observable token: string;
   @observable tokenSchema = 'Bearer';
@@ -15,7 +17,9 @@ export class AuthStore {
 
   async getAccessToken(): Promise<string> {
     try {
+      console.log('in token');
       const token = await this.getToken();
+      // const token = '';
 
       this.setAccessToken(token);
 
@@ -25,14 +29,14 @@ export class AuthStore {
     }
   }
 
-  @action
+  // @action
   private setAccessToken(token: string): void {
     this.token = token;
   }
 
-  @action
-  private async getToken(): Promise<string> {
-    return this.api.login();
+  // @action
+  private async getToken(): Promise<any> {
+    return await this.api.login();
   }
 
   private get authorizationSchema(): string {

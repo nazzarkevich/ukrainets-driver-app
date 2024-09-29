@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { Icon } from '@ui-kitten/components';
+// import { Icon } from '@ui-kitten/components';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
@@ -43,11 +43,11 @@ const Step = ({
         <View style={{ opacity: isCompletedStep ? 1 : 0.3 }}>
           {isCompletedStep && !isActive && (
             <View style={styles.iconWrapper}>
-              <Icon
+              {/* <Icon
                 name="checkmark-circle-2"
                 style={styles.completeIcon}
                 fill={colorsConst.roles.primary}
-              />
+              /> */}
             </View>
           )}
 

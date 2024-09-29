@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
-import { StyledView, Text } from '@components/themed';
+import { StyledView, Text } from 'src/components/themed';
 import { RootDrawerScreenProps } from 'src/types';
 
 export function NotFoundScreen({

@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 
-import { CreateJourneyScreen, JourneysScreen } from '@screens/';
+import { CreateJourneyScreen, JourneysScreen } from 'src/screens';
 import { JourneysStackParams } from 'src/types';
 
 const JourneysStack = createNativeStackNavigator<JourneysStackParams>();

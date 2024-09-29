@@ -1,11 +1,12 @@
 import { AxiosInstance } from 'axios';
-import { inject } from 'inversify';
+import { inject, injectable } from 'inversify';
 
 import { devConfig } from 'src/consts';
 import { injectionTokens } from 'src/types';
 
 import { ApiConfig } from './config-api';
 
+@injectable()
 export class ClientsResource {
   private readonly client: AxiosInstance;
 
@@ -15,8 +16,9 @@ export class ClientsResource {
 
   constructor(
     @inject(injectionTokens.apiConfigFactory)
-    apiConfigFactory: ({ baseURL }: { baseURL: string }) => ApiConfig,
+    public apiConfigFactory: ({ baseURL }: { baseURL: string }) => ApiConfig,
   ) {
+    console.log('CONSTRUCT CLIENTS-API');
     this.client = apiConfigFactory({
       baseURL: devConfig.api.driverApiUrl,
     }).httpRequest;

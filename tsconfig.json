@@ -5,6 +5,7 @@
     "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
+      "@/*": ["./src/*"],
       "@root/*": ["src/*"],
       "@assets/*": ["src/assets"],
       "@components/*": ["src/components"],

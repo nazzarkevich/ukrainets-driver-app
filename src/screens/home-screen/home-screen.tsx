@@ -1,4 +1,4 @@
-import { Divider } from '@ui-kitten/components';
+// import { Divider } from '@ui-kitten/components';
 import { observer } from 'mobx-react';
 import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
@@ -22,6 +22,7 @@ export const HomeScreen = observer(function HomeScreen({
     useRootStore();
 
   useEffect(() => {
+    console.log('USE EFFECT HOME SCREEN --');
     parcelsStore.fetchParcels();
     journeyStore.fetchActiveJourney();
     clientsStore.fetchClients();
@@ -41,7 +42,7 @@ export const HomeScreen = observer(function HomeScreen({
 
   return (
     <ScreenContainer title="Головна">
-      <Divider />
+      {/* <Divider /> */}
 
       <View style={styles.homeScreen}>
         <NewClientsSection />

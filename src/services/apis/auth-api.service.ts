@@ -1,14 +1,15 @@
-import { AxiosInstance } from 'axios';
-import { inject } from 'inversify';
+import { AxiosError, AxiosInstance } from 'axios';
+import { inject, injectable } from 'inversify';
 
 import { devConfig } from 'src/consts';
 import { injectionTokens } from 'src/types';
 
 import { ApiConfig } from './config-api';
+import { HttpClientBaseFactory } from './http-client-base.factory';
 
-export class AuthResource {
+@injectable()
+export class AuthResource extends HttpClientBaseFactory {
   private readonly client: AxiosInstance;
-
   private readonly resources = {
     me: 'auth/me',
     signup: 'auth/signup',
@@ -17,22 +18,26 @@ export class AuthResource {
 
   constructor(
     @inject(injectionTokens.apiConfigFactory)
-    apiConfigFactory: ({ baseURL }: { baseURL: string }) => ApiConfig,
+    public apiConfigFactory: ({ baseURL }: { baseURL: string }) => ApiConfig,
   ) {
-    this.client = apiConfigFactory({
-      baseURL: devConfig.api.driverApiUrl,
-    }).httpRequest;
+    super(devConfig.api.driverApiUrl);
+    this.client = this.createClient();
   }
 
   async fetchMe() {
-    const { data } = await this.client.get(this.resources.me);
+    console.log('this.resources.me:', this.resources.me);
+    console.log('this.client:', this.client);
 
-    return data;
+    try {
+      const data = await this.client.get(this.resources.me);
+
+      console.log('-> data: ', data);
+    } catch (err: any) {
+      console.log('ERR: ', err?.response);
+    }
   }
 
   async login() {
-    const { data } = await this.client.get(this.resources.login);
-
-    return data;
+    return await this.client.get(this.resources.login);
   }
 }
