@@ -1,3 +1,4 @@
+import 'global.css';
 import 'reflect-metadata';
 import 'react-native-gesture-handler';
 

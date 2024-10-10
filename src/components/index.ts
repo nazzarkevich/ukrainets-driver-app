@@ -11,3 +11,4 @@ export * from './small-card';
 export * from './parcels';
 export * from './button';
 export * from './stepper';
+export * from './loader';

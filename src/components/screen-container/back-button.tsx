@@ -1,33 +1,21 @@
-import { useNavigation } from '@react-navigation/native';
-// import { Button } from '@ui-kitten/components';
 import React from 'react';
-import { Button, StyleSheet, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-import { ArrowLeftIcon } from 'src/assets/icons';
+import { MoveLeft } from 'lucide-react-native';
+import { Button, ButtonText, ButtonIcon } from '@/components/ui/button';
 
 export const BackButton = (): React.ReactElement => {
   const { navigate } = useNavigation();
 
   return (
-    <View>
-      <Button title="Press Me" onPress={() => console.log('test')} />
-    </View>
+    <Button
+      className="text-sky-500"
+      size="sm"
+      action="primary"
+      variant="outline"
+      onPress={() => navigate('Journeys')}>
+      <ButtonIcon color="red" as={MoveLeft} />
+      <ButtonText>Text</ButtonText>
+    </Button>
   );
-
-  // return (
-  //   <Button
-  //     style={styles.backButton}
-  //     size="small"
-  //     status="basic"
-  //     appearance="ghost"
-  //     onPress={() => navigate('Journeys')}>
-  //     <ArrowLeftIcon size={20} />
-  //   </Button>
-  // );
 };
-
-const styles = StyleSheet.create({
-  backButton: {
-    width: 50,
-  },
-});

@@ -20,11 +20,9 @@ export class UserStore {
     try {
       const userDetails = await this.api.fetchMe();
 
-      console.log('userDetails: ', userDetails);
-      console.log('TEST');
       // this.setUserDetails(userDetails);
     } catch (err) {
-      console.log('ERROR: ', err);
+      // console.log('ERROR: ', err);
     }
   }
 

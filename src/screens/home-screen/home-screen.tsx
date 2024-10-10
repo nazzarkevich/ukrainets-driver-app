@@ -1,4 +1,4 @@
-// import { Divider } from '@ui-kitten/components';
+import { Divider } from '@/components/ui/divider';
 import { observer } from 'mobx-react';
 import React, { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
@@ -6,9 +6,9 @@ import { StyleSheet } from 'react-native';
 import {
   LastJourneysSection,
   LastParcelsSection,
+  Loader,
   NewClientsSection,
   ScreenContainer,
-  Text,
   View,
   useRootStore,
 } from 'src/components';
@@ -34,7 +34,7 @@ export const HomeScreen = observer(function HomeScreen({
     return (
       <ScreenContainer>
         <View style={styles.homeScreen}>
-          <Text>LOADING...</Text>
+          <Loader />
         </View>
       </ScreenContainer>
     );
@@ -42,7 +42,7 @@ export const HomeScreen = observer(function HomeScreen({
 
   return (
     <ScreenContainer title="Головна">
-      {/* <Divider /> */}
+      <Divider className="bg-gray-300" />
 
       <View style={styles.homeScreen}>
         <NewClientsSection />

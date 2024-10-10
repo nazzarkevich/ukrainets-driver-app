@@ -1,8 +1,8 @@
-// import { Button as UIButton } from '@ui-kitten/components';
 import React from 'react';
-import { StyleSheet, Text, View, Button as RnButton } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import { colorsConst } from 'src/consts';
+import { Button as UIButton, ButtonText } from '@/components/ui/button';
 
 export const Button = ({
   children,
@@ -18,22 +18,21 @@ export const Button = ({
   const isPrimary = type === 'primary';
 
   return (
-    <View>
-      <RnButton title="Press Me" onPress={() => console.log('test')} />
-    </View>
+    <UIButton
+      disabled={disabled}
+      onPress={onPress}
+      action={isPrimary ? 'primary' : 'secondary'}
+      className={`h-[35px] w-[170px] justify-center self-center rounded-lg ${
+        isPrimary ? 'bg-primary' : 'bg-secondary'
+      }`}>
+      <ButtonText
+        className={`text-center ${
+          isPrimary ? 'text-contrast' : 'text-primary'
+        }`}>
+        {children}
+      </ButtonText>
+    </UIButton>
   );
-
-  // return (
-  //   <UIButton
-  //     disabled={disabled}
-  //     onPress={() => onPress()}
-  //     status={isPrimary ? 'primary' : 'basic'}
-  //     style={[styles.buttonContainer, isPrimary && styles.primary]}>
-  //     <Text style={[styles.label, isPrimary && styles.primaryLabel]}>
-  //       {children}
-  //     </Text>
-  //   </UIButton>
-  // );
 };
 
 const styles = StyleSheet.create({

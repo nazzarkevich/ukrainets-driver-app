@@ -1,4 +1,4 @@
-// import { Divider } from '@ui-kitten/components';
+import { Divider } from '@/components/ui/divider';
 
 import { Button, ScreenContainer } from 'src/components';
 import { RootDrawerScreenProps } from 'src/types';
@@ -9,7 +9,7 @@ export function VehicleScreen({
   return (
     <ScreenContainer title="Автомобілі">
       <Button onPress={() => console.log('test')} />
-      {/* <Divider /> */}
+      <Divider />
     </ScreenContainer>
   );
 }

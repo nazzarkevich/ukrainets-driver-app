@@ -1,7 +1,7 @@
-// import { Text as EvaText } from '@ui-kitten/components';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
+import { Text } from '@/components/ui/text';
 import { typographyConst } from 'src/consts';
 
 import { BackButton } from './back-button';
@@ -20,7 +20,11 @@ export const ScreenContainer = ({
     <StyledView style={styles.container}>
       <View style={styles.header}>
         {showBack && <BackButton />}
-        {/* {title && <EvaText category="h5">{title}</EvaText>} */}
+        {title && (
+          <Text italic size="xl">
+            {title}
+          </Text>
+        )}
       </View>
       {children}
     </StyledView>
