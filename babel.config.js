@@ -1,20 +1,30 @@
 module.exports = function (api) {
   api.cache(true);
   return {
-    presets: ['babel-preset-expo'],
+    presets: [
+      [
+        'babel-preset-expo',
+        {
+          jsxImportSource: 'nativewind',
+        },
+      ],
+      'nativewind/babel',
+    ],
     env: {
       production: {
         plugins: ['react-native-paper/babel'],
       },
     },
     plugins: [
-      ['react-native-reanimated/plugin'],
+      'babel-plugin-transform-typescript-metadata',
       [
         '@babel/plugin-proposal-decorators',
         {
           legacy: true,
         },
       ],
+      ['@babel/plugin-proposal-class-properties', { loose: true }],
+      ['react-native-reanimated/plugin'],
       [
         'module-resolver',
         {
@@ -27,17 +37,18 @@ module.exports = function (api) {
             '.ts',
             '.tsx',
           ],
-          root: ['.'],
+          root: ['./'],
           alias: {
-            '@assets': './assets/',
-            '@components': './components/',
-            '@hooks': './hooks/',
-            '@type': './type/',
-            '@stores': './stores/',
-            '@services': './services/',
-            '@navigation': './navigation/',
-            '@screens': './screens/',
-            '@constants': './constants/',
+            '@': './',
+            '@assets': './src/assets/',
+            '@components': './src/components/',
+            '@hooks': './src/hooks/',
+            '@type': './src/type/',
+            '@stores': './src/stores/',
+            '@services': './src/services/',
+            '@navigation': './src/navigation/',
+            '@screens': './src/screens/',
+            '@constants': './src/constants/',
           },
         },
       ],

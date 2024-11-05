@@ -13,6 +13,7 @@ module.exports = {
   ],
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
+    '@typescript-eslint/no-explicit-any': 'warning',
     '@typescript-eslint/no-namespace': [2, { allowDeclarations: true }],
     'prettier/prettier': ['error', { endOfLine: 'auto' }],
     'sort-imports': [
