@@ -1,5 +1,6 @@
 export const injectionTokens = {
   apiConfigFactory: Symbol.for('apiConfigFactory'),
+  authResourceFactory: Symbol.for('authResourceFactory'),
 
   authResource: Symbol.for('authResource'),
   clientsResource: Symbol.for('clientsResource'),

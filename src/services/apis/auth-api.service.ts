@@ -8,20 +8,25 @@ import { ApiConfig } from './config-api';
 import { HttpClientBaseFactory } from './http-client-base.factory';
 
 @injectable()
-export class AuthResource extends HttpClientBaseFactory {
+export class AuthResource {
   private readonly client: AxiosInstance;
+  private readonly clientWithAuth: AxiosInstance;
   private readonly resources = {
     me: 'auth/me',
     signup: 'auth/signup',
     login: 'auth/login',
+    // login: 'posts',
   };
 
   constructor(
     @inject(injectionTokens.apiConfigFactory)
     public apiConfigFactory: ({ baseURL }: { baseURL: string }) => ApiConfig,
   ) {
-    super(devConfig.api.driverApiUrl);
-    this.client = this.createClient();
+    // super(devConfig.api.driverApiUrl);
+    // this.client = this.createClient();
+    this.clientWithAuth = this.apiConfigFactory({
+      baseURL: devConfig.api.driverApiUrl,
+    }).httpRequest;
   }
 
   async fetchMe() {
@@ -29,7 +34,7 @@ export class AuthResource extends HttpClientBaseFactory {
     console.log('this.client:', this.client);
 
     try {
-      const data = await this.client.get(this.resources.me);
+      const data = await this.clientWithAuth.get(this.resources.me);
 
       console.log('-> data: ', data);
     } catch (err: any) {
@@ -37,7 +42,21 @@ export class AuthResource extends HttpClientBaseFactory {
     }
   }
 
-  async login() {
-    return await this.client.get(this.resources.login);
-  }
+  login = async ({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }): Promise<void> => {
+    try {
+      return await this.clientWithAuth.post(this.resources.login, {
+        email,
+        password,
+        useAnonRequestHeader: true,
+      });
+    } catch (error: any) {
+      console.log('Error -> ', error);
+    }
+  };
 }

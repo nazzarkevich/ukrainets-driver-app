@@ -1,17 +1,16 @@
-import { action, computed, makeObservable, observable } from 'mobx';
+import { action, computed, makeAutoObservable } from 'mobx';
+import { injectable } from 'inversify';
 
 import { Parcel } from 'src/types';
-
 import { PARCELS_MOCK } from './parcelsMock';
-import { injectable } from 'inversify';
 
 @injectable()
 export class ParcelsStore {
-  @observable parcels: Parcel[] = [];
-  @observable isParcelsLoading = false;
+  parcels: Parcel[] = [];
+  isParcelsLoading = false;
 
   constructor() {
-    makeObservable(this);
+    makeAutoObservable(this);
   }
 
   @computed

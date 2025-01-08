@@ -1,4 +1,4 @@
-import { action, computed, makeObservable, observable } from 'mobx';
+import { action, computed, makeAutoObservable } from 'mobx';
 
 import { Journey } from 'src/types';
 
@@ -7,11 +7,11 @@ import { injectable } from 'inversify';
 
 @injectable()
 export class JourneysStore {
-  @observable journeys: Journey[] = [];
-  @observable isJourneysLoading = false;
+  journeys: Journey[] = [];
+  isJourneysLoading = false;
 
   constructor() {
-    makeObservable(this);
+    makeAutoObservable(this);
   }
 
   @computed

@@ -1,25 +1,25 @@
 import { defaults } from 'src/consts';
 import { AuthResource } from 'src/services';
 import { injectionTokens } from 'src/types';
-import { inject, injectable } from 'inversify';
-import { makeObservable, observable } from 'mobx';
+import { injectable } from 'inversify';
+import { makeAutoObservable } from 'mobx';
 
-// @provide(injectionTokens.authStore)
 @injectable()
 export class AuthStore {
-  @observable token: string;
-  @observable tokenSchema = 'Bearer';
-  @observable isAuthenticated = false;
+  token: string;
+  tokenSchema = 'Bearer';
+  isAuthenticated = false;
 
-  constructor(@inject(injectionTokens.authResource) private api: AuthResource) {
-    makeObservable(this);
+  constructor() {
+    makeAutoObservable(this);
   }
 
   async getAccessToken(): Promise<string> {
     try {
       console.log('in token');
-      const token = await this.getToken();
-      // const token = '';
+      // const token = await this.getToken();
+      const token =
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsIm5hbWUiOiJKYXkiLCJpYXQiOjE3MzYxOTg0MjMsImV4cCI6MTczNjI4NDgyM30.5s0QnKdt8DF5aaUzAgBgpTKTsUyi2Bp3uBje4vex758';
 
       this.setAccessToken(token);
 
@@ -36,7 +36,7 @@ export class AuthStore {
 
   // @action
   private async getToken(): Promise<any> {
-    return await this.api.login();
+    // return await this.api.login();
   }
 
   private get authorizationSchema(): string {

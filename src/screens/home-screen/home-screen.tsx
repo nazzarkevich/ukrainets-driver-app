@@ -27,7 +27,7 @@ export const HomeScreen = observer(function HomeScreen({
     journeyStore.fetchActiveJourney();
     clientsStore.fetchClients();
     journeysStore.fetchJourneys();
-    userStore.fetchUserDetails();
+    // userStore.fetchUserDetails();
   }, []);
 
   if (journeyStore.isJourneyLoading) {

@@ -8,16 +8,18 @@ import { ColorSchemeName } from 'react-native';
 
 import { useLinkingConfiguration } from 'src/hooks';
 
-import { RootNavigator } from './components';
+import { AuthNavigator, RootNavigator } from './components';
 
 export function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   const { linkingConfiguration } = useLinkingConfiguration();
+  // const { isAuthenticated } = useAuth();
+  const isAuthenticated = false;
 
   return (
     <NavigationContainer
       linking={linkingConfiguration}
       theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <RootNavigator />
+      {isAuthenticated ? <RootNavigator /> : <AuthNavigator />}
     </NavigationContainer>
   );
 }

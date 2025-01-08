@@ -17,11 +17,16 @@ export type RootDrawerParams = {
   Modal: undefined;
   NotFound: undefined;
   CreateJourneyScreen: undefined;
+  LoginScreen: undefined;
 };
 
 export type JourneysStackParams = {
   Journeys: undefined;
   CreateJourneyScreen: undefined;
+};
+
+export type AuthStackParams = {
+  LoginScreen: undefined;
 };
 
 export type RootDrawerScreenProps<Screen extends keyof RootDrawerParams> =

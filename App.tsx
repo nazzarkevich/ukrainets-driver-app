@@ -3,7 +3,7 @@ import 'reflect-metadata';
 import 'react-native-gesture-handler';
 
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Toast from 'react-native-toast-message';
 
 import { RootStoreProvider } from 'src/components/';
@@ -18,17 +18,19 @@ export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
-  useEffect(() => {
-    setupInjector();
-  }, []);
+  // Initialize injector immediately rather than in useEffect
+  // This ensures the container is ready before any component renders
+  setupInjector();
 
   if (!isLoadingComplete) {
     return null;
   }
 
+  // Get rootStore instance after injector is initialized
+  const rootStore = injector.get<RootStore>(injectionTokens.rootStore);
+
   return (
-    <RootStoreProvider
-      store={injector.get<RootStore>(injectionTokens.rootStore)}>
+    <RootStoreProvider store={rootStore}>
       <GluestackUIProvider>
         <Navigation colorScheme={colorScheme} />
         <StatusBar />

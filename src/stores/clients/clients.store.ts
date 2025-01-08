@@ -1,4 +1,4 @@
-import { action, computed, makeObservable, observable } from 'mobx';
+import { action, computed, makeAutoObservable } from 'mobx';
 
 import { Client } from 'src/types';
 
@@ -7,11 +7,11 @@ import { injectable } from 'inversify';
 
 @injectable()
 export class ClientsStore {
-  @observable clients: Client[] = [];
-  @observable isClientsLoading = false;
+  clients: Client[] = [];
+  isClientsLoading = false;
 
   constructor() {
-    makeObservable(this);
+    makeAutoObservable(this);
   }
 
   @computed

@@ -7,3 +7,4 @@ export * from './journeys-screen';
 export * from './couriers-screen';
 export * from './not-found-screen';
 export * from './create-journey-screen';
+export * from './login-screen';

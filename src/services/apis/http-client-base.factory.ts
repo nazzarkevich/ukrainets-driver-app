@@ -5,7 +5,9 @@ import { HttpClientFactory } from './http-client.factory';
 
 @injectable()
 export class HttpClientBaseFactory implements HttpClientFactory {
-  constructor(protected baseUrl: string) {}
+  constructor(protected baseUrl: string) {
+    console.log('baseUrl: ', this.baseUrl);
+  }
 
   createClient(): AxiosInstance {
     const httpClient = axios.create({
