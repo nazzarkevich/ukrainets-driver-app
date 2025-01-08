@@ -7,3 +7,4 @@ export * from './center';
 export * from './box';
 export * from './spinner';
 export * from './vstack';
+export * from './heading';

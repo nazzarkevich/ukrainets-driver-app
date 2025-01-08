@@ -22,7 +22,6 @@ export const HomeScreen = observer(function HomeScreen({
     useRootStore();
 
   useEffect(() => {
-    console.log('USE EFFECT HOME SCREEN --');
     parcelsStore.fetchParcels();
     journeyStore.fetchActiveJourney();
     clientsStore.fetchClients();

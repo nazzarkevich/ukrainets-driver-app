@@ -38,6 +38,8 @@ export class UserStore {
   }
 
   @action login = async (): Promise<void> => {
+    this.setIsLoading(true);
+
     try {
       const jwt = await this.api.login({
         email: this.email,
@@ -47,6 +49,8 @@ export class UserStore {
       console.log('jwt:', jwt);
     } catch (err) {
       console.log('ERROR: ', err);
+    } finally {
+      this.setIsLoading(false);
     }
 
     // this.setJwt(jwt);

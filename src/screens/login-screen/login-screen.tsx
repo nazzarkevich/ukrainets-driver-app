@@ -1,71 +1,58 @@
 import {
-  Input,
-  InputField,
   Button,
   ButtonText,
   VStack,
   Box,
-  InputSlot,
-  InputIcon,
+  Heading,
+  ButtonSpinner,
 } from '@/components/ui';
-import { EyeIcon, EyeOffIcon } from '@/components/ui/icon';
 import { observer } from 'mobx-react';
-import React, { useState } from 'react';
+import React from 'react';
 
-import { Loader, ScreenContainer, View, useRootStore } from 'src/components';
+import colors from 'tailwindcss/colors';
 import { RootDrawerScreenProps } from 'src/types';
+import { LabeledInput, View, useRootStore } from 'src/components';
 
 export const LoginScreen = observer(function LoginScreen({
   navigation,
 }: RootDrawerScreenProps<'LoginScreen'>) {
   const { userStore } = useRootStore();
-  const [showPassword, setShowPassword] = useState(false);
-
-  //   useEffect(() => {
-  //     userStore.fetchUserDetails();
-  //   }, []);
-
-  // if (userStore.isUserLoading) {
-  if (userStore.isUserLoading) {
-    return (
-      <ScreenContainer>
-        <View>
-          <Loader />
-        </View>
-      </ScreenContainer>
-    );
-  }
+  const isDisabledLoginButton = !userStore.email && !userStore.password;
 
   return (
     <View className="flex-1 items-center justify-center px-4">
       <Box className="min-w-[300px]">
         <VStack space="md">
-          <Input>
-            <InputField
-              placeholder="Email"
-              defaultValue={userStore.email}
-              onChangeText={(email) => userStore.setEmail(email)}
-              keyboardType="email-address"
-              autoCapitalize="none"
-            />
-          </Input>
+          <Heading size="3xl" className="text-typography-900">
+            Привіт 👋
+          </Heading>
 
-          <Input>
-            <InputField
-              placeholder="Password"
-              defaultValue={userStore.password}
-              onChangeText={(text) => userStore.setPassword(text)}
-              secureTextEntry={!showPassword}
-            />
-            <InputSlot
-              className="mr-2"
-              onPress={() => setShowPassword(!showPassword)}>
-              <InputIcon as={showPassword ? EyeIcon : EyeOffIcon} />
-            </InputSlot>
-          </Input>
-          <Button onPress={userStore.login} size="md">
-            {/* <Button onPress={() => console.log('click')} size="md"> */}
-            <ButtonText>Увійти</ButtonText>
+          <LabeledInput
+            label="Пошта"
+            placeholder="Ваш e-mail"
+            keyboardType="email-address"
+            defaultValue={userStore.email}
+            onChangeText={(email) => userStore.setEmail(email)}
+          />
+
+          <LabeledInput
+            label="Пароль"
+            hasSecurityText
+            placeholder="Password"
+            defaultValue={userStore.password}
+            onChangeText={(text) => userStore.setPassword(text)}
+          />
+
+          <Button
+            size="md"
+            className="flex-row items-center"
+            onPress={userStore.login}
+            disabled={isDisabledLoginButton}>
+            {userStore.isUserLoading && (
+              <ButtonSpinner color={colors.gray[400]} />
+            )}
+
+            <ButtonText className="ml-2">Увійти</ButtonText>
           </Button>
         </VStack>
       </Box>

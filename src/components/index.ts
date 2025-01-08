@@ -12,3 +12,4 @@ export * from './parcels';
 export * from './button';
 export * from './stepper';
 export * from './loader';
+export * from './labeledInput';
