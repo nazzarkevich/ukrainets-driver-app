@@ -1,5 +1,5 @@
 import { inject, injectable } from 'inversify';
-import { action, makeAutoObservable, observable } from 'mobx';
+import { action, makeAutoObservable } from 'mobx';
 
 import { AuthResource } from 'src/services';
 import { injectionTokens, Nullable } from 'src/types';
@@ -20,43 +20,18 @@ export class UserStore {
     makeAutoObservable(this);
   }
 
-  @action
   handleSignIn(): void {
     this.fetchUserDetails();
   }
 
-  @action setEmail(email: string): void {
+  setEmail(email: string): void {
     this.email = email;
   }
 
-  @action setPassword(password: string): void {
+  setPassword(password: string): void {
     this.password = password;
   }
 
-  @action setJwt(jwt: string): void {
-    this.jwt = jwt;
-  }
-
-  @action login = async (): Promise<void> => {
-    this.setIsLoading(true);
-
-    try {
-      const jwt = await this.api.login({
-        email: this.email,
-        password: this.password,
-      });
-
-      console.log('jwt:', jwt);
-    } catch (err) {
-      console.log('ERROR: ', err);
-    } finally {
-      this.setIsLoading(false);
-    }
-
-    // this.setJwt(jwt);
-  };
-
-  @action
   async fetchUserDetails(): Promise<void> {
     try {
       this.setIsLoading(true);
@@ -72,7 +47,7 @@ export class UserStore {
     }
   }
 
-  @action setIsLoading(isLoading: boolean): void {
+  setIsLoading(isLoading: boolean): void {
     this.isUserLoading = isLoading;
   }
 

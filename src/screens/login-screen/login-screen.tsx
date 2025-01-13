@@ -16,7 +16,7 @@ import { LabeledInput, View, useRootStore } from 'src/components';
 export const LoginScreen = observer(function LoginScreen({
   navigation,
 }: RootDrawerScreenProps<'LoginScreen'>) {
-  const { userStore } = useRootStore();
+  const { userStore, authStore } = useRootStore();
   const isDisabledLoginButton = !userStore.email && !userStore.password;
 
   return (
@@ -46,11 +46,9 @@ export const LoginScreen = observer(function LoginScreen({
           <Button
             size="md"
             className="flex-row items-center"
-            onPress={userStore.login}
+            onPress={authStore.login}
             disabled={isDisabledLoginButton}>
-            {userStore.isUserLoading && (
-              <ButtonSpinner color={colors.gray[400]} />
-            )}
+            {authStore.isLoading && <ButtonSpinner color={colors.gray[400]} />}
 
             <ButtonText className="ml-2">Увійти</ButtonText>
           </Button>

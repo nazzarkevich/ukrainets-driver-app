@@ -9,7 +9,6 @@ import Axios, {
 import { StatusCodes } from 'src/types';
 
 import { notificationService } from '../notification';
-import { HttpClientFactory } from './http-client.factory';
 
 interface ErrorDetails {
   error: string;
@@ -19,7 +18,7 @@ interface ErrorDetails {
 
 interface ApiInstanceOptions {
   baseURL: string;
-  getAccessToken: () => Promise<string>;
+  getAccessToken: () => string;
 }
 
 interface CustomHandlers {
@@ -29,9 +28,8 @@ interface CustomHandlers {
 
 export class ApiConfig {
   httpRequest: AxiosInstance;
-  fileRequest: AxiosInstance;
 
-  private readonly getAccessToken: () => Promise<string>;
+  private readonly getAccessToken: () => string;
 
   constructor(options: ApiInstanceOptions) {
     this.initInstance(options);
@@ -50,7 +48,6 @@ export class ApiConfig {
   private applyRequestInterceptors(instance: AxiosInstance): void {
     instance.interceptors.request.use(
       async (request: InternalAxiosRequestConfig) => {
-        console.log('REQUEST INTERCEPT: ', request);
         const requestData = request.data as CustomHandlers;
 
         if (requestData && requestData?.useAnonRequestHeader) {

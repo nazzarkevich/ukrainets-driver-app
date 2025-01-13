@@ -11,6 +11,7 @@ import {
   UserStore,
 } from 'src/stores';
 import { injectionTokens } from 'src/types';
+import { HttpClientBaseFactory } from '../services/apis/http-client-base.factory';
 
 let isInjectorSetUp = false;
 
@@ -64,13 +65,6 @@ export function setupInjector() {
 
   // Factories
   injector
-    .bind(injectionTokens.authResourceFactory)
-    .toFactory<AuthResource>((context) => {
-      return () =>
-        context.container.get<AuthResource>(injectionTokens.authResource);
-    });
-
-  injector
     .bind(injectionTokens.lazyRootStore)
     .toFactory((context: interfaces.Context) => {
       return () => {
@@ -92,6 +86,14 @@ export function setupInjector() {
             return authStore.getAccessToken();
           },
         });
+      };
+    });
+
+  injector
+    .bind(injectionTokens.apiBaseConfigFactory)
+    .toFactory((context: interfaces.Context) => {
+      return ({ baseURL }) => {
+        return new HttpClientBaseFactory(baseURL);
       };
     });
 }
