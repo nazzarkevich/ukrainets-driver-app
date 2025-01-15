@@ -1,14 +1,15 @@
-import { defaults } from 'src/consts';
-import { AuthResource } from 'src/services';
-import { injectionTokens } from 'src/types';
 import { inject, injectable } from 'inversify';
 import { makeAutoObservable } from 'mobx';
+
 import { RootStore } from '../root';
 import { UserStore } from '../user';
+import { defaults } from 'src/consts';
+import { AuthResource } from 'src/services';
+import { injectionTokens, Nullable } from 'src/types';
 
 @injectable()
 export class AuthStore {
-  token: string | null;
+  token: Nullable<string>;
   tokenSchema = 'Bearer';
   isAuthenticated = false;
   isLoading = false;
@@ -51,6 +52,11 @@ export class AuthStore {
     }
   };
 
+  logout = () => {
+    this.setAccessToken(null);
+    this.setIsAuthenticated(false);
+  };
+
   private setIsLoading(isLoading: boolean): void {
     this.isLoading = isLoading;
   }
@@ -59,7 +65,7 @@ export class AuthStore {
     this.isAuthenticated = isAuthenticated;
   }
 
-  private setAccessToken(token: string): void {
+  private setAccessToken(token: Nullable<string>): void {
     this.token = token;
   }
 

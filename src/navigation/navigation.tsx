@@ -16,12 +16,13 @@ export const Navigation = observer(
   ({ colorScheme }: { colorScheme: ColorSchemeName }) => {
     const { linkingConfiguration } = useLinkingConfiguration();
     const { authStore } = useRootStore();
+    const isAuthenticated = true; // TODO: remove
 
     return (
       <NavigationContainer
         linking={linkingConfiguration}
         theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        {authStore.isAuthenticated ? <RootNavigator /> : <AuthNavigator />}
+        {isAuthenticated ? <RootNavigator /> : <AuthNavigator />}
       </NavigationContainer>
     );
   },

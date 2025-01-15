@@ -40,7 +40,7 @@ export const JourneyCardHeader = ({
 
       <JourneyStatus isCompleted={isCompleted} />
 
-      <JourneyCardActions isCompleted={isCompleted} />
+      {/* <JourneyCardActions isCompleted={isCompleted} /> */}
     </View>
   );
 };

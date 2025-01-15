@@ -2,29 +2,14 @@ import { observer } from 'mobx-react';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { useRootStore } from '../../root-store-provider';
+import { View } from '../../themed';
 import { SectionTitle } from '../../section-title';
-import { Text, View } from '../../themed';
-import { JourneyCard } from '../journey-card';
+import { ActiveJourneyCard } from './active-journey-card';
 
-export const ActiveJourney = observer(() => {
-  const { journeyStore } = useRootStore();
-
-  if (!journeyStore.activeJourney) {
-    return <Text>No Active Journey</Text>;
-  }
-
+const ActiveJourney = observer(() => {
   return (
     <View style={styles.activeJourney}>
-      <JourneyCard
-        origin={journeyStore.activeJourney.origin}
-        drivers={journeyStore.activeJourney.drivers}
-        vehicle={journeyStore.activeJourney.vehicle}
-        isCompleted={journeyStore.activeJourney.isCompleted}
-        destination={journeyStore.activeJourney.destination}
-        journeyLoadCapacity={journeyStore.journeyLoadCapacity}
-        journeyNumber={journeyStore.activeJourney.journeyNumber}
-      />
+      <ActiveJourneyCard />
     </View>
   );
 });
