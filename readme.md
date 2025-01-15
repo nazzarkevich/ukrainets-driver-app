@@ -23,4 +23,3 @@ Check:
 Next steps:
 
 - Add refresh token
-- Dependency Injection
