@@ -8,3 +8,5 @@ export * from './box';
 export * from './spinner';
 export * from './vstack';
 export * from './heading';
+export * from './avatar';
+export * from './icon';

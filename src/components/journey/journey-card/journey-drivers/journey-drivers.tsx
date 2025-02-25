@@ -4,8 +4,7 @@ import { StyleSheet } from 'react-native';
 import { typographyConst } from 'src/consts';
 import { User } from 'src/types';
 
-import { View } from '../../../themed';
-import { Title } from '../../../title';
+import { Text, View } from '../../../themed';
 import { UserCard } from '../../../user-card';
 
 export const JourneyDrivers = ({ drivers }: { drivers?: User[] }) => {
@@ -15,7 +14,7 @@ export const JourneyDrivers = ({ drivers }: { drivers?: User[] }) => {
 
   return (
     <View style={styles.journeyDriversWrapper}>
-      <Title>Перевізники</Title>
+      <Text className="text-m">Перевізники</Text>
 
       <View style={styles.journeyDrivers}>
         {drivers.map((driver) => (

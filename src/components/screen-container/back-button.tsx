@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 
-import { MoveLeft } from 'lucide-react-native';
+import { ChevronLeft } from 'lucide-react-native';
 import { Button, ButtonText, ButtonIcon } from '@/components/ui/button';
 
 export const BackButton = (): React.ReactElement => {
@@ -9,13 +9,17 @@ export const BackButton = (): React.ReactElement => {
 
   return (
     <Button
-      className="text-sky-500"
-      size="sm"
+      className="flex items-center"
+      size="md"
       action="primary"
-      variant="outline"
+      variant="link"
       onPress={() => navigate('Journeys')}>
-      <ButtonIcon color="red" as={MoveLeft} />
-      <ButtonText>Text</ButtonText>
+      <ButtonIcon
+        size="lg"
+        className="mr-3 text-background-900"
+        as={ChevronLeft}
+      />
+      <ButtonText>Назад</ButtonText>
     </Button>
   );
 };

@@ -1,5 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
-// import { Icon } from '@ui-kitten/components';
+import { Check } from 'lucide-react-native';
+
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
@@ -8,6 +9,9 @@ import { colorsConst, typographyConst } from 'src/consts';
 
 import { Button } from '../button';
 import { Text, View } from '../themed';
+import { ButtonIcon } from '@/components';
+import { Icon } from '@/components/ui/icon';
+import { Spacer } from '../spacer';
 
 interface StepperPages {
   label: string;
@@ -39,28 +43,29 @@ const Step = ({
           ]}
         />
       )}
+
       <View style={styles.stepContainer}>
         <View style={{ opacity: isCompletedStep ? 1 : 0.3 }}>
           {isCompletedStep && !isActive && (
             <View style={styles.iconWrapper}>
-              {/* <Icon
-                name="checkmark-circle-2"
-                style={styles.completeIcon}
-                fill={colorsConst.roles.primary}
-              /> */}
+              <Icon as={Check} size="lg" />
             </View>
           )}
 
-          <Text
-            style={[
-              styles.stepNumber,
-              isActive && styles.activeStepNumber,
-              isCompletedStep && !isActive && styles.completedStep,
-            ]}>
-            {stepNumber}
-          </Text>
+          <View className="h-12 w-12 items-center justify-center rounded-3xl bg-indigo-600">
+            <Text
+              className="text-lg font-bold"
+              style={[
+                isActive && styles.activeStepNumber,
+                isCompletedStep && !isActive && styles.completedStep,
+              ]}>
+              {stepNumber}
+            </Text>
+          </View>
         </View>
+
         <Text
+          className="text-lg"
           style={[
             styles.stepLabel,
             (isCompletedStep || isActive) && styles.activeLabel,
@@ -114,7 +119,7 @@ export const Stepper = ({
 
   return (
     <View>
-      <View style={styles.container}>
+      <View className="flex w-[85%] flex-row items-center justify-center">
         {stepPages.map(({ label }, i) => (
           <Step
             label={label}
@@ -126,9 +131,13 @@ export const Stepper = ({
         ))}
       </View>
 
+      <Spacer size="xl" />
+
       <View>{stepPages[activeStep].component}</View>
 
-      <View>
+      {/* <Spacer size="xl" /> */}
+
+      {/* <View>
         {isFirstStep && (
           <Button type="secondary" onPress={() => goBack()}>
             Відмінити
@@ -147,7 +156,7 @@ export const Stepper = ({
           </Button>
         )}
         {isLastStep && <Button onPress={inFinish}>{finishButtonText}</Button>}
-      </View>
+      </View> */}
     </View>
   );
 };
@@ -191,22 +200,16 @@ const styles = StyleSheet.create({
   stepLabel: {
     fontWeight: '500',
     color: colorsConst.text.tertiary,
-    fontSize: typographyConst.font.m,
   },
 
   activeLabel: {
     color: colorsConst.text.primary,
   },
   activeStepNumber: {
-    width: 30,
-    height: 30,
-    backgroundColor: colorsConst.roles.primary,
+    color: colorsConst.text.contrast,
   },
   completedStep: {
-    borderWidth: 2,
-    color: colorsConst.roles.primary,
-    borderColor: colorsConst.roles.primary,
-    backgroundColor: colorsConst.background.main,
+    color: colorsConst.text.contrast,
   },
   iconWrapper: {
     top: -8,

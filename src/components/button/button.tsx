@@ -5,11 +5,13 @@ import { colorsConst } from 'src/consts';
 import { Button as UIButton, ButtonText } from '@/components/ui/button';
 
 export const Button = ({
+  size,
   children,
   type = 'primary',
   disabled = false,
   onPress,
 }: {
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'xs';
   children?: React.ReactNode;
   type?: 'primary' | 'secondary';
   disabled?: boolean;
@@ -21,38 +23,21 @@ export const Button = ({
     <UIButton
       disabled={disabled}
       onPress={onPress}
-      action={isPrimary ? 'primary' : 'secondary'}
-      className={`h-[35px] w-[170px] justify-center self-center rounded-lg ${
-        isPrimary ? 'bg-primary' : 'bg-secondary'
-      }`}>
+      // action={'primary'}
+      // action={isPrimary ? 'primary' : 'secondary'}
+      className="rounded-xl"
+      size={size}
+      // className={`h-[35px] w-[170px] justify-center self-center rounded-lg ${
+      //   isPrimary ? 'bg-primary' : 'bg-secondary'
+      // }`}
+    >
       <ButtonText
-        className={`text-center ${
-          isPrimary ? 'text-contrast' : 'text-primary'
-        }`}>
+      // className={`text-center color-slate-50 ${
+      //   isPrimary ? 'text-contrast' : 'text-primary'
+      // }`}
+      >
         {children}
       </ButtonText>
     </UIButton>
   );
 };
-
-const styles = StyleSheet.create({
-  buttonContainer: {
-    width: 170,
-    height: 35,
-    borderRadius: 10,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    backgroundColor: colorsConst.foreground.secondary,
-  },
-  label: {
-    textAlign: 'center',
-    color: colorsConst.text.primary,
-  },
-  primary: {
-    backgroundColor: colorsConst.roles.primary,
-  },
-  primaryLabel: {
-    textAlign: 'center',
-    color: colorsConst.text.contrast,
-  },
-});

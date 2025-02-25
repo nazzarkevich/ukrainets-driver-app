@@ -5,7 +5,7 @@ import { GbFlagIcon, UaFlagIcon } from 'src/assets/icons';
 import { colorsConst, typographyConst } from 'src/consts';
 import { Country, Journey } from 'src/types';
 
-import { JourneyCardActions } from './journey-card-actions';
+// import { JourneyCardActions } from './journey-card-actions';
 import { JourneyStatus } from './journey-card-status';
 import { Text, View } from '../../../themed';
 

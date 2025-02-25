@@ -7,17 +7,31 @@ import { Text } from '../themed';
 
 export const Title = ({
   size = 'm',
+  color = 'secondary',
+  className,
   children,
 }: {
-  size?: 's' | 'm';
+  size?: 's' | 'm' | 'l';
+  color?: 'primary' | 'secondary' | 'tertiary';
+  className?: string;
   children: React.ReactNode;
 }) => {
-  return <Text style={[styles.title, styles[size]]}>{children}</Text>;
+  return (
+    <Text style={[styles[size], styles[color]]} className={className}>
+      {children}
+    </Text>
+  );
 };
 
 const styles = StyleSheet.create({
-  title: {
+  primary: {
+    color: colorsConst.text.primary,
+  },
+  secondary: {
     color: colorsConst.text.secondary,
+  },
+  tertiary: {
+    color: colorsConst.text.tertiary,
   },
   s: {
     fontSize: typographyConst.font.s,

@@ -34,7 +34,6 @@ export const UserCard = ({
           <Text style={styles.name}>{firstName}</Text>
           {lastName && <Text style={styles.name}>{lastName}</Text>}
         </View>
-        <Text style={styles.userRole}>{userTypes[type]}</Text>
       </View>
     </View>
   );

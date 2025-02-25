@@ -8,7 +8,6 @@ import { colorsConst, typographyConst } from 'src/consts';
 import { Journey } from 'src/types';
 
 import { Text, View } from '../../../themed';
-import { Title } from '../../../title';
 
 export type JourneyCardDetailsType = Pick<
   Journey,
@@ -35,22 +34,25 @@ export const JourneyCardDetails = ({
   return (
     <View style={styles.journeyDetails}>
       <View style={styles.journeyDetailsTextRow}>
-        <Title size="s">Авто</Title>
+        <Text className="text-m">Авто</Text>
         <Text style={styles.journeyDetailsText}>{vehicle.plateNumber}</Text>
       </View>
 
       <View style={styles.journeyDetailsTextRow}>
-        <Title size="s">Номер поїздки</Title>
-        <Text style={[styles.journeyDetailsText, styles.journeyNumber]}>
-          #{journeyNumber}
+        <Text className="text-m">Номер поїздки</Text>
+
+        <View className="flex flex-row items-center justify-start gap-1">
+          <Text className="font-bold">#{journeyNumber}</Text>
+
           <Pressable onPress={copyToClipboard}>
             <CopyIcon size={20} color={colorsConst.roles.primary} />
           </Pressable>
-        </Text>
+        </View>
       </View>
 
       <View style={styles.journeyDetailsTextRow}>
-        <Title size="s">Навантаження</Title>
+        <Text className="text-m">Навантаження</Text>
+
         <Text style={styles.journeyDetailsText}>{journeyLoadCapacity}кг</Text>
       </View>
     </View>

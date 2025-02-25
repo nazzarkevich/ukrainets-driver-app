@@ -19,7 +19,7 @@ export const JourneyLoadIndicator = ({
 
   return (
     <View style={styles.loadDetails}>
-      <Title>Завантажено</Title>
+      <Text className="text-m">Завантажено</Text>
 
       <View style={styles.loadIndicator}>
         <View
